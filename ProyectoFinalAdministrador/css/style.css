@@ -1,0 +1,74 @@
+body {
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(85, 187, 198, 0.80);
+    backdrop-filter: blur(5px);
+    height: 100px;
+}
+
+.logo-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+}
+
+.usuario-container {
+    margin-right: 20px;
+}
+
+.usuario-img {
+    width: 45px;
+    height: auto;
+}
+
+.login-card {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-custom {
+    background-color: #4fc3d4;
+    border: none;
+    color: #fff;
+    padding: 6px 25px;
+    border-radius: 20px;
+}
+
+.btn-custom:hover {
+    background-color: #35a9b8;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 80px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .usuario-img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 160px;
+    }
+
+    .login-card {
+        padding: 20px;
+    }
+}
+
