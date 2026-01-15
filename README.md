@@ -1,3 +1,3 @@
-# Proyecto-final
+# Proyecto final grupal de Desarrollo en Aplicaciones  Web
 
-# patata
+## Oier Bárcena, Illart Beain, Unax Vizcaíno, Marina Redondo
