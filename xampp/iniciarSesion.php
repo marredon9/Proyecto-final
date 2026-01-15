@@ -3,6 +3,13 @@ include "db.php";
 include "sesionUsuario.php";
 session_start();
 
+/*
+0. Conexion a BD
+1. Obtener datos
+*/
+//id, nombre, apellido1, apellido2, dni, email, fecha_nac, es_admin
+$campos = ["id", "nombre", "apellido1", "apellido2", "dni", "email", "fecha_nac", "es_admin"];
+
 $email = $_POST["email"];
 $contraseña = $_POST["contraseña"];
 $contraseña = hash("sha256", $contraseña);
@@ -22,19 +29,22 @@ try {
         //contraseña incorrecta
         header("Location: login.php");
     }
-    //($id, $nombre, $apellido1, $apellido2, $dni, $email, $fechaNacimiento, $esAdmin)
-    //var_dump($r);
+    
     $sesion = new SesionUsuario(
-        $r["id"], $r["nombre"], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], $r["fecha_nac"], $r["es_admin"]
+        $r["id"], $r['nombre'], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], $r["fecha_nac"], $r["es_admin"]
     );
+    echo "<br>var_dump(): <br>";
+    var_dump($sesion);
     $sesion = serialize($sesion);
-    echo "\n";
-    echo $sesion;
-    echo "\n";
+    //echo "\n";
+    //echo $sesion;
+    //echo "\n";
     $_SESSION["sesion"] = $sesion;
     echo $_SESSION["sesion"];
     //echo serialize($sesion);
-    header("Location: index.php");
+
+    ?><a href="index.php">Continuar</a><?php
+    //header("Location: index.php");
 
 } catch (mysqli_sql_exception $e) {
     //nada

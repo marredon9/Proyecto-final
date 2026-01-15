@@ -18,9 +18,9 @@ class SesionUsuario {
     
     function __construct($id, $nombre, $apellido1, $apellido2, $dni, $email, $fechaNacimiento, $esAdmin) {
         $this->id = $id;
-        $this->$nombre = $nombre;
-        $this->$apellido1 = $apellido1;
-        $this->$apellido2 = $apellido2;
+        $this->nombre = $nombre;
+        $this->apellido1 = $apellido1;
+        $this->apellido2 = $apellido2;
         $this->dni = $dni;
         $this->email = $email;
         $this->fechaNacimiento = $fechaNacimiento;

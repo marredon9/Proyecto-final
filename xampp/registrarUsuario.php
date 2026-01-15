@@ -1,6 +1,13 @@
 <?php
 include "db.php";
 session_start();
+/*
+Errores:
+0. Error con la conexion a la Base de Datos
+1. Hay campos incompletos en el formulario
+2. Ya hay un usuario registrado con ese correo
+3. Las contraseñas no coinciden
+*/
 
 $nombre = $_POST["nombre"];
 $apellido1 = $_POST["apellido1"];
@@ -11,7 +18,22 @@ $contraseña = $_POST["contraseña"];
 $repetirContraseña = $_POST["repetirContraseña"];
 $fechaNacimiento = $_POST["fecha-nacimiento"];
 
-if ($contraseña != $repetirContraseña) header("Location: index.php");
+$datosRequeridos = [
+    "nombre",
+    "apellido1",
+    "dni",
+    "email",
+    "contraseña",
+    "repetirContraseña",
+    "fecha-nacimiento"
+];
+
+//comprobar que estan todos los datos necesarios
+for ($i = 0; $i < $datosRequeridos.length; $i++) {
+    $campo = $_POST[$datosRequeridos[$i]] ?? "";
+    if ($campo == "") //error 1: faltan datos necesarios
+        header("Location: registro.php?error=1");
+}
 
 $contraseña = hash("sha256", $contraseña);
 //echo $contraseña;
@@ -22,8 +44,11 @@ try {
     $stmt->execute();
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
-    if ($r != 0) header("Location: registro.php");
+    if ($r != 0) //error 2: ya hay un usuario registrado con ese correo electrónico
+        header("Location: registro.php?error=2");
     
+    if ($contraseña != $repetirContraseña) //error 3: las contraseñas no coinciden
+        header("Location: registro.php?error=3");
 
     //insertar usuario
     $stmt = $cn->prepare(

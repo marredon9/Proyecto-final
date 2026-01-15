@@ -43,3 +43,15 @@ session_start();
         </tr>
     </table>
 </form>
+<?php
+$error = $_GET["error"];
+$listaErrores = [
+    "Error en la base de datos",
+    "Hay campos incompletos en el formulario",
+    "Ya hay un usuario registrado con ese correo",
+    "Las contraseñas no coinciden"
+];
+if (isset($error)) {
+    ?><h1><?=$listaErrores[$error]?></h1><?php
+}
+?>
