@@ -1,8 +1,8 @@
 <form action="iniciarSesion.php" method="POST">
     <table border="1">
         <tr>
-            <td>E-mail: </td>
-            <td><input type="email" name="email" required></td>
+            <td>DNI: </td>
+            <td><input type="text" name="dni" required></td>
         </tr>
         <tr>
             <td>Contraseña: </td>

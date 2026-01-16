@@ -39,7 +39,7 @@ $contraseña = hash("sha256", $contraseña);
 
 try {
     //comprobar que no se ha registrado el correo electronico
-    $stmt = $cn->prepare("SELECT COUNT(email) AS count FROM usuario WHERE email = '?' AND eliminado = 0;");
+    $stmt = $cn->prepare("SELECT COUNT(dni) AS count FROM usuario WHERE dni = '?' AND eliminado = 0;");
     $stmt->execute();
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
