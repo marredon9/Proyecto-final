@@ -33,7 +33,12 @@ try {
     //borrar usuario
     $stmt = $cn->prepare("UPDATE usuario SET eliminado = 1 WHERE eliminado = 0 AND id = ?;");
     $stmt->bind_param("d", $id);
-    $stmt->
+    $stmt->execute();
+
+    //cerrar sesion
+    unset($_SESSION["sesion"]);
+    unset($sesion);
+    header("Location: index.php");
 
 } catch (mysqli_sql_exception $e) {
     //nada
