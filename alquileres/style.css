@@ -11,14 +11,40 @@
     }
 }
 
+/*Navbar*/
+.navbar {
+    background-color: rgba(85, 187, 198, 0.80);
+    backdrop-filter: blur(5px);
+    height: 100px;
+}
+.logo-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo {
+    width: 360px;
+    max-width: 450px;
+    height: auto;
+}
+.usuario-container {
+    margin-right: 20px;
+}
+
+.usuario-img {
+    width: 45px;
+    height: auto;
+}
+
+
 /*card*/
-.cards_title {
+.cards-title-alquiler {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 40px;
 }
-.cards_container {
+.cards-container-alquiler {
     display: flex;
     flex-direction: column; 
     align-items: center;    
@@ -31,9 +57,10 @@
     width: 100%;
     margin-top: 20px;           
 }
-.card_footer {
+.card-footer {
     display: flex;
     justify-content: flex-end;
+    
 }
 
 /*modal*/
@@ -104,3 +131,84 @@
     align-items: center;
     padding-top: 40px;
 }
+
+/*Footer*/
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    align-items: start;
+}
+
+.footer-col h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.footer-col p:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    width: 220px;
+}
+
+/* BARRA INFERIOR */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    font-size: 0.95rem;
+}
+
+.footer-social i {
+    font-size: 1.4rem;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.logo-foter {
+    width: 460px;
+    max-width: 650px;
+    height: auto;
+}
+.seccion-azul {
+    background-color: rgba(85, 187, 198, 0.80);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+/*Responsive*/
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        padding: 0 10px;
+    }
+
+    .footer-logo {
+        width: 80px;
+    }
+}
+
+

@@ -8,7 +8,8 @@ CREATE TABLE usuario (
     email VARCHAR(128) NOT NULL,
     contraseña VARCHAR(64) NOT NULL,
     fecha_nac DATE NOT NULL,
-    es_admin BOOLEAN NOT NULL
+    es_admin BOOLEAN NOT NULL,
+    eliminado BOOLEAN NOT NULL
 );
 
 CREATE TABLE sucursal (
@@ -75,7 +76,8 @@ CREATE TABLE alquiler (
     id_suc_rec INT NOT NULL,
     CONSTRAINT id_suc_rec FOREIGN KEY (id_suc_rec) REFERENCES sucursal(id),
     id_suc_dev INT,
-    CONSTRAINT id_suc_dev FOREIGN KEY (id_suc_dev) REFERENCES sucursal(id)
+    CONSTRAINT id_suc_dev FOREIGN KEY (id_suc_dev) REFERENCES sucursal(id),
+    devuelto BOOLEAN NOT NULL
 );
 */
 SELECT * FROM usuario WHERE email = "ejemplo@hotmail.com";
