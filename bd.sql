@@ -76,7 +76,8 @@ CREATE TABLE alquiler (
     id_suc_rec INT NOT NULL,
     CONSTRAINT id_suc_rec FOREIGN KEY (id_suc_rec) REFERENCES sucursal(id),
     id_suc_dev INT,
-    CONSTRAINT id_suc_dev FOREIGN KEY (id_suc_dev) REFERENCES sucursal(id)
+    CONSTRAINT id_suc_dev FOREIGN KEY (id_suc_dev) REFERENCES sucursal(id),
+    devuelto BOOLEAN NOT NULL
 );
 */
 SELECT * FROM usuario WHERE email = "ejemplo@hotmail.com";
