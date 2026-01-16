@@ -4,12 +4,12 @@ CREATE TABLE usuario (
     nombre VARCHAR(128) NOT NULL,
     apellido1 VARCHAR(128) NOT NULL,
     apellido2 VARCHAR(128),
-    dni VARCHAR(16) NOT NULL,
+    dni VARCHAR(16) UNIQUE NOT NULL,
     email VARCHAR(128) NOT NULL,
     contraseña VARCHAR(64) NOT NULL,
     fecha_nac DATE NOT NULL,
     es_admin BOOLEAN NOT NULL,
-    eliminado BOOLEAN NOT NULL
+    desactivado BOOLEAN NOT NULL
 );
 
 CREATE TABLE sucursal (
