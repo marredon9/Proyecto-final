@@ -4,7 +4,7 @@ include "sesionUsuario.php";
 session_start();
 if (isset($_SESSION["sesion"])) {
     $sesion = unserialize($_SESSION["sesion"]);
-    var_dump($sesion);
+    //var_dump($sesion);
     ?><h1>Bienvenido, <?=$sesion->nombre?></h1><?php
 }
 ?>
@@ -12,4 +12,3 @@ if (isset($_SESSION["sesion"])) {
 <a href="login.php">Iniciar Sesión</a>
 <a href="cerrarSesion.php">Cerrar Sesión</a><br>
 <hr>
-<!--<?=serialize($sesion)?>-->

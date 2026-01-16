@@ -8,7 +8,8 @@ CREATE TABLE usuario (
     email VARCHAR(128) NOT NULL,
     contraseña VARCHAR(64) NOT NULL,
     fecha_nac DATE NOT NULL,
-    es_admin BOOLEAN NOT NULL
+    es_admin BOOLEAN NOT NULL,
+    eliminado BOOLEAN NOT NULL
 );
 
 CREATE TABLE sucursal (

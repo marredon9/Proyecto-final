@@ -29,18 +29,17 @@ $datosRequeridos = [
 ];
 
 //comprobar que estan todos los datos necesarios
-for ($i = 0; $i < $datosRequeridos.length; $i++) {
+for ($i = 0; $i < sizeof($datosRequeridos); $i++) {
     $campo = $_POST[$datosRequeridos[$i]] ?? "";
     if ($campo == "") //error 1: faltan datos necesarios
         header("Location: registro.php?error=1");
 }
 
 $contraseña = hash("sha256", $contraseña);
-//echo $contraseña;
 
 try {
     //comprobar que no se ha registrado el correo electronico
-    $stmt = $cn->prepare("SELECT COUNT(email) AS count FROM usuario WHERE email = '?'");
+    $stmt = $cn->prepare("SELECT COUNT(email) AS count FROM usuario WHERE email = '?' AND eliminado = 0;");
     $stmt->execute();
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
