@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Proyecto final grupal de Desarrollo en Aplicaciones  Web
 
 ## Oier Bárcena, Illart Beain, Unax Vizcaíno, Marina Redondo
@@ -10,4 +10,3 @@
 
 #### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajustes.
 
->>>>>>> ede69d422827abc865c97de5a061afc3c8340731
