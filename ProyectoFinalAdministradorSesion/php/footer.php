@@ -8,7 +8,7 @@ function footer() {
 
                 <!-- IZQUIERDA: LOGO + MAPA -->
                 <div class="footer-col footer-map">
-                    <img src="../img/editado.png" class="logo-foter" alt="Logo Alquiza" class="footer-logo">
+                    <img src="../img/editado.png" class="logo-footer" alt="Logo Alquiza" class="footer-logo">
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 25px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
