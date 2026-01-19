@@ -1,6 +1,5 @@
 <?php
-include "db.php";
-include "sesionUsuario.php";
+include "include.php";
 session_start();
 
 /*

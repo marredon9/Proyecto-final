@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "include.php";
 session_start();
 /*
 Errores:
@@ -39,11 +39,11 @@ $contraseña = hash("sha256", $contraseña);
 
 try {
     //comprobar que no se ha registrado el correo electronico
-    $stmt = $cn->prepare("SELECT COUNT(dni) AS count FROM usuario WHERE dni = '?' AND eliminado = 0;");
+    $stmt = $cn->prepare("SELECT COUNT(dni) AS count FROM usuario WHERE dni = '?' AND desactivado = 0;");
     $stmt->execute();
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
-    if ($r != 0) //error 2: ya hay un usuario registrado con ese correo electrónico
+    if ($r != 0) //error 2: ya hay un usuario registrado con ese DNI
         header("Location: registro.php?error=2");
     
     if ($contraseña != $repetirContraseña) //error 3: las contraseñas no coinciden
