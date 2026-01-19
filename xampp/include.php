@@ -3,6 +3,7 @@
 $files = "
 db.php
 sesionUsuario.php
+debug.php
 ";
 
 //sustituir espacios, tabulaciones y saltos de linea 
