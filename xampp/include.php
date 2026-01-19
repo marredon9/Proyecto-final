@@ -1,7 +1,8 @@
 <?php
+//PONER NOMBRES DE ARCHIVOS A IMPORTAR DE LA CARPETA INCLUDE
 $files = "
 db.php
-aaaaa
+sesionUsuario.php
 ";
 
 //sustituir espacios, tabulaciones y saltos de linea 
@@ -14,5 +15,5 @@ for ($i = 0; $i < sizeof($files); $i++) {
     //echo $element;
     include "include/" . $element;
 }
-
+//echo "Include realizado correctamente!";
 ?>
