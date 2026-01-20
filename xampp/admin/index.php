@@ -2,5 +2,6 @@
 include "include.php";
 session_start();
 $sesion = $_SESSION["sesion"] ?? "";
-if ($session == "") debug_header("Location: ../login.php");
+if ($sesion == "") debug_header("Location: ../login.php");
 ?>
+<h1>Has iniciado sesión como administrador!<h1>
