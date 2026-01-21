@@ -1,11 +1,19 @@
 body {
     font-size: 20px;
     color: rgb(255, 255, 255);
+    animation: fadeIn 1.5s ease-in;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+}
 
 .navbar {
-    background-color: rgba(85, 187, 198, 0.80);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     backdrop-filter: blur(5px);
     height: 100px;
 }
@@ -24,9 +32,10 @@ body {
 }
 
 .logo {
-    width: 360px;
+    width: 300px;
     max-width: 450px;
     height: auto;
+    filter: invert(1);
 }
 
 .usuario-container {
@@ -40,16 +49,11 @@ body {
 
 
 .escaparate {
-    background: rgba(85, 187, 198, 0.80);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     width: 600px;
     height: 550px;
-}
-
-.buscador-imagenes {
-    width: 20px;
-    height: 20px;
 }
 
 .fondo-blanco {
@@ -58,8 +62,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 10px 15px;
     font-size: 18px;
-    color: black;
-
+    color: rgb(0, 0, 0);
 }
 
 .input-fecha {
@@ -139,18 +142,15 @@ body {
 
 .btn-light {
     transition: all 0.4s ease;
-}
-
-.btn-light {
-    transition: all 0.4s ease;
     background: #ffffff;
     color: #000;
 }
 
-
 .btn-light:hover {
-    background: #5ca4f1;
+    background: #3b82f6;
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
 .btn-light:active {
@@ -212,15 +212,8 @@ body {
     }
 }
 
-hr {
-    width: 100%;
-    border: none;
-    border-top: 4px solid #000;
-    margin: 0;
-}
-
 .seccion-azul {
-    background-color: rgba(85, 187, 198, 0.80);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 10px 15px;
@@ -228,13 +221,7 @@ hr {
     color: rgb(255, 255, 255);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 40px;
-    padding: 40px;
-    align-items: start;
-}
+/* Removed .footer-grid as now using Bootstrap grid */
 
 .footer-col h4 {
     font-weight: bold;
@@ -268,33 +255,78 @@ hr {
     font-size: 1.4rem;
     margin-left: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-social i:hover {
+    transform: scale(1.2);
+    color: #ffdd00;
 }
 
 .logo-foter {
-    width: 460px;
-    max-width: 650px;
+    width: auto;
+    max-width: 350px;
     height: auto;
+    filter: invert(1);
 }
 
-/* RESPONSIVE */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
     .footer-bottom {
         flex-direction: column;
+        text-align: center;
         gap: 10px;
+    }
+    .img-borde {
+        width: 290px;
+        height: auto;
+        border-radius: 30px;
+    }
+    #map {
+        height: 250px !important;
+    }
+    .logo-foter {
+        max-width: 200px;
+    }
+    .footer-col {
+        text-align: center;
     }
 }
 
-@media (max-width: 600px) {
-    .footer-content {
-        padding: 0 10px;
-    }
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
 
-    .footer-logo {
-        width: 80px;
-    }
+.carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+    color: black;
+    font-size: 20px;
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    background-color: rgba(0,0,0,0.1);
+    transform: scale(1.1);
+}
+
+.carousel-indicators button {
+    background-color: black;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: black;
+    transform: scale(1.2);
+}
+
+.carousel-item.active img {
+    border: none;
+    border-radius: 10px;
+    transition: border 0.5s ease;
 }
