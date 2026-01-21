@@ -4,6 +4,7 @@ $files = "
 db.php
 sesionUsuario.php
 debug.php
+rutaAssets.php
 ";
 
 //sustituir espacios, tabulaciones y saltos de linea 
