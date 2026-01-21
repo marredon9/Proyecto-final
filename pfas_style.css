@@ -40,7 +40,7 @@ body {
 }
 
 .btn-custom {
-    background-color: #4fc3d4;
+    background-color: #2600ff;
     border: none;
     color: #fff;
     padding: 6px 25px;
@@ -155,5 +155,109 @@ body {
 
     .footer-logo {
         width: 80px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        height: 80px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .usuario-img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 160px;
+    }
+
+    .login-card {
+        padding: 20px;
+    }
+}
+
+.seccion-azul {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+/* Removed .footer-grid as now using Bootstrap grid */
+
+.footer-col h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.footer-col p:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    width: 220px;
+}
+
+/* BARRA INFERIOR */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    font-size: 0.95rem;
+}
+
+.footer-social i {
+    font-size: 1.4rem;
+    margin-left: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-social i:hover {
+    transform: scale(1.2);
+    color: #ffdd00;
+}
+
+.logo-foter {
+    width: auto;
+    max-width: 350px;
+    height: auto;
+    filter: invert(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .img-borde {
+        width: 290px;
+        height: auto;
+        border-radius: 30px;
+    }
+    #map {
+        height: 250px !important;
+    }
+    .logo-foter {
+        max-width: 200px;
+    }
+    .footer-col {
+        text-align: center;
     }
 }
