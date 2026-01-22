@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
@@ -22,7 +27,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="#flota">Nuestra flota</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#flota">Iniciar Sesion</a></li>
                     <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
                     <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
@@ -101,35 +106,52 @@
     </div>
 
     <!-- Sección flota vehículos -->
-<h2 class="section-title mb-4 text-center">Descubra Nuestra Flota</h2>
-<div class="vehicles-wrapper d-flex justify-content-center overflow-x-auto">
-    <div class="vehicles d-flex gap-3">
-        <!-- Vehículos en línea -->
-        <div class="vehicle">
-            <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Minivans" /></a>
-            <p>Minivans</p>
-        </div>
-        <div class="vehicle">
-            <a href="#"><img src="https://images.unsplash.com/photo-1616077788687-26f7f4f2f93c?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Eléctricos" /></a>
-            <p>Eléctricos</p>
-        </div>
-        <div class="vehicle">
-            <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Gasolina" /></a>
-            <p>Gasolina</p>
-        </div>
-        <div class="vehicle">
-            <a href="#"><img src="https://images.unsplash.com/photo-1575767741836-1f8f4f7b1f2f?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Scooter" /></a>
-            <p>Motos</p>
-        </div>
-        <div class="vehicle">
-            <a href="#"><img src="https://images.unsplash.com/photo-1625165519484-7f94b3b6f7d8?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Furgoneta" /></a>
-            <p>Furgonetas</p>
+    <h2 class="section-title mb-4 text-center">Descubra Nuestra Flota</h2>
+    <div class="vehicles-wrapper d-flex justify-content-center overflow-x-auto">
+        <div class="vehicles d-flex gap-3">
+            <!-- Vehículos en línea -->
+            <div class="vehicle">
+                <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Minivans" /></a>
+                <p>Minivans</p>
+            </div>
+            <div class="vehicle">
+                <a href="#"><img src="https://images.unsplash.com/photo-1616077788687-26f7f4f2f93c?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Eléctricos" /></a>
+                <p>Eléctricos</p>
+            </div>
+            <div class="vehicle">
+                <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Gasolina" /></a>
+                <p>Gasolina</p>
+            </div>
+            <div class="vehicle">
+                <a href="#"><img src="https://images.unsplash.com/photo-1575767741836-1f8f4f7b1f2f?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Scooter" /></a>
+                <p>Motos</p>
+            </div>
+            <div class="vehicle">
+                <a href="#"><img src="https://images.unsplash.com/photo-1625165519484-7f94b3b6f7d8?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Furgoneta" /></a>
+                <p>Furgonetas</p>
+            </div>
         </div>
     </div>
-</div>
 
     <div style="text-align: center; margin-top: 20px;">
         <button class="view-button">Ver Nuestros Vehículos</button>
+    </div>
+
+    <!--Zona gris -->
+
+    <div class="seccion-gris mt-5">
+        <div class="container justify-content-center text-center">
+            <h1><b>¿QUIENES SOMOS?</b></h1>
+            <div class="row mt-3">
+                <div class="col slide-in-left">
+                    <img src="../img/escaparate.png" width="auto" height="300px" class="img-borde">
+                </div>
+                <div class="col slide-in-right mt-3">
+                    En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con libertad, por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos tanto para los turistas que quieren explorar cada rincón,
+                    como para los locales que necesitan soluciones de movilidad para su día a día. Nos enorgullece nuestro trato cercano y la flexibilidad para adaptarnos a todas tus necesidades, garantizando siempre la calidad y el mejor servicio.
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Contacto y footer -->
@@ -146,11 +168,43 @@
 
     <footer class="mt-5 text-center">
         <div class="container">
-            <p>&copy; 2024 Alquiza Ibiza. Todos los derechos reservados.</p>
-            <p>
-                <a href="#">Política de Cookies</a> |
-                <a href="#">Aviso Legal</a>
-            </p>
+            <div class="row">
+                <!-- IZQUIERDA: LOGO + MAPA -->
+                <div class="col-lg-5 col-md-6 col-12 footer-map">
+                    <!-- MAPA NO SE TOCA -->
+                    <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
+                </div>
+
+                <!-- CENTRO -->
+                <div class="col-lg-3 col-md-3 col-6 footer-col">
+                    <h4>MÁS INFORMACIÓN</h4>
+                    <p>Preguntas frecuentes</p>
+                    <p>Contacta con nosotros</p>
+                    <p>NUESTRAS SUCURSALES</p>
+                </div>
+
+                <!-- DERECHA -->
+                <div class="col-lg-4 col-md-3 col-6 footer-col">
+                    <h4>INFORMACIÓN LEGAL</h4>
+                    <p>Información legal</p>
+                    <p>Política de gestión de daños</p>
+                    <p>Política de depósito</p>
+                    <p>Política de Privacidad</p>
+                    <p>Términos y Condiciones</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA INFERIOR -->
+        <div class="footer-bottom">
+            <span>© Alquiza 2026</span>
+            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
     </footer>
 
@@ -158,4 +212,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var map = L.map('map').setView([38.9089, 1.4321], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        L.marker([38.9089, 1.4321]).addTo(map)
+            .bindPopup('Alquiza - Tu alquiler en Ibiza')
+            .openPopup();
+    });
+</script>
+
 </html>
