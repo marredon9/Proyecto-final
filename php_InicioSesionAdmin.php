@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -50,7 +50,7 @@
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
                 <div class="col-lg-5 col-md-6 col-12 footer-map">
-                    <img src="../img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
+                    <img src="assets/img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
