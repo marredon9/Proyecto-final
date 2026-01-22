@@ -27,10 +27,7 @@ try {
         header("Location: login.php?error=1");
     }
 
-    if ($r["desactivado"] == 1) {
-        $reactivado = $r["desactivado"];
-    }
-
+    $reactivado = ($r["desactivado"] == 1);
     $sesion = new SesionUsuario(
         $r["id"], $r['nombre'], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], $r["fecha_nac"], $r["es_admin"]
     );
@@ -38,7 +35,7 @@ try {
     $_SESSION["sesion"] = serialize($sesion);
     if ($sesion->esAdmin) {
         header("Location: admin/index.php");
-    } else  if ($reactivada) {
+    } else if ($reactivado) {
         header("Location: menuCuentaReactivada.php");
     } else {
         header("Location: index.php");
