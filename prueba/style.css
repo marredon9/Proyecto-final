@@ -188,3 +188,147 @@ footer a:hover {
     background-color: #004d00;
 }
 
+.vehicles-wrapper {
+    overflow: hidden;
+    width: 80%;
+}
+
+.vehicles-wrapper {
+    overflow-x: auto;
+    /* Permite desplazamiento horizontal si es necesario */
+    padding: 10px;
+}
+
+.vehicles {
+    display: flex;
+    gap: 15px;
+    /* Espacio entre vehículos */
+    flex-shrink: 0;
+}
+
+.vehicle {
+    flex: 0 0 auto;
+    width: 200px;
+    /* Puedes ajustar el tamaño de las tarjetas */
+    text-align: center;
+}
+
+.vehicle img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.vehicle img:hover {
+    transform: scale(1.05);
+}
+
+
+
+.seccion-gris {
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px 15px;
+    font-size: 18px;
+    color: black;
+}
+
+.container {
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: justify;
+
+
+}
+
+.img-borde {
+    width: 590px;
+    height: auto;
+    border-radius: 30px;
+}
+
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 15px 5px 10px 5px;
+    /* Menos padding */
+    font-size: 0.95rem;
+    /* Texto más pequeño */
+}
+
+footer h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    /* Título más pequeño */
+}
+
+.footer-col {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#map {
+    height: 230px !important;
+    /* Más alto */
+    width: 95%;
+    /* Más ancho, pero no al 100% */
+    border-radius: 12px;
+    margin: 15px auto;
+    min-width: 180px;
+    max-width: 400px;
+    /* Controla el máximo en pantallas grandes */
+    display: block;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social i {
+    margin: 0 5px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+
+    .footer-col,
+    .footer-map {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .img-borde {
+        width: 290px;
+        height: auto;
+        border-radius: 30px;
+    }
+
+
+    #map {
+        height: 150px !important;
+        max-width: 95%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
