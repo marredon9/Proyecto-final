@@ -3,8 +3,8 @@ include "include.php";
 session_start();
 
 /*
-0. Conexion a BD
-1. Obtener datos
+0. Error con la conexion a la base de datos
+1. La contraseña es incorrecta o el usuario no existe
 */
 
 $dni = $_POST["dni"];
@@ -13,11 +13,8 @@ $contraseña = hash("sha256", $contraseña);
 //var_dump($dni);
 try {
     //contar usuarios y comprobar que no hay ninguno
-
-
-
     //obtener usuarios con ese dni
-    $query = "SELECT * FROM usuario WHERE dni = ? AND desactivado = 0 LIMIT 1;";
+    $query = "SELECT * FROM usuario WHERE dni = ? LIMIT 1;";
     //echo $query;
     $stmt = $cn->prepare($query);
     $stmt->bind_param("s", $dni);
@@ -27,7 +24,11 @@ try {
     $r = $res->fetch_assoc();
     if ($contraseña != $r["contraseña"]) {
         //contraseña incorrecta
-        header("Location: login.php");
+        header("Location: login.php?error=1");
+    }
+
+    if ($r["desactivado"] == 1) {
+        $reactivado = $r["desactivado"];
     }
 
     $sesion = new SesionUsuario(
@@ -35,18 +36,16 @@ try {
     );
 
     $_SESSION["sesion"] = serialize($sesion);
-    /*?><a href="index.php">Continuar</a><?php*/
     if ($sesion->esAdmin) {
-        //header("Location: admin/index.php");
-        echo '<a href="admin/index.php">Continuar a admin/index.php</a>';
-    }
-    else {
-        //header("Location: index.php");
-        echo '<a href="index.php">Continuar a index.php</a>';
+        header("Location: admin/index.php");
+    } else  if ($reactivada) {
+        header("Location: menuCuentaReactivada.php");
+    } else {
+        header("Location: index.php");
     }
 
 } catch (mysqli_sql_exception $e) {
-    //nada
+    header("Location: login.php?error=0");
 }
 
 ?>
