@@ -1,0 +1,212 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Encabezado con logo y título */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+/* Banner principal con video y overlay */
+.hero-section {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+/* Video de olas en el fondo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+/* Contenido del hero */
+.hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+}
+
+/* Resto de estilos, igual que en tu código original */
+.section-title {
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #007bff;
+    text-align: center;
+}
+
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 20px;
+}
+
+footer h5 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-inner img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Fondo bonito para el modal */
+.custom-modal {
+    position: relative;
+    background: url('img/ibiza.avif') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    color: #f0f0f0; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal * {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Color del encabezado */
+.custom-modal .modal-header {
+    border-bottom: none;
+}
+
+/* Botón cerrar en color blanco */
+.btn-close-white {
+    filter: invert(1);
+}
+
+/* Inputs y selects en modal */
+.custom-modal input,
+.custom-modal select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.custom-modal input:hover,
+.custom-modal select:hover,
+.custom-modal input:focus,
+.custom-modal select:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-color: #fff;
+}
+
+/* Botón modal */
+.custom-modal .btn-primary {
+    background-color: #ff7e5f;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.custom-modal .btn-primary:hover {
+    background-color: #eb6750;
+}
+
+/* Estilos para carrusel y botones */
+.nav-button {
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #004d00;
+}
+
+.view-button {
+    background-color: #006400;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-button:hover {
+    background-color: #004d00;
+}
+
+.vehicles-wrapper {
+    overflow: hidden;
+    width: 80%;
+}
+
+.vehicles-wrapper {
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    padding: 10px;
+}
+
+.vehicles {
+    display: flex;
+    gap: 15px; /* Espacio entre vehículos */
+    flex-shrink: 0;
+}
+
+.vehicle {
+    flex: 0 0 auto;
+    width: 200px; /* Puedes ajustar el tamaño de las tarjetas */
+    text-align: center;
+}
+
+.vehicle img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.vehicle img:hover {
+    transform: scale(1.05);
+}
