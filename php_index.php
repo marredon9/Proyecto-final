@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -21,18 +21,15 @@
     <div class="fondo-imagen">
         <nav class="navbar mb-3">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <a class="navbar-brand mx-auto" href="#">
-                    <img src="../img/logo.png" class="logo" alt="Logo">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/logo.png" class="logo" alt="Logo">
                 </a>
+
+
 
                 <div class="usuario-container">
                     <a href="#">
-                        <img src="../img/usuario.png" class="usuario-img" alt="Usuario">
+                        <img src="assets/img/usuario.png" class="usuario-img" alt="Usuario">
                     </a>
                 </div>
 
@@ -46,9 +43,9 @@
                 <div class="text-center mb-3">
                     <h1>¿Tipo de vehículo?</h1>
                     <div class="mt-2">
-                        <img src="../img/coche.png" width="40">
-                        <img src="../img/motos.png" width="35">
-                        <img src="../img/camion.png" width="40">
+                        <img src="assets/img/coche.png" width="40">
+                        <img src="assets/img/motos.png" width="35">
+                        <img src="assets/img/camion.png" width="40">
                     </div>
                 </div>
 
@@ -105,7 +102,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="card rounded-pill text-center overflow-hidden border-0 shadow m-5" style="max-width: 18rem;">
-                        <img src="../img/Ofertas.png" class="card-img-top" alt="...">
+                        <img src="assets/img/Ofertas.png" class="card-img-top" alt="...">
                         <div class="card-body bg-dark text-white mt-2">
                             <h5 class="card-title fw-bold">Ofertas y Promociones</h5>
                             <p class="card-text">Obtén un 20% en el alquiler de coches, motos y furgonetas este invierno.</p>
@@ -115,7 +112,7 @@
                 </div>
                 <div class="col-sm">
                     <div class="card rounded-pill text-center overflow-hidden border-0 shadow m-5" style="max-width: 18rem;">
-                        <img src="../img/Ruta.png" class="card-img-top" alt="...">
+                        <img src="assets/img/Rutas.png" class="card-img-top" alt="...">
                         <div class="card-body bg-dark text-white mt-2">
                             <h5 class="card-title fw-bold">Planifica tu ruta</h5>
                             <p class="card-text">Planifica los sitios a los que deseas ir y te aconsejamos</p>
@@ -125,7 +122,7 @@
                 </div>
                 <div class="col-sm">
                     <div class="card rounded-pill text-center overflow-hidden border-0 shadow m-5" style="max-width: 18rem;">
-                        <img src="../img/furgoneta1.png" class="card-img-top" alt="...">
+                        <img src="assets/img/furgoneta1.png" class="card-img-top" alt="...">
                         <div class="card-body bg-dark text-white mt-2">
                             <h5 class="card-title fw-bold">Alquila tu furgoneta</h5>
                             <p class="card-text">Tu furgoneta con un 25% de descuento.</p>
@@ -146,7 +143,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col slide-in-left">
-                        <img src="../img/escaparate.png" width="auto" height="300px" class="img-borde">
+                        <img src="assets/img/escaparate.png" width="auto" height="300px" class="img-borde">
                     </div>
                     <div class="col slide-in-right">
                         En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con libertad, por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos tanto para los turistas que quieren explorar cada rincón,
@@ -173,13 +170,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../img/porche.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Coche">
+                            <img src="assets/img/porche.jpg" class="d-block carousel-img" alt="Coche">
                         </div>
                         <div class="carousel-item">
-                            <img src="../img/audi-Q8.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Moto">
+                            <img src="assets/img/audi-Q8.jpg" class="d-block w-100 carousel-img" alt="Coche">
                         </div>
                         <div class="carousel-item">
-                            <img src="../img/bmw.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Camión">
+                            <img src="assets/img/bmw.jpg" class="d-block w-100 carousel-img" alt="Coche">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -204,7 +201,7 @@
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
                 <div class="col-lg-5 col-md-6 col-12 footer-map">
-                    <img src="../img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
+                    <img src="assets/img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>

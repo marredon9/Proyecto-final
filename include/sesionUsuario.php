@@ -35,4 +35,13 @@ class SesionUsuario {
     function getFechaNacimiento() { return $this->fechaNacimiento; }
     function getEsAdmin() { return $this->esAdmin; }
 }
+
+function obtenerSesion() {
+    session_start();
+    if (isset($_SESSION["sesion"])) {
+        $sesion = unserialize($_SESSION["sesion"]);
+    } else {
+        $sesion = "";
+    }
+}
 ?>

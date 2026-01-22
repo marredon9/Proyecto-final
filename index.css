@@ -10,8 +10,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /*h1 {
@@ -20,11 +25,15 @@ body {
 .navbar {
     background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
     backdrop-filter: blur(5px);
-    height: 100px;
+    height: 120px;
+    align-items: flex-start;
+    padding-top: 6px;
+    position: relative;
+    /* needed for absolute logo positioning */
 }
 
 .fondo-imagen {
-    background-image: url("../img/ibiza.png");
+    background-image: url("assets/img/ibiza.png");
     background-size: cover;
     background-position: center;
     padding-bottom: 60px;
@@ -37,18 +46,25 @@ body {
 }
 
 .logo {
-    width: 300px;
-    max-width: 450px;
+    width: 420px;
+    max-width: 720px;
     height: auto;
     filter: invert(1);
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    z-index: 100;
 }
 
 .usuario-container {
     margin-right: 20px;
+    position: absolute;
+    right: 20px;
+    top: 12px;
 }
 
 .usuario-img {
-    width: 45px;
+    width: 60px;
     height: auto;
 }
 
@@ -59,6 +75,15 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     width: 600px;
     height: 550px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+/* Desplazar el escaparate ligeramente a la izquierda en pantallas grandes */
+@media (min-width: 769px) {
+    .escaparate {
+        transform: translateX(-80px);
+    }
 }
 
 .fondo-blanco {
@@ -197,8 +222,20 @@ body {
         height: 80px;
     }
 
+    .navbar {
+        align-items: center;
+        padding-top: 0;
+    }
+
     .logo {
         width: 200px;
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0 auto;
+        z-index: 10;
+        display: block;
+        transform: none;
     }
 
     .usuario-img {
@@ -281,24 +318,29 @@ body {
         text-align: center;
         gap: 10px;
     }
+
     .img-borde {
         width: 290px;
         height: auto;
         border-radius: 30px;
     }
+
     #map {
         height: 250px !important;
     }
+
     .logo-foter {
         max-width: 200px;
     }
+
     .footer-col {
         text-align: center;
     }
 }
 
 /*Carousel*/
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-color: transparent;
     border: 2px solid black;
     border-radius: 50%;
@@ -307,13 +349,15 @@ body {
     transition: all 0.3s ease;
 }
 
-.carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
     color: black;
     font-size: 20px;
 }
 
-.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
-    background-color: rgba(0,0,0,0.1);
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
     transform: scale(1.1);
 }
 
@@ -330,8 +374,17 @@ body {
     transform: scale(1.2);
 }
 
-.carousel-item.active img {
-    border: none;
+.carousel-item {
+    height: auto;
+    /* Tamaño fijo del carrusel */
+    background-color: #000;
+    /* Fondo para los huecos */
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 10px;
     transition: border 0.5s ease;
 }
