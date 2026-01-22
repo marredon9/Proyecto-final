@@ -45,7 +45,7 @@ try {
     header("Location: index.php");
 
 } catch (mysqli_sql_exception $e) {
-    //nada
+    header("Location: index.php?error=0");
 }
 
 ?>

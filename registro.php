@@ -15,7 +15,7 @@ session_start();
         </tr>
         <tr>
             <td>2<sup>do</sup> apellido: </td>
-            <td><input type="text" name="apellido2" required></td>
+            <td><input type="text" name="apellido2"></td>
         </tr>
         <tr>
             <td>DNI: </td>
@@ -44,14 +44,16 @@ session_start();
     </table>
 </form>
 <?php
-$error = $_GET["error"];
+$error = $_GET["error"] ?? -1;
 $listaErrores = [
     "Error en la base de datos",
     "Hay campos incompletos en el formulario",
-    "Ya hay un usuario registrado con ese correo",
+    "Ya hay un usuario registrado con ese DNI",
     "Las contraseñas no coinciden"
 ];
 if (isset($error)) {
-    ?><h1><?=$listaErrores[$error]?></h1><?php
+    if ($error >= 0 && $error < $listaErrores) {
+        ?><h1><?=$listaErrores[$error]?></h1><?php
+    }
 }
 ?>

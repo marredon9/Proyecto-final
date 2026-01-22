@@ -9,9 +9,10 @@ Errores:
 3. Las contraseñas no coinciden
 */
 
+//PARAMETROS DEL FORMULARIO
 $nombre = $_POST["nombre"];
 $apellido1 = $_POST["apellido1"];
-$apellido2 = $_POST["apellido2"];
+$apellido2 = $_POST["apellido2"]; //Opcional
 $dni = $_POST["dni"];
 $email = $_POST["email"];
 $contraseña = $_POST["contraseña"];
@@ -36,23 +37,27 @@ for ($i = 0; $i < sizeof($datosRequeridos); $i++) {
 }
 
 $contraseña = hash("sha256", $contraseña);
+$repetirContraseña = hash("sha256", $repetirContraseña);
 
 try {
+    echo "haciendo select...";
     //comprobar que no se ha registrado el correo electronico
-    $stmt = $cn->prepare("SELECT COUNT(dni) AS count FROM usuario WHERE dni = '?' AND desactivado = 0;");
+    $stmt = $cn->prepare("SELECT COUNT(dni) AS count FROM usuario WHERE dni = ? AND desactivado = 0;");
+    $stmt->bind_param("s", $dni);
     $stmt->execute();
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
-    if ($r != 0) //error 2: ya hay un usuario registrado con ese DNI
+    if ($r["count"] != 0) //error 2: ya hay un usuario registrado con ese DNI
         header("Location: registro.php?error=2");
     
     if ($contraseña != $repetirContraseña) //error 3: las contraseñas no coinciden
         header("Location: registro.php?error=3");
 
+    echo "insertando usuario...";
     //insertar usuario
     $stmt = $cn->prepare(
-        "INSERT INTO usuario (nombre, apellido1, apellido2, dni, email, contraseña, fecha_nac, es_admin)
-         VALUES (?, ?, ?, ?, ?, ?, ?, FALSE);");
+        "INSERT INTO usuario (nombre, apellido1, apellido2, dni, email, contraseña, fecha_nac, es_admin, desactivado)
+         VALUES (?, ?, ?, ?, ?, ?, ?, FALSE, FALSE);");
     $stmt->bind_param(
         "sssssss", 
         $nombre,
@@ -63,8 +68,10 @@ try {
         $contraseña,
         $fechaNacimiento
     );
+    //echo "Todo bien aqui...";
     $stmt->execute();
 
+    echo "obteniendo id de ultimo insert...";
     //obtener id del ultimo insert
     $stmt = $cn->prepare("SELECT LAST_INSERT_ID() AS id;");
     $stmt->execute();
@@ -72,8 +79,11 @@ try {
     $r = $res->fetch_assoc();
     $_SESSION["userID"] = $r["id"];
     echo "Usuario registrado correctamente!!!!";
+    header("Location: index.php");
+
 } catch (mysqli_sql_exception $e) {
-    //nada
+    echo $e;
+    header("Location: registro.php?error=0");
 }
 
 ?>

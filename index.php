@@ -11,6 +11,6 @@ if (isset($_SESSION["sesion"])) {
 <a href="registro.php">Registrar usuario</a>
 <a href="login.php">Iniciar Sesión</a>
 <a href="cerrarSesion.php">Cerrar Sesión</a>
-<a href="desactivarMiCuenta.php">Borrar mi usuario</a>
+<a href="desactivarMiCuenta.php">Desactivar mi cuenta</a>
 <br>
 <hr>
