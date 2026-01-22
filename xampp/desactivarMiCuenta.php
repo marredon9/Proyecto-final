@@ -1,6 +1,5 @@
 <?php
-include "sesionUsuario.php";
-include "db.php";
+include "include.php";
 session_start();
 
 //servlet para eliminar el usuario que le da al boton

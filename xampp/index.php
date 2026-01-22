@@ -1,5 +1,5 @@
 <?php
-include "sesionUsuario.php";
+include "include.php";
 //header("Location: registro.php");
 session_start();
 if (isset($_SESSION["sesion"])) {

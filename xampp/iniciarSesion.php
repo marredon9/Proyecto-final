@@ -1,6 +1,5 @@
 <?php
-include "db.php";
-include "sesionUsuario.php";
+include "include.php";
 session_start();
 
 /*
@@ -11,7 +10,7 @@ session_start();
 $dni = $_POST["dni"];
 $contraseña = $_POST["contraseña"];
 $contraseña = hash("sha256", $contraseña);
-var_dump($dni);
+//var_dump($dni);
 try {
     //contar usuarios y comprobar que no hay ninguno
 
@@ -37,7 +36,14 @@ try {
 
     $_SESSION["sesion"] = serialize($sesion);
     /*?><a href="index.php">Continuar</a><?php*/
-    header("Location: index.php");
+    if ($sesion->esAdmin) {
+        //header("Location: admin/index.php");
+        echo '<a href="admin/index.php">Continuar a admin/index.php</a>';
+    }
+    else {
+        //header("Location: index.php");
+        echo '<a href="index.php">Continuar a index.php</a>';
+    }
 
 } catch (mysqli_sql_exception $e) {
     //nada

@@ -17,24 +17,20 @@
 </head>
 
 <body>
-
+    <!-- Fondo de imagen + Navbar-->
     <div class="fondo-imagen">
-        <nav class="navbar position-relative mb-3">
-            <div class="container-fluid d-flex align-items-center">
-
-                <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent"
-                    aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+        <nav class="navbar mb-3">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand logo-center" href="#">
+                <a class="navbar-brand mx-auto" href="#">
                     <img src="../img/logo.png" class="logo" alt="Logo">
                 </a>
 
-                <div class="usuario-container ms-auto">
+                <div class="usuario-container">
                     <a href="#">
                         <img src="../img/usuario.png" class="usuario-img" alt="Usuario">
                     </a>
@@ -44,11 +40,11 @@
         </nav>
 
 
+        <!--Zona azul para buscar coches-->
         <div class="container d-flex justify-content-center mt-4">
             <div class="escaparate p-4">
-
                 <div class="text-center mb-3">
-                    ¿Tipo de vehículo?
+                    <h1>¿Tipo de vehículo?</h1>
                     <div class="mt-2">
                         <img src="../img/coche.png" width="40">
                         <img src="../img/motos.png" width="35">
@@ -103,7 +99,7 @@
         </div>
 
     </div>
-
+    <!--Cards-->
     <div class="fondo-blanco">
         <div class="container justify-content-center">
             <div class="row">
@@ -143,14 +139,16 @@
 
     <div class="seccion-gris">
         <div class="container justify-content-center text-center">
+
+            <!--Zona gris -->
             <h1>¿QUIENES SOMOS?</h1>
 
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col slide-in-left">
                         <img src="../img/escaparate.png" width="auto" height="300px" class="img-borde">
                     </div>
-                    <div class="col">
+                    <div class="col slide-in-right">
                         En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con libertad, por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos tanto para los turistas que quieren explorar cada rincón,
                         como para los locales que necesitan soluciones de movilidad para su día a día. Nos enorgullece nuestro trato cercano y la flexibilidad para adaptarnos a todas tus necesidades, garantizando siempre la calidad y el mejor servicio.
                     </div>
@@ -164,22 +162,55 @@
             <h2 class="mb-4">Nuestra flota de coches, motos y furgonetas</h2>
         </div>
         <hr>
+        <!-- Carousel Section -->
+        <div class="py-3" style="width: 90%; margin: 0 auto;">
+            <div class="container">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../img/porche.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Coche">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/audi-Q8.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Moto">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/bmw.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Camión">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary">Explorar Flota</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-    <div class="seccion-azul mt-5">
-        <footer class="footer-alquiza">
-            <div class="footer-grid">
-
+    <!--Footer-->
+    <footer class="footer-alquiza seccion-azul mt-5">
+        <div class="container">
+            <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
-                <div class="footer-col footer-map">
-                    <img src="../img/logo.png" class="logo-foter" alt="Logo Alquiza" class="footer-logo">
+                <div class="col-lg-5 col-md-6 col-12 footer-map">
+                    <img src="../img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
 
                 <!-- CENTRO -->
-                <div class="footer-col">
+                <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
                     <p>Preguntas frecuentes</p>
                     <p>Contacta con nosotros</p>
@@ -187,7 +218,7 @@
                 </div>
 
                 <!-- DERECHA -->
-                <div class="footer-col">
+                <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p>Información legal</p>
                     <p>Política de gestión de daños</p>
@@ -195,25 +226,24 @@
                     <p>Política de Privacidad</p>
                     <p>Términos y Condiciones</p>
                 </div>
-
             </div>
+        </div>
 
-            <!-- BARRA INFERIOR -->
-            <div class="footer-bottom">
-                <span>© Alquiza 2026</span>
-                <span>Política de cookies | Menciones legales | Sites maps</span>
-                <span class="footer-social">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-x-twitter"></i>
-                </span>
-            </div>
-        </footer>
-    </div>
+        <!-- BARRA INFERIOR -->
+        <div class="footer-bottom">
+            <span>© Alquiza 2026</span>
+            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
+        </div>
+    </footer>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Coordenadas de Ibiza (puedes cambiarlas por la dirección exacta de tu sucursal)
+        // Coordenadas de Ibiza
         var map = L.map('map').setView([38.9089, 1.4321], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -225,6 +255,20 @@
             .openPopup();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+        // Animación al scroll para la sección "¿QUIENES SOMOS?"
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 
