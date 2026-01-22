@@ -12,6 +12,9 @@ $stmt->execute();
 ?>
 
 <table border="1">
+    <tr>
+        <td><b>ID</b></td>
+    </tr>
     <?php
 while ($r = $res->fetch_assoc()) {
     $id = htmlspecialchars($r["id"]);

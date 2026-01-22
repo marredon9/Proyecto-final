@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $host = "localhost";
+    $host = "servidoralquiza";
     $user = "root";
     $pass = "root";
     $db = "alquiler";
