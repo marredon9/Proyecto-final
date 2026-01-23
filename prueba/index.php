@@ -128,7 +128,7 @@
 
     <!-- Sección de la flota con carrusel -->
     <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
-    <!-- Sección de la flota con carrusel -->
+    <!-- Sección de la flota con carrusel de prueba -->
     <div class="section-center">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
