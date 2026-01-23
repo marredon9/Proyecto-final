@@ -13,4 +13,7 @@ if (isset($_SESSION["sesion"])) {
 <a href="cerrarSesion.php">Cerrar Sesión</a>
 <a href="menuDesactivarCuenta.php">Desactivar mi cuenta</a>
 <br>
+<?php
+
+?>
 <hr>
