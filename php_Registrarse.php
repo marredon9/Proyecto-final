@@ -10,11 +10,48 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 </head>
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container">
+        <!-- LOGO IZQUIERDA -->
+        <a class="navbar-brand me-4" href="#">
+            <img src="assets/img/logo.png" alt="Alquiza" class="navbar-logo">
+        </a>
+
+        <!-- BOTÓN MOBILE -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- LINKS -->
+        <div class="collapse navbar-collapse" id="navbarDark">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white" href="#">Vehículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white" href="#">Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white" href="#">Quiénes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+</body>
 
     <form method="post" action="" id="registroForm">
         <div class="container d-flex justify-content-center mt-4">
@@ -84,7 +121,7 @@
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
                 <div class="col-lg-5 col-md-6 col-12 footer-map">
-                    <img src="../img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
+                    <img src="assets/img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
