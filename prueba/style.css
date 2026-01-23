@@ -60,6 +60,13 @@ body {
     text-align: center;
 }
 
+.nav-link:hover {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
 footer {
     background-color: #222;
     color: #ccc;
@@ -295,6 +302,124 @@ footer h4 {
 .footer-social i {
     margin: 0 5px;
     font-size: 1.1rem;
+}
+
+/* Contenedor del formulario en un cuadro azul con transparencia y bordes redondeados */
+.form-container {
+    background-color: rgba(0, 123, 255, 0.6);
+    /* azul con transparencia */
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    /* efecto difuminado si quieres más efecto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el botón en el formulario */
+.btn-custom {
+    background-color: #ff7e5f;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #eb6750;
+}
+
+/* Texto de registro */
+.register-text {
+    text-align: center;
+    color: #fff;
+    /* blanco para contraste en el fondo azul */
+    font-size: 1rem;
+}
+
+.register-text a {
+    color: #ffd700;
+    /* color dorado o el que prefieras */
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+/* Para que el video de fondo se vea bien en toda la sección */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* altísima toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* El tamaño del input de usuario más largo */
+.email-input {
+    width: 100%;
+    /* ocupa todo el ancho disponible */
+    max-width: 100%;
+    /* aseguramos que no tenga límite */
+    font-size: 1.2rem;
+    /* más grande que el estándar */
+    padding: 12px;
+    /* más espacio interno */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Contraseña más pequeña */
+.password-input {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    /* más pequeño que el del email */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Botón en blanco y con cambios en hover */
+.btn-custom {
+    background-color: #fff;
+    /* blanco */
+    color: #007bff;
+    /* azul del fondo, para que contraste */
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    /* más pequeño */
+    font-size: 1rem;
+    /* tamaño más pequeño */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #007bff;
+    /* mismo azul que el fondo */
+    color: #fff;
+    /* texto en blanco en hover para contraste */
 }
 
 @media (max-width: 768px) {
