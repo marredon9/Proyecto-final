@@ -39,19 +39,16 @@
 
     <!-- Banner destacado con video -->
     <section class="hero-section mb-5 position-relative">
-        <!-- Video de olas -->
         <video class="background-video" autoplay muted loop playsinline>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <!-- Contenido -->
-        <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative" style="z-index: 1;">
+        <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative"
+            style="z-index: 1;">
             <h1 class="display-4 fw-bold mb-3">¡Tu mejor opción en Ibiza!</h1>
             <p class="lead mb-4">Alquiler de coches, motos y furgonetas con la mejor calidad y precio</p>
             <button type="button" class="btn btn-primary btn-lg btn-rounded" data-bs-toggle="modal"
-                data-bs-target="#reservaModal">
-                Reserva Ahora
-            </button>
+                data-bs-target="#reservaModal">Reserva Ahora</button>
         </div>
     </section>
 
@@ -61,22 +58,26 @@
             <div class="modal-content custom-modal">
                 <div class="modal-header border-0 d-flex justify-content-between align-items-center p-4">
                     <h5 class="modal-title" id="reservaModalLabel">Reserva tu vehículo</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body px-4 pb-4">
                     <form id="reservaForm" action="reservar.php" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombre completo</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                    placeholder="Tu nombre" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="correo@ejemplo.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="telefono" class="form-label">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="123-456-7890" required>
+                                <input type="tel" class="form-control" id="telefono" name="telefono"
+                                    placeholder="123-456-7890" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="vehiculo" class="form-label">Tipo de vehículo</label>
@@ -95,9 +96,29 @@
                                 <label for="horario" class="form-label">Horario</label>
                                 <input type="time" class="form-control" id="horario" name="horario" required>
                             </div>
+                            <div class="col-md-6">
+                                <label for="fecha_devolucion" class="form-label">Fecha de devolución</label>
+                                <input type="date" class="form-control" id="fecha_devolucion" name="fecha_devolucion"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="horario_devolucion" class="form-label">Horario</label>
+                                <input type="time" class="form-control" id="horario_devolucion"
+                                    name="horario_devolucion" required>
+                            </div>
+                            <div class="row g-3 mt-3">
+                                <div class="col-12">
+                                    <input type="checkbox" id="silla" name="silla" />
+                                    <label for="silla">Necesita silla infantil</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="checkbox" id="mascota" name="mascota" />
+                                    <label for="mascota">Lleva mascota</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-end mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg px-5">Enviar reserva</button>
+                            <button type="submit" class="btn btn-primary btn-lg px-5">Buscar</button>
                         </div>
                     </form>
                 </div>
@@ -105,33 +126,88 @@
         </div>
     </div>
 
-    <!-- Sección flota vehículos -->
-    <h2 class="section-title mb-4 text-center">Descubra Nuestra Flota</h2>
-    <div class="vehicles-wrapper d-flex justify-content-center overflow-x-auto">
-        <div class="vehicles d-flex gap-3">
-            <!-- Vehículos en línea -->
-            <div class="vehicle">
-                <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Minivans" /></a>
-                <p>Minivans</p>
+    <!-- Sección de la flota con carrusel -->
+    <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
+    <!-- Sección de la flota con carrusel de prueba -->
+    <div class="section-center">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="vehicle">
-                <a href="#"><img src="https://images.unsplash.com/photo-1616077788687-26f7f4f2f93c?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Eléctricos" /></a>
-                <p>Eléctricos</p>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="image-container">
+                        <img src="img/seat.png" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gasolina/Diésel</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/hibridos.png" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Híbridos</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/tesla.webp" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Eléctricos</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/suv.avif" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>SUV</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/grandes.avif" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Grandes</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/motoo.png" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Motos</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="img/furgoneta.webp" class="d-block w-100 carousel-image" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Furgonetas</h5>
+                    </div>
+                </div>
             </div>
-            <div class="vehicle">
-                <a href="#"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Gasolina" /></a>
-                <p>Gasolina</p>
-            </div>
-            <div class="vehicle">
-                <a href="#"><img src="https://images.unsplash.com/photo-1575767741836-1f8f4f7b1f2f?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Scooter" /></a>
-                <p>Motos</p>
-            </div>
-            <div class="vehicle">
-                <a href="#"><img src="https://images.unsplash.com/photo-1625165519484-7f94b3b6f7d8?ixlib=rb-4.0.4&auto=format&fit=crop&w=800&q=80" alt="Furgoneta" /></a>
-                <p>Furgonetas</p>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </div>
 
     <div style="text-align: center; margin-top: 20px;">
         <button class="view-button">Ver Nuestros Vehículos</button>
@@ -154,17 +230,17 @@
         </div>
     </div>
 
-    <!-- Contacto y footer -->
-    <div class="container my-5 py-4" id="contacto">
-        <h2 class="section-title mb-4">Contacto</h2>
-        <p class="text-center">¿Tienes dudas? Contáctanos y te ayudaremos.</p>
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <p><strong>Email:</strong> contacto@alquiza.com</p>
-                <p><strong>Teléfono:</strong> +34 600 123 456</p>
+        <!-- Contacto y footer -->
+        <div class="container my-5 py-4" id="contacto">
+            <h2 class="section-title mb-4">Contacto</h2>
+            <p class="text-center">¿Tienes dudas? Contáctanos y te ayudaremos.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <p><strong>Email:</strong> contacto@alquiza.com</p>
+                    <p><strong>Teléfono:</strong> +34 600 123 456</p>
+                </div>
             </div>
         </div>
-    </div>
 
     <footer class="mt-5 text-center">
         <div class="container">
@@ -208,9 +284,9 @@
         </div>
     </footer>
 
-    <!-- Scripts Bootstrap y personalizados -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+        <!-- Scripts Bootstrap y personalizados -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
 </body>
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
