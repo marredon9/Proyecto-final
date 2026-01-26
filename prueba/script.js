@@ -1,5 +1,4 @@
 
-
 // Manejar el formulario de reserva
 document.getElementById('reservaForm').addEventListener('submit', function (e) {
   e.preventDefault();

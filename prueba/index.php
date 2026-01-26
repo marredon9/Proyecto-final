@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="#flota">Iniciar Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -62,7 +62,7 @@
                         aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body px-4 pb-4">
-                    <form id="reservaForm" action="reservar.php" method="POST">
+                    <form id="reservaForm" action="buscar.php" method="GET">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombre completo</label>
@@ -99,14 +99,18 @@
                             <div class="col-md-6">
                                 <label for="fecha_devolucion" class="form-label">Fecha de devolución</label>
                                 <input type="date" class="form-control" id="fecha_devolucion" name="fecha_devolucion"
-                                    required>
+                                required>
                             </div>
                             <div class="col-md-6">
                                 <label for="horario_devolucion" class="form-label">Horario</label>
                                 <input type="time" class="form-control" id="horario_devolucion"
-                                    name="horario_devolucion" required>
+                                name="horario_devolucion" required>
                             </div>
                             <div class="row g-3 mt-3">
+                                <div class="col-12">
+                                    <label for="personas">Número de personas:</label>
+                                    <input type="number" id="tentacles" name="personas" min="1" max="9" />
+                                </div>
                                 <div class="col-12">
                                     <input type="checkbox" id="silla" name="silla" />
                                     <label for="silla">Necesita silla infantil</label>
@@ -118,7 +122,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg px-5">Buscar</button>
+                            <a href="#" class="btn btn-primary btn-lg px-5">Buscar</a>
                         </div>
                     </form>
                 </div>
@@ -126,91 +130,40 @@
         </div>
     </div>
 
-    <!-- Sección de la flota con carrusel -->
+    <!-- Sección cards con carrusel -->
     <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
-    <!-- Sección de la flota con carrusel de prueba -->
-    <div class="section-center">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+    <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
+        <div class="card" style="width: 18rem;">
+            <img src="img/coche.png" class="card-img-top" alt="coche">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Coches</h5>
+                </div>
+                <a href="coches.php" class="btn btn-outline-dark">Ver más</a>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="image-container">
-                        <img src="img/seat.png" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Gasolina/Diésel</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/hibridos.png" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Híbridos</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/tesla.webp" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Eléctricos</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/suv.avif" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>SUV</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/grandes.avif" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Grandes</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/motoo.png" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Motos</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="img/furgoneta.webp" class="d-block w-100 carousel-image" alt="...">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Furgonetas</h5>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <button class="view-button">Ver Nuestros Vehículos</button>
+        <div class="card" style="width: 18rem;">
+            <img src="img/van.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Furgonetas</h5>
+                </div>
+                <a href="furgonetas.php" class="btn btn-outline-dark">Ver más</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="img/moto.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Motos</h5>
+                </div>
+                <a href="motos.php" class="btn btn-outline-dark">Ver más</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a class="view-button" href="vehiculos.php">Ver Nuestros Vehículos</a>
     </div>
 
     <!--Zona gris -->
@@ -218,29 +171,31 @@
     <div class="seccion-gris mt-5">
         <div class="container justify-content-center text-center">
             <h1><b>¿QUIENES SOMOS?</b></h1>
-            <div class="row mt-3">
-                <div class="col slide-in-left">
-                    <img src="../img/escaparate.png" width="auto" height="300px" class="img-borde">
+            <div class="row mt-3 align-items-center">
+                <!-- Columna de la imagen -->
+                <div class="col-12 col-md-6 slide-in-left mb-3 mb-md-0">
+                    <img src="../img/escaparate.png" width="auto" height="300px" class="img-fluid img-borde"
+                        alt="Escaparate">
                 </div>
-                <div class="col slide-in-right mt-3">
-                    En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con libertad, por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos tanto para los turistas que quieren explorar cada rincón,
-                    como para los locales que necesitan soluciones de movilidad para su día a día. Nos enorgullece nuestro trato cercano y la flexibilidad para adaptarnos a todas tus necesidades, garantizando siempre la calidad y el mejor servicio.
+                <!-- Columna del texto -->
+                <div class="col-12 col-md-6 slide-in-right">
+                    <p>
+                        En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor
+                        experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con
+                        libertad,
+                        por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos
+                        tanto
+                        para los turistas que quieren explorar cada rincón,
+                        como para los locales que necesitan soluciones de movilidad para su día a día. Nos enorgullece
+                        nuestro trato cercano y la flexibilidad para adaptarnos a todas tus necesidades, garantizando
+                        siempre la calidad y el mejor servicio.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- Contacto y footer -->
-        <div class="container my-5 py-4" id="contacto">
-            <h2 class="section-title mb-4">Contacto</h2>
-            <p class="text-center">¿Tienes dudas? Contáctanos y te ayudaremos.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <p><strong>Email:</strong> contacto@alquiza.com</p>
-                    <p><strong>Teléfono:</strong> +34 600 123 456</p>
-                </div>
-            </div>
-        </div>
+    <!-- Footer -->
 
     <footer class="mt-5 text-center">
         <div class="container">
@@ -284,14 +239,14 @@
         </div>
     </footer>
 
-        <!-- Scripts Bootstrap y personalizados -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script.js"></script>
+    <!-- Scripts Bootstrap y personalizados -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var map = L.map('map').setView([38.9089, 1.4321], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
