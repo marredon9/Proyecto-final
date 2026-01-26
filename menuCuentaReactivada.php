@@ -7,6 +7,7 @@ else
     $session = "";
 ?>
 <!DOCTYPE html>
+<?= footer() ?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">

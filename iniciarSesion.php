@@ -2,6 +2,7 @@
 include "include.php";
 session_start();
 
+
 /*
 0. Error con la conexion a la base de datos
 1. La contraseña es incorrecta o el usuario no existe
@@ -77,3 +78,5 @@ try {
 }
 
 ?>
+<?= navbar() ?>
+<?= footer() ?>

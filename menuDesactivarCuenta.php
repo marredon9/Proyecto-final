@@ -13,6 +13,7 @@ if ($sesion == "") {
 ?>
 
 <!DOCTYPE html>
+<?= footer() ?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -45,3 +46,4 @@ if ($sesion == "") {
 
 </body>
 </html>
+<?= navbar() ?>

@@ -5,6 +5,8 @@ db.php
 sesionUsuario.php
 debug.php
 rutaAssets.php
+navbar.php
+footer.php
 ";
 
 //sustituir espacios, tabulaciones y saltos de linea 
