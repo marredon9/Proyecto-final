@@ -29,7 +29,7 @@ $comprobarCampos = [$nombre, $apellido1, $dni, $contraseña, $repetirContraseña
 for ($i = 0; $i > sizeof($comprobarCampos); $i++) {
     //echo ($i);
     if ($comprobarCampos[$i] == "") {
-        header("Location: registro.php?error=3"); //error 3: datos insuficientes
+        redirect("registro.php?error=3"); //error 3: datos insuficientes
         return;
     }
 }
@@ -38,7 +38,7 @@ unset($comprobarCampos);
 $contraseña = hash("sha256", $contraseña);
 $repetirContraseña = hash("sha256", $repetirContraseña);
 if ($contraseña != $repetirContraseña) {
-    header("Location: registro.php?error=2"); //error 2: las contraseñas no coinciden
+    redirect("registro.php?error=2"); //error 2: las contraseñas no coinciden
     return;
 }
 
@@ -52,7 +52,7 @@ try {
     $r = $res->fetch_assoc();
     $recuento = $r["count"];
     if ($recuento != 0) { //si el recuento no es 0
-        header("Location: registro.php?error=1");
+        redirect("registro.php?error=1");
         return;
     }
 
@@ -63,10 +63,10 @@ try {
     $stmt->execute();
     
     //final redirigir a login.php
-    header("Location: login.php");
+    redirect("login.php");
     return;
 } catch (mysqli_sql_exception $e) {
-    header("Location: registro.php?error=0"); //error 0: error con base de datos
+    redirect("registro.php?error=0"); //error 0: error con base de datos
     return;
 }
 

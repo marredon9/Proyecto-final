@@ -7,9 +7,9 @@ $sesion = obtenerSesion();
 
 <h1>REGISTRO</h1>
 
-<!-- <form action="<?=srv("registrarUsuario.php")?>" method="POST"> -->
+<!-- <form action="<?=srv("registrarUsuario")?>" method="POST"> -->
 <!-- <form action="registrarUsuario.php" method="POST"> -->
-<form action="<?=srv("registrarUsuario.php")?>" method="POST">
+<form action="<?=srv("registrarUsuario")?>" method="POST">
     <table border="1">
         <tr>
             <td>Nombre:</td>

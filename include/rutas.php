@@ -1,15 +1,24 @@
 <?php
 
+define("RUTA_ABS", "http://localhost/php/git/proyectofinal/Proyecto-final/");
+define("RUTA_IMG", "assets/img/");
+define("RUTA_VID", "assets/vid/");
+define("RUTA_SRV", "servlets/");
+
 function img($nombre) {
-    return "assets/img/" . $nombre;
+    return RUTA_ABS . RUTA_IMG . $nombre;
 }
 
 function vid($nombre) {
-    return "assets/vid/" . $nombre;
+    return RUTA_ABS . RUTA_VID . $nombre;
 }
 
 function srv($nombre) {
-    return "servlets/" . $nombre;
+    return RUTA_ABS . RUTA_SRV . $nombre . ".php";
+}
+
+function redirect($ruta) {
+    header("Location: " . RUTA_ABS . $ruta);
 }
 
 ?>
