@@ -44,4 +44,12 @@ function obtenerSesion() {
         $sesion = "";
     }
 }
+
+//llamar esta funcion en paginas de admin
+//si un usuario no administrador entra a una pagina de admin mediante URL, con esta funcion se le expulsa automaticamente
+function verificarAdmin() {
+    if ($sesion == "" || !($sesion->esAdmin)) {
+        header("Location: index.php");
+    }
+}
 ?>

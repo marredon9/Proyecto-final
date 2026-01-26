@@ -13,19 +13,46 @@ $contraseña = $_POST["contraseña"];
 $contraseña = hash("sha256", $contraseña);
 //var_dump($dni);
 try {
-    //contar usuarios y comprobar que no hay ninguno
+    //contar usuarios
+    $stmt = $cn->prepare("SELECT COUNT(*) AS count FROM usuario;");
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $r = $res->fetch_assoc();
+    if ($r["count"] == 0) {
+        debug_header("Location: login.php?error=0");
+        return;
+    }
+
+
+    //contar usuarios con ese dni y comprobar que no hay ninguno
+    $stmt = $cn->prepare("SELECT COUNT(*) AS count FROM usuario WHERE dni = ? LIMIT 1;");
+    $stmt->bind_param("s", $dni);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $r = $res->fetch_assoc();
+    //var_dump($r);
+    //echo $r["count"];
+    if ($r["count"] == 0) {
+        //contraseña incorrecta o el usuario ya existe
+        debug_header("Location: login.php?error=1");
+        return;
+    } 
+    //echo "aaaa";
+
     //obtener usuarios con ese dni
-    $query = "SELECT * FROM usuario WHERE dni = ? LIMIT 1;";
     //echo $query;
-    $stmt = $cn->prepare($query);
+    $stmt = $cn->prepare("SELECT * FROM usuario WHERE dni = ? LIMIT 1;");
     $stmt->bind_param("s", $dni);
     $stmt->execute();
     //leer resultados y comprarar contraseña hasheada
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
+    var_dump($r);
+    var_dump();
     if ($contraseña != $r["contraseña"]) {
-        //contraseña incorrecta
-        header("Location: login.php?error=1");
+        //contraseña incorrecta o el usuario ya existe
+        debug_header("Location: login.php?error=1");
+        return;
     }
 
     $reactivado = ($r["desactivado"] == 1);
@@ -35,15 +62,19 @@ try {
 
     $_SESSION["sesion"] = serialize($sesion);
     if ($sesion->esAdmin) {
-        header("Location: admin/index.php");
+        debug_header("Location: admin/index.php");
+        return;
     } else if ($reactivado) {
-        header("Location: menuCuentaReactivada.php");
+        debug_header("Location: menuCuentaReactivada.php");
+        return;
     } else {
-        header("Location: index.php");
+        debug_header("Location: index.php");
+        return;
     }
 
 } catch (mysqli_sql_exception $e) {
-    header("Location: login.php?error=0");
+    debug_header("Location: login.php?error=0");
+    return;
 }
 
 ?>

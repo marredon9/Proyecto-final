@@ -15,4 +15,7 @@ if (isset($_SESSION["sesion"])) {
 <a href="menuDesactivarCuenta.php">Desactivar mi cuenta</a>
 <?= navbar() ?>
 <br>
+<?php
+
+?>
 <hr>

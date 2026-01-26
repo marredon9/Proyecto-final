@@ -1,4 +1,3 @@
-<?= footer() ?>
 <form action="iniciarSesion.php" method="POST">
     <table border="1">
         <tr>
@@ -15,4 +14,3 @@
         </tr>
     </table>
 </form>
-<?= navbar() ?>
