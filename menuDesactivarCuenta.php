@@ -13,7 +13,6 @@ if ($sesion == "") {
 ?>
 
 <!DOCTYPE html>
-<?= footer() ?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +32,7 @@ if ($sesion == "") {
     </script>
 </head>
 <body>
-
+<?= navbar() ?>
 <h1>¿Deseas desactivar tu cuenta?</h1>
 
 <form action="index.php">
@@ -43,7 +42,6 @@ if ($sesion == "") {
 <form action="desactivarMiCuenta.php" onsubmit="return confirmarDesactivacion();">
     <input type="submit" value="Estoy segur@">
 </form>
-
+<?= footer() ?>
 </body>
 </html>
-<?= navbar() ?>

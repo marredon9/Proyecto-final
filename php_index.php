@@ -21,12 +21,24 @@
     <div class="fondo-imagen">
         <nav class="navbar mb-3">
             <div class="container-fluid">
+<<<<<<< HEAD:php_index.php
                 <a class="navbar-brand" href="#">
                     <img src="assets/img/logo.png" class="logo" alt="Logo">
                 </a>
 
 
 
+=======
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand mx-auto" href="#">
+                    <img src="../img/logo.png" class="logo" alt="Logo">
+                </a>
+
+>>>>>>> de87242e8113722c4216288b25a5b2d6c7c6669e:PHP/index.php
                 <div class="usuario-container">
                     <a href="#">
                         <img src="assets/img/usuario.png" class="usuario-img" alt="Usuario">
@@ -143,7 +155,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col slide-in-left">
+<<<<<<< HEAD:php_index.php
                         <img src="assets/img/escaparate.png" width="auto" height="300px" class="img-borde">
+=======
+                        <img src="../img/escaparate.png" width="auto" height="300px" class="img-borde">
+>>>>>>> de87242e8113722c4216288b25a5b2d6c7c6669e:PHP/index.php
                     </div>
                     <div class="col slide-in-right">
                         En Alquiza, somos una empresa familiar con corazón ibicenco, dedicada a ofrecerte la mejor experiencia de alquiler de vehículos en la isla. Sabemos lo importante que es moverse con libertad, por eso ponemos a tu disposición una flota variada de coches, motos y furgonetas, perfectos tanto para los turistas que quieren explorar cada rincón,
@@ -170,6 +186,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
+<<<<<<< HEAD:php_index.php
                             <img src="assets/img/porche.jpg" class="d-block carousel-img" alt="Coche">
                         </div>
                         <div class="carousel-item">
@@ -177,6 +194,15 @@
                         </div>
                         <div class="carousel-item">
                             <img src="assets/img/bmw.jpg" class="d-block w-100 carousel-img" alt="Coche">
+=======
+                            <img src="../img/porche.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Coche">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/audi-Q8.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Moto">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/bmw.jpg" class="d-block w-100 img-fluid" style="height: 400px; object-fit: cover;" alt="Camión">
+>>>>>>> de87242e8113722c4216288b25a5b2d6c7c6669e:PHP/index.php
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -201,7 +227,11 @@
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
                 <div class="col-lg-5 col-md-6 col-12 footer-map">
+<<<<<<< HEAD:php_index.php
                     <img src="assets/img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
+=======
+                    <img src="../img/logo.png" class="logo-foter footer-logo" alt="Logo Alquiza">
+>>>>>>> de87242e8113722c4216288b25a5b2d6c7c6669e:PHP/index.php
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>

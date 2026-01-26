@@ -7,7 +7,6 @@ else
     $session = "";
 ?>
 <!DOCTYPE html>
-<?= footer() ?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -21,12 +20,12 @@ else
     </script>
 </head>
 <body>
-
+<?= navbar() ?>
 <h1>Tu cuenta ha sido reactivada.</h1>
 
 <form action="index.php" onsubmit="return mostrarMensaje();">
     <input type="submit" value="Aceptar">
 </form>
-
+<?= footer() ?>
 </body>
 </html>
