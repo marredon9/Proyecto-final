@@ -1,27 +1,31 @@
 <?php
 function footer() {
     ?>
-     <!-- Contacto y footer -->
-    <div class="container my-5 py-4" id="contacto">
-        <h2 class="section-title mb-4">Contacto</h2>
-        <p class="text-center">¿Tienes dudas? Contáctanos y te ayudaremos.</p>
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <p><strong>Email:</strong> contacto@alquiza.com</p>
-                <p><strong>Teléfono:</strong> +34 600 123 456</p>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="card shadow-lg border-0 p-4" style="max-width: 500px; width: 100%;">
+            <div class="card-body text-center">
+                <h2 class="fw-bold mb-3 text-primary">¿Deseas desactivar tu cuenta?</h2>
+                <p class="text-muted mb-4">
+                    Esta acción desactivará tu cuenta temporalmente.
+                    Podrás volver cuando quieras.
+                </p>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <form action="index.php">
+                        <button type="submit" class="btn btn-outline-secondary px-4">
+                            Volver atrás
+                        </button>
+                    </form>
+
+                    <form action="desactivarMiCuenta.php" onsubmit="return confirmarDesactivacion();">
+                        <button type="submit" class="btn btn-danger px-4">
+                            Estoy segur@
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-
-    <footer class="mt-5 text-center">
-        <div class="container">
-            <p>&copy; 2024 Alquiza Ibiza. Todos los derechos reservados.</p>
-            <p>
-                <a href="#">Política de Cookies</a> |
-                <a href="#">Aviso Legal</a>
-            </p>
-        </div>
-    </footer>
     <?php
 }
 ?>

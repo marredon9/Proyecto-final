@@ -16,30 +16,7 @@
 </head>
 
 <body>
-    <!--Navbar-->
-    <div class="fondo-imagen">
-        <nav class="navbar position-relative mb-3">
-            <div class="container-fluid d-flex align-items-center">
-
-                <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <a class="navbar-brand logo-center" href="#">
-                    <img src="../img/logo.png" class="logo" alt="Logo">
-                </a>
-
-                <div class="usuario-container ms-auto">
-                    <a href="#">
-                        <img src="../img/usuario.png" class="usuario-img" alt="Usuario">
-                    </a>
-                </div>
-
-            </div>
-        </nav>
-    </div>
+   
     <!--Card1-->
     <div class="cards-title-alquiler">
         <h2>Nuestros coches</h2>
@@ -160,3 +137,5 @@
 </body>
 
 </html>
+<?= navbar() ?>
+<?= footer() ?>
