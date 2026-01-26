@@ -17,7 +17,7 @@ if ($sesion == "") { //si no ha iniciado sesión
 
 <h1>Bienvenido, <?=$sesion->nombre?></h1>
 <a href="buscar.php">Buscar</a>
-<a href="cerrarSesion.php">Cerrar Sesión</a>
+<a href="<?=srv("cerrarSesion")?>">Cerrar Sesión</a>
 
     <?php
 }
