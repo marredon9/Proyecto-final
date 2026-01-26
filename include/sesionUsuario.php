@@ -42,15 +42,8 @@ function guardarSesion($sesion) {
     $_SESSION["sesion"] = serialize($sesion);
 }
 
-function borrarSesion() {
-    $_SESSION["sesion"] = serialize("");
-}
-
-//llamar esta funcion en paginas de admin
-//si un usuario no administrador entra a una pagina de admin mediante URL, con esta funcion se le expulsa automaticamente
-function verificarAdmin($sesion) {
-    if ($sesion == "" || !($sesion->esAdmin)) {
-        header("Location: index.php");
-    }
+function borrarSesion($sesion) {
+    $sesion = serialize("");
+    $_SESSION["sesion"] = $sesion;
 }
 ?>

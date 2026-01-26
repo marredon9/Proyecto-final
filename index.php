@@ -21,4 +21,5 @@ if ($sesion == "") { //si no ha iniciado sesión
 
     <?php
 }
+var_dump($sesion);
 ?>

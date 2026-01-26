@@ -48,10 +48,14 @@ try {
 
     //guardar objeto sesionusuario en datos de sesion
     $sesion = new SesionUsuario(
-        $r["id"], $r["nombre"], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], $r["es_admin"]
+        $r["id"], $r["nombre"], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], ($r["es_admin"] == 1)
     );
     guardarSesion($sesion);
-    redirect("index.php");
+    if ($sesion->esAdmin) {
+        redirect("admin/index.php");
+    } else {
+        redirect("index.php");
+    }
 } catch (mysqli_sql_exception $e) {
     redirect("login.php?error=0"); //error 0: problema con la base de datos
 }

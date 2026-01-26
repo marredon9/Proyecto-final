@@ -1,6 +1,9 @@
 <?php
 include "include.php";
-//$sesion = obtenerSesion();
-borrarSesion();
+session_start();
+$sesion = obtenerSesion();
+borrarSesion($sesion);
+$sesion = obtenerSesion();
+var_dump($sesion);
 redirect("index.php");
 ?>
