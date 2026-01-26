@@ -12,7 +12,6 @@ body {
 /* Banner principal con video y overlay */
 .hero-section {
     position: relative;
-    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,8 +86,10 @@ footer a:hover {
 }
 
 .image-container {
-    width: 100%; /* o un ancho fijo, por ejemplo 800px */
-    height: 400px; /* altura fija */
+    width: 100%;
+    /* o un ancho fijo, por ejemplo 800px */
+    height: 400px;
+    /* altura fija */
     overflow: hidden;
     position: relative;
 }
@@ -99,6 +100,7 @@ footer a:hover {
     object-fit: cover;
     display: block;
 }
+
 /* Fondo del modal con overlay para mejorar la legibilidad */
 .custom-modal {
     position: relative;
@@ -313,22 +315,34 @@ footer h4 {
     font-size: 1.1rem;
 }
 
-/* Contenedor del formulario en un cuadro azul con transparencia y bordes redondeados */
 .form-container {
-    background-color: rgba(0, 123, 255, 0.6);
-    /* azul con transparencia */
+    background: rgba(0, 123, 255, 0.6);
+    backdrop-filter: blur(6px);
     border-radius: 20px;
     padding: 30px;
-    max-width: 500px;
-    width: 90%;
-    margin: 20px auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    /* efecto difuminado si quieres más efecto */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    z-index: 2;
 }
+
+.custom-input {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.35);
+}
+
 
 /* Estilo para el botón en el formulario */
 .btn-custom {
@@ -382,13 +396,6 @@ footer h4 {
 
 /* El tamaño del input de usuario más largo */
 .email-input {
-    width: 100%;
-    /* ocupa todo el ancho disponible */
-    max-width: 100%;
-    /* aseguramos que no tenga límite */
-    font-size: 1.2rem;
-    /* más grande que el estándar */
-    padding: 12px;
     /* más espacio interno */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -398,11 +405,6 @@ footer h4 {
 
 /* Contraseña más pequeña */
 .password-input {
-    width: 100%;
-    max-width: 100%;
-    font-size: 1rem;
-    /* más pequeño que el del email */
-    padding: 10px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
@@ -431,29 +433,41 @@ footer h4 {
     /* texto en blanco en hover para contraste */
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
 
-    .footer-col,
-    .footer-map {
-        text-align: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .img-borde {
-        width: 290px;
+    /* La sección hero se ajusta en pantallas pequeñas */
+    .hero-section {
         height: auto;
-        border-radius: 30px;
+        padding: 20px 10px;
+        flex-direction: column;
     }
 
+    /* Tamaño del título en hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 
+    /* Tamaño del párrafo en hero */
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajustar mapa en pantallas pequeñas */
     #map {
         height: 150px !important;
-        max-width: 95%;
+        max-width: 100%;
     }
 
+    /* Flex en footer_bottom en pantallas pequeñas */
     .footer-bottom {
         flex-direction: column;
-        gap: 5px;
+        align-items: center;
     }
+
+    /* Ajustar padding en footer en móvil */
+    footer {
+        padding: 15px 10px;
+    }
+
+    /* Mejorar tamaño de botón y inputs en móvil si quieres, pero no toco los estilos azules ya existentes */
 }
