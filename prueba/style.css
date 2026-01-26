@@ -12,7 +12,6 @@ body {
 /* Banner principal con video y overlay */
 .hero-section {
     position: relative;
-    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,11 +57,18 @@ body {
     text-align: center;
 }
 
+.nav-link:hover {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 
 .image-container {
-    width: 100%; /* o un ancho fijo, por ejemplo 800px */
-    height: 400px; /* altura fija */
+    width: 100%;
+    /* o un ancho fijo, por ejemplo 800px */
+    height: 400px;
+    /* altura fija */
     overflow: hidden;
     position: relative;
 }
@@ -252,29 +258,159 @@ footer h4 {
     font-size: 1.1rem;
 }
 
-@media (max-width: 768px) {
+.form-container {
+    background: rgba(0, 123, 255, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    z-index: 2;
+}
 
-    .footer-col,
-    .footer-map {
-        text-align: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
+.custom-input {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
 
-    .img-borde {
-        width: 290px;
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* Estilo para el botón en el formulario */
+.btn-custom {
+    background-color: #ff7e5f;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #eb6750;
+}
+
+/* Texto de registro */
+.register-text {
+    text-align: center;
+    color: #fff;
+    /* blanco para contraste en el fondo azul */
+    font-size: 1rem;
+}
+
+.register-text a {
+    color: #ffd700;
+    /* color dorado o el que prefieras */
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+/* Para que el video de fondo se vea bien en toda la sección */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* altísima toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* El tamaño del input de usuario más largo */
+.email-input {
+    /* más espacio interno */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Contraseña más pequeña */
+.password-input {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Botón en blanco y con cambios en hover */
+.btn-custom {
+    background-color: #fff;
+    /* blanco */
+    color: #007bff;
+    /* azul del fondo, para que contraste */
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    /* más pequeño */
+    font-size: 1rem;
+    /* tamaño más pequeño */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #007bff;
+    /* mismo azul que el fondo */
+    color: #fff;
+    /* texto en blanco en hover para contraste */
+}
+
+@media(max-width: 768px) {
+
+    /* La sección hero se ajusta en pantallas pequeñas */
+    .hero-section {
         height: auto;
-        border-radius: 30px;
+        padding: 20px 10px;
+        flex-direction: column;
     }
 
+    /* Tamaño del título en hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 
+    /* Tamaño del párrafo en hero */
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajustar mapa en pantallas pequeñas */
     #map {
         height: 150px !important;
-        max-width: 95%;
+        max-width: 100%;
     }
 
+    /* Flex en footer_bottom en pantallas pequeñas */
     .footer-bottom {
         flex-direction: column;
-        gap: 5px;
+        align-items: center;
     }
+
+    /* Ajustar padding en footer en móvil */
+    footer {
+        padding: 15px 10px;
+    }
+
+    /* Mejorar tamaño de botón y inputs en móvil si quieres, pero no toco los estilos azules ya existentes */
 }
