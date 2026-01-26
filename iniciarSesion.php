@@ -47,7 +47,7 @@ try {
     $res = $stmt->get_result();
     $r = $res->fetch_assoc();
     var_dump($r);
-    var_dump()
+    var_dump();
     if ($contraseña != $r["contraseña"]) {
         //contraseña incorrecta o el usuario ya existe
         debug_header("Location: login.php?error=1");
