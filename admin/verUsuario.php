@@ -31,6 +31,7 @@ try {
 
 ?>
 <h1>Editar usuario</h1>
+<h3><a href="usuarios.php">Volver atrás</a></h3>
 
 <table>
     <form action="<?= srv("admin/editarUsuario") ?>" method="POST">
@@ -65,7 +66,7 @@ try {
         <tr>
             <td>
                 <input type="hidden" value="<?= $id ?>" name="id">
-                <input type="submit" value="Editar Usuario">
+                <input type="submit" value="Guardar Cambios">
             </td>
             <td></td>
         </tr>

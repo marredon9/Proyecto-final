@@ -5,10 +5,11 @@ $sesion = obtenerSesion();
 if (!$sesion->esAdmin) {
     redirect("index.php");
 }
-/*
+
+
+
 // TODO arreglar este servlet, al entrar se queda infinitamente cargando
 echo "Calculando url de retorno...<br>";
-$urlRetorno = "admin/verUsuario.php?id=" . $id;
 
 echo "Guardando parámetros en variables...<br>";
 //guardar parametros en variables
@@ -30,16 +31,21 @@ for ($i = 0; $i < sizeof($campos); $i++) {
 }
 unset($campos);
 
+$id = intval($id);
+$urlRetorno = "admin/verUsuario.php?id=" . $id;
+    
+
 echo "Ejecutando update...<br>";
 //hacer update segun campos recibidos
 try {
-    $stmt = $cn->prepare("UPDATE FROM usuario SET nombre = ?, apellido1 = ?, apellido2 = ?, dni = ?, email = ?, es_admin = ? WHERE id = ?;");
+    $query = "UPDATE usuario SET nombre = ?, apellido1 = ?, apellido2 = ?, dni = ?, email = ?, es_admin = ? WHERE id = ?;";
+    $stmt = $cn->prepare($query);
     $stmt->bind_param("sssssdd", $nombre, $apellido1, $apellido2, $dni, $email, $esAdmin, $id);
     $stmt->execute();
 } catch (mysqli_sql_exception $e) {
-    //redirect($urlRetorno . "&error=0");
+    redirect($urlRetorno . "&error=0");
 }
-//redirect($urlRetorno);
+redirect($urlRetorno);
 
-*/
+
 ?>

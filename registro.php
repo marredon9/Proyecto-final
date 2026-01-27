@@ -40,7 +40,7 @@ $sesion = obtenerSesion();
             <td><input type="password" name="repetirContraseña"></td>
         </tr>
         <tr>
-            <td></td>
+            <td><input type="reset" value="Reiniciar Campos"></td>
             <td><input type="submit" value="Crear Cuenta"></td>
         </tr>
     </table>

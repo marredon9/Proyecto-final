@@ -21,7 +21,9 @@ CREATE TABLE sucursal (
 
 CREATE TABLE vehiculo (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    matricula VARCHAR(16),
 	marca VARCHAR(32),
+    modelo VARCHAR(128),
     asientos NUMERIC(2),
     puertas NUMERIC(2),
     maletero BOOLEAN,

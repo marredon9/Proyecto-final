@@ -12,5 +12,5 @@ if (!$sesion->esAdmin) {
     <li><a href="usuarios.php">Administrar usuarios</a></li>
     <li><a href="vehiculos.php">Administrar vehiculos</a></li>
     <li><a href="alquileres.php">Administrar alquileres</a></li>
-    <li><a href="surcursales.php">Administrar sucursales</a></li>
+    <li><a href="sucursales.php">Administrar sucursales</a></li>
 </ul>

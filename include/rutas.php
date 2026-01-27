@@ -17,6 +17,10 @@ function srv($nombre) {
     return RUTA_ABS . RUTA_SRV . $nombre . ".php";
 }
 
+function lnk($ruta) {
+    return RUTA_ABS . $ruta;
+}
+
 function redirect($ruta) {
     header("Location: " . RUTA_ABS . $ruta);
 }
