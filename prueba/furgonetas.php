@@ -1,3 +1,20 @@
+<?php
+// Iniciar sesión o verificar si hay una cookie de tema
+session_start();
+
+if (isset($_GET['tema'])) {
+    // Cambiar el modo según el parámetro GET y guardar en cookie
+    $nuevo_tema = $_GET['tema'];
+    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
+    // Redirigir para evitar que se vuelva a enviar el formulario
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+// Obtener el tema de la cookie
+$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,7 +33,8 @@
 
 </head>
 
-<body>
+<body class="<?php echo $tema === 'dark' ? 'dark-theme' : ''; ?>">
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
@@ -32,6 +50,11 @@
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <!-- Enlace para cambiar a modo oscuro -->
+                    <a href="?tema=dark" class="btn btn-secondary">Modo Oscuro</a>
+
+                    <!-- Enlace para cambiar a modo claro -->
+                    <a href="?tema=light" class="btn btn-light">Modo Claro</a>
                 </ul>
             </div>
         </div>
@@ -39,11 +62,7 @@
 
     <!-- Footer -->
 
-<<<<<<< HEAD
-    <footer class="mt-5 text-center">
-=======
     <footer class="footer-alquiza seccion-azul">
->>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -51,17 +70,6 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-<<<<<<< HEAD
-
-                <!-- CENTRO -->
-                <div class="col-lg-3 col-md-3 col-6 footer-col">
-                    <h4>MÁS INFORMACIÓN</h4>
-                    <p>Preguntas frecuentes</p>
-                    <p>Contacta con nosotros</p>
-                    <p>NUESTRAS SUCURSALES</p>
-                </div>
-
-=======
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
@@ -70,41 +78,27 @@
                     <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
->>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-<<<<<<< HEAD
-                    <p><a href="">Política de gestión de daños</a></p>
-                    <p><a href="">Política de depósito</a></p>
-                    <p><a href="">Política de Privacidad</a></p>
-=======
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
                     <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
->>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
                     <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
-<<<<<<< HEAD
-=======
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-linkedin"></i>
                 <i class="fab fa-x-twitter"></i>
             </span>
->>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         </div>
     </footer>
 
