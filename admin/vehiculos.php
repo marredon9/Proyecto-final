@@ -28,6 +28,7 @@ sucursal (nombre mediante inner join)
 ?>
 <h1>Gestión de vehículos</h1>
 <h3><a href="index.php">Volver atrás</a></h3>
+<h3><a href="añadirVehiculo.php">Añadir Vehículo</a></h3>
 <!-- no uso inputs porque no entran los campos en pantalla -->
 <table border="1">
     <tr>
