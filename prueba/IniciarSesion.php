@@ -32,7 +32,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
                     <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
@@ -107,12 +107,6 @@
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
-            <span class="footer-social">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-x-twitter"></i>
-            </span>
         </div>
     </footer>
 

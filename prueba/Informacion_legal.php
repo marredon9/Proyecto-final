@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
@@ -48,8 +48,8 @@
             <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
             <div>
                 <div class="informacion-legal">
-                    <p>Bienvenido a <strong>[Nombre de tu empresa]</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>[correo electrónico]</a> o en el teléfono [número de teléfono].</p>
+                    <p>Bienvenido a <strong>Alquiza</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
+                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>Alquiza@gmail.com</a> o en el teléfono 6883940.</p>
                 </div>
             </div>
         </div>
@@ -87,12 +87,6 @@
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
-            <span class="footer-social">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-x-twitter"></i>
-            </span>
         </div>
     </footer>
 
