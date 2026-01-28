@@ -39,7 +39,11 @@
 
     <!-- Footer -->
 
+<<<<<<< HEAD
     <footer class="mt-5 text-center">
+=======
+    <footer class="footer-alquiza seccion-azul">
+>>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -47,6 +51,7 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
+<<<<<<< HEAD
 
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
@@ -56,22 +61,50 @@
                     <p>NUESTRAS SUCURSALES</p>
                 </div>
 
+=======
+                <!-- CENTRO -->
+                <div class="col-lg-3 col-md-3 col-6 footer-col">
+                    <h4>MÁS INFORMACIÓN</h4>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
+                </div>
+
+>>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
+<<<<<<< HEAD
                     <p><a href="">Política de gestión de daños</a></p>
                     <p><a href="">Política de depósito</a></p>
                     <p><a href="">Política de Privacidad</a></p>
+=======
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
+>>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
                     <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
+<<<<<<< HEAD
+=======
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
+>>>>>>> 0b03be9ab81a8531422f2f7f50361e817fd61fb1
         </div>
     </footer>
 

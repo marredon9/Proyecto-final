@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@
             Tu navegador no soporta la etiqueta de video.
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div class="form-container">
+        <div id="contact-card">
             <h1 class="text-center mb-3"><b>Política de deposito</b></h1>
             <p>
                 Para el alquiler del vehículo se requiere un depósito de seguridad, el cual será retenido en la tarjeta de crédito

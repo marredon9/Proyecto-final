@@ -197,7 +197,7 @@
 
     <!-- Footer -->
 
-    <footer class="mt-5 text-center">
+    <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -205,7 +205,6 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
@@ -219,13 +218,12 @@
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
+                    <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
-
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
@@ -240,7 +238,7 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var map = L.map('map').setView([38.9089, 1.4321], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

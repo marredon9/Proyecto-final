@@ -39,46 +39,34 @@
 
 
     <!-- Form de contacto -->
-    <section class="hero-section mb-5 position-relative">
+    <section class="hero-section">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center position-relative">
-            <div class="form-container" id="contacto">
-                <form method="post" action="contacto.php" class="w-100">
-                    <h5 class="text-center mb-4 text-white"><b>Contáctanos</b></h5>
+        <div id="contact-card" class="card" style="width: 600px;">
 
-                    <div class="mb-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control email-input" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Asunto</label>
-                        <input type="text" name="asunto" class="form-control email-input" required>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label">Mensaje</label>
-                        <textarea name="mensaje" class="form-control email-input" rows="3"
-                            placeholder="Introduzca el mensaje aquí" required></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn-custom">Enviar</button>
-                    </div>
-                </form>
+            <div class="card-body">
+                <h5 class="card-title">Contacta con nosotros</h5>
+                <p>Puedes encontrarnos en:</p>
+                <div class="branch">
+                    <p>Av. d'Isidor Macabich, 24, 07800 Eivissa</p>
+                    <p class="phone">+34 971 31 80 84</p>
+                </div>
+                <hr class="separator">
+                <div class="branch">
+                    <p>Av. de Bartomeu de Roselló, 12, 07800 Eivissa</p>
+                    <p class="phone">+34 971 39 87 31</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="mailto:info@alquizaibiza.com" class="email-link">info@alquizaibiza.com</a>
             </div>
         </div>
     </section>
     <!-- Footer -->
 
-    <footer class="mt-5 text-center">
+    <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -86,29 +74,27 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p>Preguntas frecuentes</p>
-                    <p>Contacta con nosotros</p>
-                    <p>NUESTRAS SUCURSALES</p>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="">Política de gestión de daños</a></p>
-                    <p><a href="">Política de depósito</a></p>
-                    <p><a href="">Política de Privacidad</a></p>
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
-
         <!-- BARRA INFERIOR -->
-        <div class="footer-bottom">
+        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
             <span class="footer-social">
