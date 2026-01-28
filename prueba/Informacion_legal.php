@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -49,7 +49,7 @@
             <div>
                 <div class="informacion-legal">
                     <p>Bienvenido a <strong>Alquiza</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>Alquiza@gmail.com</a> o en el teléfono 6883940.</p>
+                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>info@alquizaibiza.com</a> o en el teléfono 6883940.</p>
                 </div>
             </div>
         </div>

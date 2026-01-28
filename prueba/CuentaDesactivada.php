@@ -4,7 +4,6 @@ if (isset($_SESSION["sesion"])) {
     $sesion = unserialize($_SESSION["sesion"]);
 } else {
     $sesion = "";
-
 }
 ?>
 
@@ -21,7 +20,7 @@ if (isset($_SESSION["sesion"])) {
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sass/style.css" />
 </head>
 
 <body>
@@ -73,7 +72,7 @@ if (isset($_SESSION["sesion"])) {
         </div>
     </div>
 
-    
+
     <footer class="mt-5 text-center">
         <div class="container">
             <p>&copy; 2024 Alquiza Ibiza. Todos los derechos reservados.</p>

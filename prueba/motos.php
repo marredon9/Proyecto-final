@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -37,8 +38,8 @@
         </div>
     </nav>
 
-    <!-- Footer -->
 
+    <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
@@ -60,9 +61,9 @@
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-                    <p><a href="">Términos y Condiciones</a></p>
+                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
@@ -70,33 +71,35 @@
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
-            <span class="footer-social">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-x-twitter"></i>
-            </span>
         </div>
     </footer>
 
-    <!-- Scripts Bootstrap y personalizados -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var map = L.map('map').setView([38.9089, 1.4321], 13);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Coordenadas de Ibiza
+        var map = L.map("map").setView([38.9089, 1.4321], 13);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
         }).addTo(map);
-
-        L.marker([38.9089, 1.4321]).addTo(map)
-            .bindPopup('Alquiza - Tu alquiler en Ibiza')
+        L.marker([38.9089, 1.4321])
+            .addTo(map)
+            .bindPopup("Alquiza - Tu alquiler en Ibiza")
             .openPopup();
-    });
-</script>
+    </script>
+    <script>
+        // Animación al scroll para la sección "¿QUIENES SOMOS?" (si la tienes)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                }
+            });
+        });
+        document.querySelectorAll(".slide-in-left, .slide-in-right").forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
