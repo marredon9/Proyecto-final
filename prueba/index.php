@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,14 +20,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="#flota">Iniciar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
                     <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
@@ -100,12 +99,12 @@
                             <div class="col-md-6">
                                 <label for="fecha_devolucion" class="form-label">Fecha de devolución</label>
                                 <input type="date" class="form-control" id="fecha_devolucion" name="fecha_devolucion"
-                                required>
+                                    required>
                             </div>
                             <div class="col-md-6">
                                 <label for="horario_devolucion" class="form-label">Horario</label>
                                 <input type="time" class="form-control" id="horario_devolucion"
-                                name="horario_devolucion" required>
+                                    name="horario_devolucion" required>
                             </div>
                             <div class="row g-3 mt-3">
                                 <div class="col-12">
@@ -131,7 +130,7 @@
         </div>
     </div>
 
-    <!-- Sección cards con carrusel -->
+    <!-- Sección cards -->
     <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
     <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
         <div class="card" style="width: 18rem;">
@@ -167,7 +166,7 @@
         <a class="view-button" href="vehiculos.php">Ver Nuestros Vehículos</a>
     </div>
 
-        <!--Zona gris -->
+    <!--Zona gris -->
 
     <div class="seccion-gris mt-5">
         <div class="container justify-content-center text-center">
@@ -198,47 +197,47 @@
 
     <!-- Footer -->
 
-        <footer class="mt-5 text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- IZQUIERDA: LOGO + MAPA -->
-                    <div class="col-lg-5 col-md-6 col-12 footer-map">
-                        <!-- MAPA NO SE TOCA -->
-                        <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
-                    </div>
+    <footer class="mt-5 text-center">
+        <div class="container">
+            <div class="row">
+                <!-- IZQUIERDA: LOGO + MAPA -->
+                <div class="col-lg-5 col-md-6 col-12 footer-map">
+                    <!-- MAPA NO SE TOCA -->
+                    <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
+                </div>
 
-                    <!-- CENTRO -->
-                    <div class="col-lg-3 col-md-3 col-6 footer-col">
-                        <h4>MÁS INFORMACIÓN</h4>
-                        <p>Preguntas frecuentes</p>
-                        <p>Contacta con nosotros</p>
-                        <p>NUESTRAS SUCURSALES</p>
-                    </div>
+                <!-- CENTRO -->
+                <div class="col-lg-3 col-md-3 col-6 footer-col">
+                    <h4>MÁS INFORMACIÓN</h4>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
+                </div>
 
-                    <!-- DERECHA -->
-                    <div class="col-lg-4 col-md-3 col-6 footer-col">
-                        <h4>INFORMACIÓN LEGAL</h4>
-                        <p><a href="Informacion_legal.php">Información legal</a></p>
-                        <p><a href="">Política de gestión de daños</a></p>
-                        <p><a href="">Política de depósito</a></p>
-                        <p><a href="">Política de Privacidad</a></p>
-                        <p><a href="">Términos y Condiciones</a></p>
-                    </div>
+                <!-- DERECHA -->
+                <div class="col-lg-4 col-md-3 col-6 footer-col">
+                    <h4>INFORMACIÓN LEGAL</h4>
+                    <p><a href="Informacion_legal.php">Información legal</a></p>
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
+                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
             </div>
+        </div>
 
-            <!-- BARRA INFERIOR -->
-            <div class="footer-bottom">
-                <span>© Alquiza 2026</span>
-                <span>Política de cookies | Menciones legales | Sites maps</span>
-                <span class="footer-social">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-x-twitter"></i>
-                </span>
-            </div>
-        </footer>
+        <!-- BARRA INFERIOR -->
+        <div class="footer-bottom">
+            <span>© Alquiza 2026</span>
+            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
+        </div>
+    </footer>
 
     <!-- Scripts Bootstrap y personalizados -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -247,7 +246,7 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         var map = L.map('map').setView([38.9089, 1.4321], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
