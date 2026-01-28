@@ -1,17 +1,324 @@
-@use 'variables';
-@use 'navbar';
-@use 'layout';
-@use 'forms';
-@use 'footer';
+// Variables (opcional, si quieres usar colores y tamaños repetidamente)
+$primary-color: #007bff;
+$background-color-body: #f8f9fa;
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+$font-family: "Poppins", sans-serif;
 
-// Media Queries Finales
-@media(max-width: 768px) {
-    .hero-section {
-        height: auto;
-        padding: 50px 20px;
+// Configuración general
+body {
+  font-family: $font-family;
+  background-color: $background-color-body;
+  margin: 0;
+  padding: 0;
+}
+
+// Navbar
+.navbar {
+  background-color: $primary-color !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: 0.3s;
+
+    &:hover {
+      color: #ffffff !important;
+      text-decoration: underline;
+      font-weight: bold;
+      transform: translateY(-1px);
     }
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+  }
+}
+a{
+    color: rgb(196, 196, 196);
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+// Hero sección y video de fondo
+.hero-section {
+  color: white;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  #registrar {
+    color: rgb(226, 226, 34);
+  }
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    color: #ffffff;
+    text-shadow: $text-shadow;
+    z-index: 1;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Secciones y contenedores
+.section-title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: $primary-color;
+  text-align: center;
+}
+
+.seccion-gris {
+  background-color: #D9D9D9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #000;
+}
+
+.container {
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 5px;
+  text-align: justify;
+}
+
+// Imágenes y cards
+.image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.img-borde {
+  width: 590px;
+  height: auto;
+  border-radius: 30px;
+}
+
+// Tarjeta de contacto (Glassmorphism)
+#contact-card {
+  background: rgba(0, 123, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  h5 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .branch {
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  .phone {
+    font-weight: 600;
+  }
+
+  .separator {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 20px 0;
+  }
+
+  .email-link {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+      background: #ffffff;
+      color: $primary-color;
+    }
+  }
+}
+
+// Modal personalizado
+.custom-modal {
+  position: relative;
+  background: url('img/ibiza.avif') center/cover no-repeat;
+  border-radius: 20px;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  input,
+  select {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+}
+
+// Formularios
+.form-container {
+  background: rgba(0, 123, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 420px;
+
+  .custom-input {
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border: none;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+// Inputs específicos
+.email-input,
+.password-input {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+// Botones
+.btn-custom {
+  background-color: #ffffff;
+  color: $primary-color;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+}
+
+.nav-button {
+  background-color: #006400;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+}
+
+.view-button {
+  background-color: #0022ff;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 12px 24px;
+}
+
+// Footer
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 15px 10px;
+
+  h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+
+// Responsive (medias)
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    padding: 20px 10px;
+    flex-direction: column;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  #map {
+    height: 150px;
+    max-width: 100%;
+  }
 }

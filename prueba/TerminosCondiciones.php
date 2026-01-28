@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@
             Tu navegador no soporta la etiqueta de video.
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div class="form-container">
+        <div id="contact-card">
             <h1 class="text-center mb-3"><b>Terminos Y Condiciones</b></h1>
             <p>
                 Al realizar una reserva, el cliente acepta los presentes términos y condiciones establecidos por la empresa.
@@ -97,12 +97,6 @@
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
-            <span class="footer-social">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-x-twitter"></i>
-            </span>
         </div>
     </footer>
 

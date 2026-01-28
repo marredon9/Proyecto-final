@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -10,7 +9,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -87,9 +86,9 @@
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
-                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
-                    <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->
