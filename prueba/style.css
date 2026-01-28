@@ -29,15 +29,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* Estilo para modo oscuro */
-.dark-theme {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-:root {
-  --color1: #0000FF;
-}
 
 .prueba {
   background-color: var(--color1);

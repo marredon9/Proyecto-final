@@ -27,7 +27,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -45,7 +45,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
                     <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
@@ -104,9 +104,9 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="Sucursales.php">NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->
@@ -124,6 +124,12 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
     </footer>
 
