@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <!-- Sección cards con carrusel -->
+    <!-- Sección cards -->
     <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
     <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
         <div class="card" style="width: 18rem;">

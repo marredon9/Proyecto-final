@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button
                 class="navbar-toggler"
                 type="button"
