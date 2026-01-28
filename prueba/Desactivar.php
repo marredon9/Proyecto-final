@@ -62,8 +62,8 @@ if (isset($_SESSION["sesion"])) {
                         </button>
                     </form>
 
-                    <form action="desactivarMiCuenta.php" onsubmit="return confirmarDesactivacion();">
-                        <button type="submit" class="btn btn-danger px-4">
+                    <form action="CuentaDesactivada.php" onsubmit="return confirmarDesactivacion();">
+                        <button type="submit" class="btn btn-danger px-4" href="CuentaDesactivada.php">
                             Estoy segur@
                         </button>
                     </form>
