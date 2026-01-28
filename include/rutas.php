@@ -1,6 +1,6 @@
 <?php
 
-define("RUTA_ABS", "http://localhost/php/git/proyectofinal/Proyecto-final/");
+define("RUTA_ABS", "http://localhost/git/proyectofinal/");
 define("RUTA_IMG", "assets/img/");
 define("RUTA_VID", "assets/vid/");
 define("RUTA_SRV", "servlets/");

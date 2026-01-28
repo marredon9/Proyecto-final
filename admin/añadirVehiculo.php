@@ -7,7 +7,7 @@ if (!$sesion->esAdmin) {
 }
 
 ?>
-<form>
+<form action="<?=srv("admin/añadirVehiculo")?>" method="post">
     <table>
         <tr>
             <td>Matrícula: </td>
@@ -20,6 +20,16 @@ if (!$sesion->esAdmin) {
         <tr>
             <td>Modelo: </td>
             <td><input type="text" name="modelo" required></td>
+        </tr>
+        <tr>
+            <td>Tipo: </td>
+            <td>
+                <select name="tipo">
+                    <option value="coche">Coche</option>
+                    <option value="moto">Moto</option>
+                    <option value="furgoneta">Furgoneta</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>Asientos: </td>
@@ -87,6 +97,10 @@ try {
                     ?>
                 </select>
             </td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="Vaciar campos"></td>
+            <td><input type="submit" value="Guardar Coche"></td>
         </tr>
     </table>
 </form>

@@ -21,19 +21,20 @@ $direccion = $_POST["direccion"] ?? "";
 
 //si el nombre o la direccion estan vacios, redirigir a la página anterior
 if ($nombre == "" || $direccion == "") {
-    redirect("admin/sucursalAñadir.php?error=1");
+    redirect("admin/añadirSucursal.php?error=1");
 }
 
 //hacer insert a base de datos
 try {
-    $stmt = $cn->prepare("INSERT INTO sucursal (nombre, direccion) VALUES (?, ?);");
+    $stmt = $cn->prepare("INSERT INTO sucursal (nombre, direccion, latitud, longitud, telefono) VALUES (?, ?, 0, 0, 0);");
     $stmt->bind_param("ss", $nombre, $direccion);
     $var = $stmt->execute();
     //var_dump($var);
     //echo $stmt->error;
-    redirect("admin/sucursalAñadir.php");
+    redirect("admin/añadirSucursal.php");
 } catch (mysqli_sql_exception $e) {
-    redirect("admin/sucursalAñadir.php?error=0");
+    echo $e;
+    //redirect("admin/añadirSucursal.php?error=0");
 }
 
 ?>

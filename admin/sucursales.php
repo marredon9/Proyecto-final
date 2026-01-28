@@ -8,7 +8,7 @@ if (!$sesion->esAdmin) {
 ?>
 <h1>Gestión de sucursales</h1>
 <h3><a href="index.php">Volver atrás</a></h3>
-<a href="sucursalAñadir.php">Añadir Sucursal</a>
+<a href="añadirSucursal.php">Añadir Sucursal</a>
 <table>
     <tr>
         <td><b></b></td>

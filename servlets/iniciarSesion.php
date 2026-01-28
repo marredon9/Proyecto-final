@@ -31,7 +31,7 @@ $contraseña = hash("sha256", $contraseña);
 //consultas a base de datos
 try {
     //comprobar que hay usuarios con ese id en la base de datos
-    $stmt = $cn->prepare("SELECT *, COUNT(*) AS count FROM usuario WHERE dni = ?;");
+    $stmt = $cn->prepare("SELECT COUNT(*) AS count FROM usuario WHERE dni = ?;");
     $stmt->bind_param("s", $dni);
     $stmt->execute();
     $res = $stmt->get_result();
@@ -41,6 +41,13 @@ try {
         redirect("login.php?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
     }
     
+    //hacer consulta con todos los datos del usuario
+    $stmt = $cn->prepare("SELECT * FROM usuario WHERE dni = ?;");
+    $stmt->bind_param("s", $dni);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $r = $res->fetch_assoc();
+
     //comprobar que la contraseña es correcta
     if ($contraseña != $r["contraseña"]) {
         redirect("login.php?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
@@ -57,7 +64,8 @@ try {
         redirect("index.php");
     }
 } catch (mysqli_sql_exception $e) {
-    redirect("login.php?error=0"); //error 0: problema con la base de datos
+    echo $e;
+    //redirect("login.php?error=0"); //error 0: problema con la base de datos
 }
 
 
