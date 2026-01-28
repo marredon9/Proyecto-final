@@ -10,7 +10,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -62,14 +62,14 @@
                     <li class="faq-item">
                         <input type="checkbox" id="faq2" class="faq-toggle">
                         <label for="faq2" class="faq-question"><strong>Sucursal Nº1:</strong> Aeropuerto Ibiza</label>
-                        <div class="faq-answer">Nuestra primera sucursal se encuentra en el aeropuerto de Ibiza, haciendo asi que nuestros clientes tengan facilidad para llegar a la ciudad.</div>
+                        <div class="faq-answer">Carretera del Aeropuerto, km 7.5, 07818 - Sant Jordi de ses Salines</div>
                     </li>
 
                     <ul class="faq-list">
                     <li class="faq-item">
                         <input type="checkbox" id="faq1" class="faq-toggle">
                         <label for="faq1" class="faq-question"><strong>Sucursal Nº2:</strong>Eivissa</label>
-                        <div class="faq-answer">Nuestra segunda sucursal se encuentra en la Calle Carrer de Madrid, al lado de la incorporación Carrer de Jaume |.</div>
+                        <div class="faq-answer">Av. d'Espanya, 24, 07800 Eivissa.</div>
                     </li>
                  
                 </ul>
