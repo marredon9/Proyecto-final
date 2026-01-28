@@ -44,7 +44,7 @@
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <div id="contact-card" class="card" style="width: 600px;"> 
+        <div id="contact-card" class="card" style="width: 600px;">
 
             <div class="card-body">
                 <h5 class="card-title">Contacta con nosotros</h5>
@@ -66,7 +66,7 @@
     </section>
     <!-- Footer -->
 
-    <footer class="mt-5 text-center">
+    <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -74,29 +74,27 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p>Preguntas frecuentes</p>
-                    <p>Contacta con nosotros</p>
-                    <p>NUESTRAS SUCURSALES</p>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="">Política de gestión de daños</a></p>
-                    <p><a href="">Política de depósito</a></p>
-                    <p><a href="">Política de Privacidad</a></p>
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
-
         <!-- BARRA INFERIOR -->
-        <div class="footer-bottom">
+        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
             <span class="footer-social">
