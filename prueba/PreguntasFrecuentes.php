@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,42 +37,89 @@
         </div>
     </nav>
 
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Alquiza</title>
+        <link rel="stylesheet" href="faq.css">
+    </head>
+
+    <body>
+      
     <section class="hero-section">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div class="form-container">
-            <h1 class="text-center mb-3"><b>Política de gestión de daños</b></h1>
-            <div>
-                <div class="informacion-legal">
-                    <p>
-                        Todos los vehículos son inspeccionados antes y después de cada alquiler.
-                        El estado del vehículo se documenta y se pone a disposición del cliente.
-                    </p>
 
-                    <p>
-                        Si al finalizar el alquiler se detectan daños adicionales, la empresa
-                        informará al cliente de forma transparente, incluyendo evidencia y
-                        valoración del coste de reparación.
-                    </p>
+            <section class="faq-container mt-5 mb-5">
+                <h1 class="faq-title"><strong>Preguntas Frecuentes</strong></h1>
 
-                    <p>
-                        La responsabilidad del cliente se aplicará conforme al contrato y a la
-                        cobertura contratada. El desgaste normal del vehículo no será considerado
-                        daño imputable.
-                    </p>
+                <ul class="faq-list">
 
-                    <p>
-                        Nuestro objetivo es garantizar una gestión justa, clara y conforme a la
-                        normativa vigente.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq1" class="faq-toggle">
+                        <label for="faq1" class="faq-question"><strong>Cliente:</strong> ¿Qué requisitos necesito para alquilar un coche?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Carnet válido, ser mayor de 21 años y tarjeta de pago.</div>
+                    </li>
 
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq2" class="faq-toggle">
+                        <label for="faq2" class="faq-question"><strong>Cliente:</strong> ¿Puedo cancelar una reserva?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, gratis hasta 24h antes de la recogida.</div>
+                    </li>
+                 
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq3" class="faq-toggle">
+                        <label for="faq3" class="faq-question"><strong>Cliente:</strong> ¿El precio incluye seguro?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, incluye seguro básico. Puedes añadir todo riesgo.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq4" class="faq-toggle">
+                        <label for="faq4" class="faq-question"><strong>Cliente:</strong> ¿Hay límite de kilómetros?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Depende del modelo. Muchos incluyen kilometraje ilimitado.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq5" class="faq-toggle">
+                        <label for="faq5" class="faq-question"><strong>Cliente:</strong> ¿Puedo devolver el coche en otra sucursal?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, sin ningun problema.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq6" class="faq-toggle">
+                        <label for="faq6" class="faq-question"><strong>Cliente:</strong> ¿Se necesita depósito o fianza?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, se bloquea una fianza en tarjeta al recoger el coche.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq8" class="faq-toggle">
+                        <label for="faq8" class="faq-question"><strong>Cliente:</strong> ¿Ofrecen entrega en el aeropuerto?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, puedes recoger el coche directamente en el aeropuerto.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq9" class="faq-toggle">
+                        <label for="faq9" class="faq-question"><strong>Cliente:</strong> ¿Qué pasa si devuelvo el coche tarde?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Puede aplicarse un cargo adicional según el retraso.</div>
+                    </li>
+
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq10" class="faq-toggle">
+                        <label for="faq10" class="faq-question"><strong>Cliente:</strong> ¿Puedo alquilar algun otro vehiculo en vez de un coche?</label>
+                        <div class="faq-answer"><strong>Alquiza:</strong> Sí, tenemos motos y furgonetas disponibles en Ibiza.</div>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+    </body>
+
+    </html>
     <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
         <div class="container">
@@ -96,7 +142,7 @@
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>

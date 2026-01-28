@@ -426,3 +426,91 @@ a:hover {
 
     /* Mejorar tamaño de botón y inputs en móvil si quieres, pero no toco los estilos azules ya existentes */
 }
+
+/* Contenedor azul tipo tarjeta */
+.faq-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(0, 123, 255, 0.85); /* azul translúcido */
+  backdrop-filter: blur(10px); /* efecto difuminado */
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Título */
+.faq-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* Lista FAQ */
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada item FAQ */
+.faq-item {
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.1); /* leve transparencia */
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Checkbox oculto */
+.faq-toggle {
+  display: none;
+}
+
+/* Pregunta */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.98rem;
+  transition: background-color 0.3s;
+  color: #fff;
+}
+
+.faq-question:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Icono + / − */
+.faq-question::after {
+  content: '+';
+  font-weight: bold;
+  transition: transform 0.3s;
+  margin-left: 10px;
+}
+
+/* Respuesta */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.2rem;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Mostrar respuesta cuando el checkbox está checked */
+.faq-toggle:checked + .faq-question + .faq-answer {
+  max-height: 500px;
+  padding: 0.9rem 1.2rem;
+}
+
+/* Cambiar icono cuando abierto */
+.faq-toggle:checked + .faq-question::after {
+  content: '−';
+  transform: rotate(180deg);
+}

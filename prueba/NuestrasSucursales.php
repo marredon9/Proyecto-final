@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,68 +13,72 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Menú">
+            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Alquiza</title>
+        <link rel="stylesheet" href="faq.css">
+    </head>
+
+    <body>
+      
     <section class="hero-section">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div class="form-container">
-            <!-- Formulario de login -->
-            <form method="post" action="">
-                <div class="login-card">
-                    <h4 class="text-center mb-3"><b>Usuario</b></h4>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control password-input" required />
-                    </div>
-                    <div class="text-end">
-                        <input type="submit" class="btn btn-custom" value="Entrar" />
-                    </div>
-                </div>
-            </form>
-            <!-- Texto de registro justo debajo del formulario -->
-            <div class="register-text mt-2">
-                <strong class="negro">¿Aún no tienes cuenta con nosotros?</strong>
-                <a href="Registrarse.php">Regístrate aquí</a>
-            </div>
-        </div>
-    </section>
 
+            <section class="faq-container">
+                <h1 class="faq-title"><strong>Nuestras Sucursales</strong></h1>
 
+                <ul class="faq-list">
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq2" class="faq-toggle">
+                        <label for="faq2" class="faq-question"><strong>Sucursal Nº1:</strong> Aeropuerto Ibiza</label>
+                        <div class="faq-answer">Nuestra primera sucursal se encuentra en el aeropuerto de Ibiza, haciendo asi que nuestros clientes tengan facilidad para llegar a la ciudad.</div>
+                    </li>
+
+                    <ul class="faq-list">
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq1" class="faq-toggle">
+                        <label for="faq1" class="faq-question"><strong>Sucursal Nº2:</strong>Eivissa</label>
+                        <div class="faq-answer">Nuestra segunda sucursal se encuentra en la Calle Carrer de Madrid, al lado de la incorporación Carrer de Jaume |.</div>
+                    </li>
+                 
+                </ul>
+            </section>
+        </section>
+
+    </body>
+
+    </html>
     <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
         <div class="container">
@@ -143,6 +147,5 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
 </html>

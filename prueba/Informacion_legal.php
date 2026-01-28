@@ -48,8 +48,8 @@
             <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
             <div>
                 <div class="informacion-legal">
-                    <p>Bienvenido a <strong>[Nombre de tu empresa]</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>[correo electrónico]</a> o en el teléfono [número de teléfono].</p>
+                    <p>Bienvenido a <strong>Alquiza</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
+                    <p>Para cualquier duda o consulta, contacta con nosotros en <a><strong>alquizaalquileres@gmail.com</strong></a> o en el teléfono <strong>612345678</strong>.</p>
                 </div>
             </div>
         </div>
@@ -67,9 +67,9 @@
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
                 <!-- DERECHA -->
