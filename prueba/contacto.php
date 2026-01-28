@@ -39,40 +39,28 @@
 
 
     <!-- Form de contacto -->
-    <section class="hero-section mb-5 position-relative">
+    <section class="hero-section">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center position-relative">
-            <div class="form-container" id="contacto">
-                <form method="post" action="contacto.php" class="w-100">
-                    <h5 class="text-center mb-4 text-white"><b>Contáctanos</b></h5>
+        <div id="contact-card" class="card" style="width: 600px;"> 
 
-                    <div class="mb-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control email-input" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Asunto</label>
-                        <input type="text" name="asunto" class="form-control email-input" required>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label">Mensaje</label>
-                        <textarea name="mensaje" class="form-control email-input" rows="3"
-                            placeholder="Introduzca el mensaje aquí" required></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn-custom">Enviar</button>
-                    </div>
-                </form>
+            <div class="card-body">
+                <h5 class="card-title">Contacta con nosotros</h5>
+                <p>Puedes encontrarnos en:</p>
+                <div class="branch">
+                    <p>Av. d'Isidor Macabich, 24, 07800 Eivissa</p>
+                    <p class="phone">+34 971 31 80 84</p>
+                </div>
+                <hr class="separator">
+                <div class="branch">
+                    <p>Av. de Bartomeu de Roselló, 12, 07800 Eivissa</p>
+                    <p class="phone">+34 971 39 87 31</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="mailto:info@alquizaibiza.com" class="email-link">info@alquizaibiza.com</a>
             </div>
         </div>
     </section>
