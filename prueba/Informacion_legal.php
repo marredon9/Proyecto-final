@@ -45,30 +45,18 @@
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div class="form-container">
-            <!-- Formulario de login -->
-                <div class="login-card">
-                    <h4 class="text-center mb-3"><b>Informacion Legal</b></h4>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control password-input" required />
-                    </div>
-                    <div class="text-end">
-                        <input type="submit" class="btn btn-custom" value="Entrar" />
-                    </div>
+            <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
+            <div>
+                <div class="informacion-legal">
+                    <p>Bienvenido a <strong>[Nombre de tu empresa]</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
+                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>[correo electrónico]</a> o en el teléfono [número de teléfono].</p>
                 </div>
-            <!-- Texto de registro justo debajo del formulario -->
-            <div class="register-text mt-2">
-                <strong class="negro">¿Aún no tienes cuenta con nosotros?</strong>
-                <a href="Registrarse.php">Regístrate aquí</a>
             </div>
         </div>
     </section>
 
-    <footer class="mt-5 text-center">
+    <!-- Footer -->
+    <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -76,29 +64,27 @@
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p>Preguntas frecuentes</p>
-                    <p>Contacta con nosotros</p>
-                    <p>NUESTRAS SUCURSALES</p>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="">Política de gestión de daños</a></p>
-                    <p><a href="">Política de depósito</a></p>
-                    <p><a href="">Política de Privacidad</a></p>
-                    <p><a href="">Términos y Condiciones</a></p>
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
+                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
-
         <!-- BARRA INFERIOR -->
-        <div class="footer-bottom">
+        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
             <span class="footer-social">
@@ -110,24 +96,32 @@
         </div>
     </footer>
 
-    <!-- Scripts Bootstrap y personalizados -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var map = L.map('map').setView([38.9089, 1.4321], 13);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Coordenadas de Ibiza
+        var map = L.map("map").setView([38.9089, 1.4321], 13);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
         }).addTo(map);
-
-        L.marker([38.9089, 1.4321]).addTo(map)
-            .bindPopup('Alquiza - Tu alquiler en Ibiza')
+        L.marker([38.9089, 1.4321])
+            .addTo(map)
+            .bindPopup("Alquiza - Tu alquiler en Ibiza")
             .openPopup();
-    });
-</script>
+    </script>
+    <script>
+        // Animación al scroll para la sección "¿QUIENES SOMOS?" (si la tienes)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                }
+            });
+        });
+        document.querySelectorAll(".slide-in-left, .slide-in-right").forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

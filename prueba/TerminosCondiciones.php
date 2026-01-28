@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alquiza</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <title>Alquiza - Alquiler de Coches en Ibiza</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 
 <body>
@@ -17,19 +22,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">Alquiza Ibiza</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Menú">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
                     <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
                     <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
@@ -46,31 +45,25 @@
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div class="form-container">
-            <!-- Formulario de login -->
-            <form method="post" action="">
-                <div class="login-card">
-                    <h4 class="text-center mb-3"><b>Usuario</b></h4>
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control password-input" required />
-                    </div>
-                    <div class="text-end">
-                        <input type="submit" class="btn btn-custom" value="Entrar" />
-                    </div>
-                </div>
-            </form>
-            <!-- Texto de registro justo debajo del formulario -->
-            <div class="register-text mt-2">
-                <strong class="negro">¿Aún no tienes cuenta con nosotros?</strong>
-                <a href="Registrarse.php">Regístrate aquí</a>
-            </div>
+            <h1 class="text-center mb-3"><b>Terminos Y Condiciones</b></h1>
+            <p>
+                Al realizar una reserva, el cliente acepta los presentes términos y condiciones establecidos por la empresa.
+            </p>
+
+            <p>
+                El vehículo deberá ser devuelto en la fecha y condiciones acordadas. Cargos adicionales podrán aplicarse en caso
+                de retrasos, daños, multas o incumplimiento del contrato.
+            </p>
+
+            <p>
+                El uso del vehículo está limitado al conductor autorizado y para fines legales únicamente.
+            </p>
+
+            <p>
+                La empresa se reserva el derecho de modificar estos términos sin previo aviso.
+            </p>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
@@ -140,6 +133,5 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
 </html>
