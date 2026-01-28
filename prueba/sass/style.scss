@@ -1,0 +1,17 @@
+@use 'variables';
+@use 'navbar';
+@use 'layout';
+@use 'forms';
+@use 'footer';
+
+// Media Queries Finales
+@media(max-width: 768px) {
+    .hero-section {
+        height: auto;
+        padding: 50px 20px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

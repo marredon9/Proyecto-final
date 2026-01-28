@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alquiza</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <title>Alquiza - Alquiler de Coches en Ibiza</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
@@ -16,7 +19,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -30,10 +33,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="index.php">Principal</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
