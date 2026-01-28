@@ -150,9 +150,9 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
-                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
-                    <p><a href="Sucursales.php">NUESTRAS SUCURSALES</a></p>
+                    <p><a>Preguntas frecuentes</a></p>
+                    <p><a>Contacta con nosotros</a></p>
+                    <p><a>NUESTRAS SUCURSALES</a></p>
                 </div>
 
                 <!-- DERECHA -->

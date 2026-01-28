@@ -99,18 +99,18 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p>Preguntas frecuentes</p>
+                    <p>Contacta con nosotros</p>
+                    <p>NUESTRAS SUCURSALES</p>
                 </div>
 
                 <!-- DERECHA -->
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
-                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
+                    <p><a href="">Política de gestión de daños</a></p>
+                    <p><a href="">Política de depósito</a></p>
+                    <p><a href="">Política de Privacidad</a></p>
                     <p><a href="">Términos y Condiciones</a></p>
                 </div>
             </div>

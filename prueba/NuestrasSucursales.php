@@ -1,22 +1,5 @@
-<?php
-// Iniciar sesión o verificar si hay una cookie de tema
-session_start();
-
-if (isset($_GET['tema'])) {
-    // Cambiar el modo según el parámetro GET y guardar en cookie
-    $nuevo_tema = $_GET['tema'];
-    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
-    // Redirigir para evitar que se vuelva a enviar el formulario
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// Obtener el tema de la cookie
-$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
-?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -27,18 +10,17 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="sass/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 </head>
 
-<body class="<?php echo $tema === 'dark' ? 'dark-theme' : ''; ?>">
-
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Alquiza Ibiza</a>
+            <a class="navbar-brand" href="#">Alquiza Ibiza</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
@@ -46,36 +28,57 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="IniciarSesion.php">Iniciar Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coches.php">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
-                    <!-- Enlace para cambiar a modo oscuro -->
-                    <a href="?tema=dark" class="btn btn-secondary">Modo Oscuro</a>
-
-                    <!-- Enlace para cambiar a modo claro -->
-                    <a href="?tema=light" class="btn btn-light">Modo Claro</a>
+                    <li class="nav-item"><a class="nav-link" href="#coches">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#motos">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#furgonetas">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Alquiza</title>
+        <link rel="stylesheet" href="faq.css">
+    </head>
+
+    <body>
+      
     <section class="hero-section">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
         </video>
-        <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div id="contact-card">
-            <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
-            <div>
-                <div class="informacion-legal">
-                    <p>Bienvenido a <strong>[Nombre de tu empresa]</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>[correo electrónico]</a> o en el teléfono [número de teléfono].</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
+            <section class="faq-container">
+                <h1 class="faq-title"><strong>Nuestras Sucursales</strong></h1>
+
+                <ul class="faq-list">
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq2" class="faq-toggle">
+                        <label for="faq2" class="faq-question"><strong>Sucursal Nº1:</strong> Aeropuerto Ibiza</label>
+                        <div class="faq-answer">Nuestra primera sucursal se encuentra en el aeropuerto de Ibiza, haciendo asi que nuestros clientes tengan facilidad para llegar a la ciudad.</div>
+                    </li>
+
+                    <ul class="faq-list">
+                    <li class="faq-item">
+                        <input type="checkbox" id="faq1" class="faq-toggle">
+                        <label for="faq1" class="faq-question"><strong>Sucursal Nº2:</strong>Eivissa</label>
+                        <div class="faq-answer">Nuestra segunda sucursal se encuentra en la Calle Carrer de Madrid, al lado de la incorporación Carrer de Jaume |.</div>
+                    </li>
+                 
+                </ul>
+            </section>
+        </section>
+
+    </body>
+
+    </html>
     <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
         <div class="container">
@@ -108,6 +111,12 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
             <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
     </footer>
 
