@@ -50,14 +50,13 @@ AND v.id_sucursal LIKE ?;
 ';*/
 
 $query = "
-SELECT v.*, a.* FROM vehiculo v INNER JOIN alquiler a ON v.id = a.id_ve
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM alquiler a
-    WHERE a.id_ve = v.id
-      AND a.desde <= ?
-      AND a.hasta >= ?
-)
+SELECT v.*
+FROM vehiculo v
+LEFT JOIN alquiler a
+  ON a.id_ve = v.id
+ AND a.desde <= ?
+ AND a.hasta >= ?
+WHERE a.id IS NULL
 AND v.tipo LIKE ?
 AND v.marca LIKE ?
 AND v.modelo LIKE ?
@@ -68,7 +67,7 @@ AND v.modo LIKE ?
 AND v.emisiones LIKE ?
 AND v.id_sucursal LIKE ?
 ;
-"; //filtrar luego las columnas con id de vehiculos que ya se han mostrado
+"; //gracias stackoverflow
 
 try {
     $stmt = $cn->prepare($query);
@@ -78,15 +77,8 @@ try {
     $stmt->execute();
     $res = $stmt->get_result();
 
-    $listaIds = [];
-
     while ($r = $res->fetch_assoc()) {
-        $id = $r["id"];
-        if (in_array($id, $listaIds)) {
-            continue; //si está en el array, saltar
-        }
-        array_push($listaIds, $id);
-        
+
     }
 } catch (mysqli_sql_exception $e) {
 
