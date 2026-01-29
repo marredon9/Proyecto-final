@@ -4,21 +4,21 @@ include "includes/footer.php";
 include "includes/navbar.php";
 session_start();
 
-if (isset($_GET['tema'])) {
-    // Cambiar el modo según el parámetro GET y guardar en cookie
-    $nuevo_tema = $_GET['tema'];
-    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
-    // Redirigir para evitar que se vuelva a enviar el formulario
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
+    if (isset($_GET['tema'])) {
+        // Cambiar el modo según el parámetro GET y guardar en cookie
+        $nuevo_tema = $_GET['tema'];
+        setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
+        // Redirigir para evitar que se vuelva a enviar el formulario
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
 
-// Obtener el tema de la cookie
-$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
-?>
+    // Obtener el tema de la cookie
+    $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+    ?>
 
-<!DOCTYPE html>
-<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
