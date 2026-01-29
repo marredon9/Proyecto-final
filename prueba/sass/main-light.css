@@ -322,6 +322,19 @@ footer .footer-social i {
   transform: rotate(180deg);
 }
 
+#contact-card {
+  background: rgba(0, 123, 255, 0.6) !important;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.card-body {
+  color: white;
+  max-width: 520px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f8f9fa;

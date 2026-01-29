@@ -31,8 +31,12 @@ function footer()
         </div>
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
-            <span>© Alquiza 2026</span>
-            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="Sitemap.php">Sites maps</a></span>
+            <p>© Alquiza 2026</p>
+
+            <span class="text-center"><a href="PoliticaCookies.php">Política de cookies</a> | <a
+                    href="MencionesLegales.php">Menciones
+                    legales</a> | <a href="Sitesmaps.php">Sites maps</a></span>
+
         </div>
     </footer>
 
