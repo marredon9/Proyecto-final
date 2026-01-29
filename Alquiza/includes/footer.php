@@ -30,7 +30,7 @@ function footer()
             </div>
         </div>
         <!-- BARRA INFERIOR -->
-        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2 fixed-button">
             <p>© Alquiza 2026</p>
 
             <span class="text-center"><a href="PoliticaCookies.php">Política de cookies</a> | <a
