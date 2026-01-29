@@ -93,12 +93,16 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         </div>
         </div>
         <!-- BARRA INFERIOR -->
-        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+       <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
-    </footer>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>

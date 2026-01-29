@@ -69,8 +69,8 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
             <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
             <div>
                 <div class="informacion-legal">
-                    <p>Bienvenido a <strong>[Nombre de tu empresa]</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>[correo electrónico]</a> o en el teléfono [número de teléfono].</p>
+                    <p>Bienvenido a <strong>Alquiza</strong>. Antes de utilizar nuestros servicios, por favor lee detenidamente la siguiente información legal:</p>
+                    <p>Para cualquier duda o consulta, contacta con nosotros en <a>info@alquiza.com</a> o en el teléfono 601234567.</p>
                 </div>
             </div>
         </div>
