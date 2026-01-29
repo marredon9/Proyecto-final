@@ -63,7 +63,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
 
     <!-- Footer -->
-    <footer class="footer-alquiza seccion-azul">
+    <footer class="footer-alquiza seccion-azul fixed-bottom">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
