@@ -164,7 +164,7 @@ a:hover {
 
 .custom-modal {
   position: relative;
-  background: url("img/ibiza.avif") center/cover no-repeat;
+  background: url("../img/ibiza.avif") center/cover no-repeat;
   border-radius: 20px;
   color: #ffffff;
   padding: 20px;
