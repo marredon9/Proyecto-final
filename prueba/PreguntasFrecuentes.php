@@ -48,12 +48,12 @@
     </head>
 
     <body>
-      
-    <section class="hero-section">
-        <video class="background-video" autoplay muted loop>
-            <source src="img/olas.mp4" type="video/mp4" />
-            Tu navegador no soporta la etiqueta de video.
-        </video>
+
+        <section class="hero-section">
+            <video class="background-video" autoplay muted loop>
+                <source src="img/olas.mp4" type="video/mp4" />
+                Tu navegador no soporta la etiqueta de video.
+            </video>
 
             <section class="faq-container mt-5 mb-5">
                 <h1 class="faq-title"><strong>Preguntas Frecuentes</strong></h1>
@@ -71,7 +71,7 @@
                         <label for="faq2" class="faq-question"><strong>Cliente:</strong> ¿Puedo cancelar una reserva?</label>
                         <div class="faq-answer"><strong>Alquiza:</strong> Sí, gratis hasta 24h antes de la recogida.</div>
                     </li>
-                 
+
                     <li class="faq-item">
                         <input type="checkbox" id="faq3" class="faq-toggle">
                         <label for="faq3" class="faq-question"><strong>Cliente:</strong> ¿El precio incluye seguro?</label>
@@ -118,9 +118,6 @@
         </section>
 
     </body>
-
-    </html>
-    <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
@@ -133,7 +130,7 @@
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
                     <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
-                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="contacto.php">Contacta con nosotros</a></p>
                     <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
@@ -142,7 +139,7 @@
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
@@ -151,7 +148,7 @@
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>
@@ -160,6 +157,9 @@
             </span>
         </div>
     </footer>
+
+    </html>
+
 
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

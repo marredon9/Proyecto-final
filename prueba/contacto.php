@@ -108,8 +108,8 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <div class="col-lg-4 col-md-3 col-6 footer-col">
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="PoliticaDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticaDeposito.php">Política de depósito</a></p>
+                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
@@ -135,7 +135,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         var map = L.map('map').setView([38.9089, 1.4321], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

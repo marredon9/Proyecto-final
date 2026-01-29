@@ -76,7 +76,7 @@
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
                     <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
-                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="contacto.php">Contacta con nosotros</a></p>
                     <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
@@ -92,9 +92,9 @@
             </div>
         </div>
         <!-- BARRA INFERIOR -->
-         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>
