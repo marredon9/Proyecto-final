@@ -1,6 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+// Iniciar sesión o verificar si hay una cookie de tema
+session_start();
 
+if (isset($_GET['tema'])) {
+    // Cambiar el modo según el parámetro GET y guardar en cookie
+    $nuevo_tema = $_GET['tema'];
+    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
+    // Redirigir para evitar que se vuelva a enviar el formulario
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+// Obtener el tema de la cookie
+$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+?>
+
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -17,7 +33,8 @@
 
 </head>
 
-<body>
+<body class="<?php echo $tema === 'dark' ? 'dark-theme' : ''; ?>">
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
@@ -33,6 +50,11 @@
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <!-- Enlace para cambiar a modo oscuro -->
+                    <a href="?tema=dark" class="btn btn-secondary">Modo Oscuro</a>
+
+                    <!-- Enlace para cambiar a modo claro -->
+                    <a href="?tema=light" class="btn btn-light">Modo Claro</a>
                 </ul>
             </div>
         </div>
@@ -70,9 +92,9 @@
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
                 <!-- DERECHA -->

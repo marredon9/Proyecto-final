@@ -1,3 +1,20 @@
+<?php
+// Iniciar sesión o verificar si hay una cookie de tema
+session_start();
+
+if (isset($_GET['tema'])) {
+    // Cambiar el modo según el parámetro GET y guardar en cookie
+    $nuevo_tema = $_GET['tema'];
+    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
+    // Redirigir para evitar que se vuelva a enviar el formulario
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+// Obtener el tema de la cookie
+$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +34,8 @@
 
 </head>
 
-<body>
+<body class="<?php echo $tema === 'dark' ? 'dark-theme' : ''; ?>">
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
@@ -33,37 +51,45 @@
                     <li class="nav-item"><a class="nav-link" href="motos.php">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="furgonetas.php">Furgonetas</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <!-- Enlace para cambiar a modo oscuro -->
+                    <a href="?tema=dark" class="btn btn-secondary">Modo Oscuro</a>
+
+                    <!-- Enlace para cambiar a modo claro -->
+                    <a href="?tema=light" class="btn btn-light">Modo Claro</a>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-    <!-- Footer -->
-    <footer class="footer-alquiza seccion-azul">
-        <div class="container">
-            <div class="row">
-                <!-- IZQUIERDA: LOGO + MAPA -->
-                <div class="col-lg-5 col-md-6 col-12 footer-map">
-                    <!-- MAPA NO SE TOCA -->
-                    <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
-                </div>
-                <!-- CENTRO -->
-                <div class="col-lg-3 col-md-3 col-6 footer-col">
-                    <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
-                </div>
+       <!-- Footer -->
 
-                <!-- DERECHA -->
-                <div class="col-lg-4 col-md-3 col-6 footer-col">
-                    <h4>INFORMACIÓN LEGAL</h4>
-                    <p><a href="Informacion_legal.php">Información legal</a></p>
-                    <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
+        <footer class="mt-5 text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- IZQUIERDA: LOGO + MAPA -->
+                    <div class="col-lg-5 col-md-6 col-12 footer-map">
+                        <!-- MAPA NO SE TOCA -->
+                        <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
+                    </div>
+
+                    <!-- CENTRO -->
+                    <div class="col-lg-3 col-md-3 col-6 footer-col">
+                        <h4>MÁS INFORMACIÓN</h4>
+                        <p>Preguntas frecuentes</p>
+                        <p>Contacta con nosotros</p>
+                        <p>NUESTRAS SUCURSALES</p>
+                    </div>
+
+                    <!-- DERECHA -->
+                    <div class="col-lg-4 col-md-3 col-6 footer-col">
+                        <h4>INFORMACIÓN LEGAL</h4>
+                        <p><a href="Informacion_legal.php">Información legal</a></p>
+                        <p><a href="">Política de gestión de daños</a></p>
+                        <p><a href="">Política de depósito</a></p>
+                        <p><a href="">Política de Privacidad</a></p>
+                        <p><a href="">Términos y Condiciones</a></p>
+                    </div>
                 </div>
             </div>
         </div>

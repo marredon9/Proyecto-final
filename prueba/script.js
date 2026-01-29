@@ -19,3 +19,4 @@ document.getElementById('reservaForm').addEventListener('submit', function (e) {
       console.error(error);
     });
 });
+
