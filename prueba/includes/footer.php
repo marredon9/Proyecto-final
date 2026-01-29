@@ -25,7 +25,7 @@ function footer()
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
                     <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-                    <p><a href="TerminosCondiciones">Términos y Condiciones</a></p>
+                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
