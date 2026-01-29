@@ -63,7 +63,6 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
 
     <!-- Footer -->
-
     <footer class="mt-5 text-center">
         <div class="container">
             <div class="row">

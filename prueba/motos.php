@@ -63,8 +63,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
 
     <!-- Footer -->
-
-    <footer class="mt-5 text-center">
+    <footer class="footer-alquiza seccion-azul">
         <div class="container">
             <div class="row">
                 <!-- IZQUIERDA: LOGO + MAPA -->
@@ -72,12 +71,11 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                     <!-- MAPA NO SE TOCA -->
                     <div id="map" style="height: 350px; width: 100%; border-radius: 15px; margin: 30px 0;"></div>
                 </div>
-
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
                     <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
-                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="contacto.php">Contacta con nosotros</a></p>
                     <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
@@ -92,11 +90,16 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 </div>
             </div>
         </div>
-        </div>
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
     </footer>
 

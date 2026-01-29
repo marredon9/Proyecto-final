@@ -74,9 +74,9 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
                 <!-- DERECHA -->
@@ -84,7 +84,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                     <h4>INFORMACIÓN LEGAL</h4>
                     <p><a href="Informacion_legal.php">Información legal</a></p>
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
-                    <p><a href="PoliticasDeposito.php">Política de gestión de daños</a></p>
+                    <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
                     <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
@@ -93,7 +93,13 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
+            <span class="footer-social">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+            </span>
         </div>
     </footer>
 
