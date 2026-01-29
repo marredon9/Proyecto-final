@@ -1,0 +1,78 @@
+@import 'variables';
+
+.faq-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: $faq-background;
+  backdrop-filter: blur(10px);
+  color: $footer-text-color;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  .faq-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: $color-white;
+  }
+
+  .faq-list {
+    list-style: none;
+    padding: 0;
+
+    .faq-item {
+      margin-bottom: 0.8rem;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid $faq-border-color;
+
+      input[type='checkbox'] {
+        display: none;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.9rem 1.2rem;
+        cursor: pointer;
+        font-size: 0.98rem;
+        transition: background-color 0.3s;
+        color: #fff;
+
+        &:hover {
+          background-color: rgba(255,255,255,0.2);
+        }
+
+        &::after {
+          content: '+';
+          font-weight: bold;
+          transition: transform 0.3s;
+          margin-left: 10px;
+        }
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.2rem;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #fff;
+      }
+
+      input[type='checkbox']:checked + .faq-question + .faq-answer {
+        max-height: $faq-answer-max-height;
+        padding: 0.9rem 1.2rem;
+      }
+
+      input[type='checkbox']:checked + .faq-question::after {
+        content: '−';
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
