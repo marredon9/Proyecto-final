@@ -158,10 +158,12 @@ for ($i = 0; $i < sizeof($listaModos); $i++) {
             <td>Kilometraje: </td>
             <td><input type="number" name="km" required value="<?=$km?>"></td>
         </tr>
+        <!--
         <tr>
             <td>Capacidad: </td>
             <td><input type="number" name="capacidad" required value="<?=$capacidad?>"></td>
         </tr>
+        -->
         <tr>
             <td>Emisiones: </td>
             <td>

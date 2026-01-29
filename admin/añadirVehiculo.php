@@ -52,10 +52,12 @@ if (!$sesion->esAdmin) {
                 </select>
             </td>
         </tr>
+        <!--
         <tr>
             <td>Kilometraje: </td>
             <td><input type="number" name="km" required></td>
         </tr>
+        -->
         <tr>
             <td>Capacidad: </td>
             <td><input type="number" name="capacidad" required></td>
