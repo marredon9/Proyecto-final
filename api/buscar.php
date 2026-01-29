@@ -77,8 +77,13 @@ try {
     $stmt->execute();
     $res = $stmt->get_result();
 
+    $jsonArray = [];
     while ($r = $res->fetch_assoc()) {
-
+        if ($json == "true") {
+            array_push($jsonArray, $r);
+        } else {
+            
+        }
     }
 } catch (mysqli_sql_exception $e) {
 
