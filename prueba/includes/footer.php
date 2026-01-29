@@ -25,14 +25,14 @@ function footer()
                     <p><a href="PoliticasDaños.php">Política de gestión de daños</a></p>
                     <p><a href="PoliticasDeposito.php">Política de depósito</a></p>
                     <p><a href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-                    <p><a href="TerminosCondiciones">Términos y Condiciones</a></p>
+                    <p><a href="TerminosCondiciones.php">Términos y Condiciones</a></p>
                 </div>
             </div>
         </div>
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="Sitemap.php">Sites maps</a></span>
         </div>
     </footer>
 

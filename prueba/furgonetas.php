@@ -45,7 +45,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     <!-- Footer -->
 
     <?= footer() ?>
-    <!-- Scripts -->
+    
 </body>
 
 </html>
