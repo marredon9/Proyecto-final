@@ -1,20 +1,3 @@
-<?php
-// Iniciar sesión o verificar si hay una cookie de tema
-session_start();
-
-if (isset($_GET['tema'])) {
-    // Cambiar el modo según el parámetro GET y guardar en cookie
-    $nuevo_tema = $_GET['tema'];
-    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
-    // Redirigir para evitar que se vuelva a enviar el formulario
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// Obtener el tema de la cookie
-$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -67,23 +50,12 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div id="contact-card">
-            <h1 class="text-center mb-3"><b>Terminos Y Condiciones</b></h1>
-            <p>
-                Al realizar una reserva, el cliente acepta los presentes términos y condiciones establecidos por la empresa.
-            </p>
+            <h1 class="text-center mb-3"><b>Mapa del Sitio</b></h1>
+            <p>El presente mapa del sitio web <strong>Alquiza</strong> tiene como finalidad facilitar a los usuarios el acceso a los contenidos y secciones disponibles, permitiendo una navegación más clara y organizada dentro de la página.</p>
 
-            <p>
-                El vehículo deberá ser devuelto en la fecha y condiciones acordadas. Cargos adicionales podrán aplicarse en caso
-                de retrasos, daños, multas o incumplimiento del contrato.
-            </p>
+            <p>A través del sitemap, el usuario puede localizar de manera rápida las principales páginas, servicios e información ofrecida en este sitio web, mejorando así la experiencia de navegación y la accesibilidad.</p>
 
-            <p>
-                El uso del vehículo está limitado al conductor autorizado y para fines legales únicamente.
-            </p>
-
-            <p>
-                La empresa se reserva el derecho de modificar estos términos sin previo aviso.
-            </p>
+            <p>Alquiza se reserva el derecho de actualizar o modificar la estructura y contenidos del sitio web en cualquier momento. Para cualquier consulta, puede contactar a través del correo electrónico <strong>info@alquizaibiza.com</strong>.</p>
         </div>
     </section>
 
@@ -99,9 +71,9 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="NuestrasSucursales.php">Nuestras Sucursales</a></p>
                 </div>
 
                 <!-- DERECHA -->
@@ -118,7 +90,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>

@@ -68,22 +68,11 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div id="contact-card">
             <h1 class="text-center mb-3"><b>Terminos Y Condiciones</b></h1>
-            <p>
-                Al realizar una reserva, el cliente acepta los presentes términos y condiciones establecidos por la empresa.
-            </p>
+            <p>En el sitio web <strong>Alquiza</strong> utilizamos cookies propias y de terceros con el objetivo de garantizar el correcto funcionamiento de la página.</p>
 
-            <p>
-                El vehículo deberá ser devuelto en la fecha y condiciones acordadas. Cargos adicionales podrán aplicarse en caso
-                de retrasos, daños, multas o incumplimiento del contrato.
-            </p>
+            <p>Al acceder y navegar por este sitio web, el usuario acepta el uso de cookies conforme a las condiciones establecidas en esta Política. El usuario puede permitir, bloquear o eliminar las cookies instaladas en su dispositivo mediante la configuración del navegador, aunque la desactivación de cookies puede afectar al correcto funcionamiento de nuestra web.</p>
 
-            <p>
-                El uso del vehículo está limitado al conductor autorizado y para fines legales únicamente.
-            </p>
-
-            <p>
-                La empresa se reserva el derecho de modificar estos términos sin previo aviso.
-            </p>
+            <p>Alquiza se reserva el derecho de modificar esta Política de Cookies en cualquier momento para adaptarla a cambios legales o técnicos. Para cualquier consulta relacionada con el uso de cookies en este sitio web, puede contactar a través del correo electrónico <strong>info@alquizaibiza.com</strong>.</p>
         </div>
     </section>
 
@@ -118,7 +107,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>

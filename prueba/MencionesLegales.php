@@ -1,20 +1,3 @@
-<?php
-// Iniciar sesión o verificar si hay una cookie de tema
-session_start();
-
-if (isset($_GET['tema'])) {
-    // Cambiar el modo según el parámetro GET y guardar en cookie
-    $nuevo_tema = $_GET['tema'];
-    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
-    // Redirigir para evitar que se vuelva a enviar el formulario
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// Obtener el tema de la cookie
-$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -67,25 +50,15 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         </video>
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div id="contact-card">
-            <h1 class="text-center mb-3"><b>Terminos Y Condiciones</b></h1>
-            <p>
-                Al realizar una reserva, el cliente acepta los presentes términos y condiciones establecidos por la empresa.
-            </p>
+            <h1 class="text-center mb-3"><b>Menciones Legales</b></h1>
+            <p>En cumplimiento con la normativa vigente, el presente sitio web <strong>Alquiza</strong> informa a los usuarios que el acceso y uso de esta página implica la aceptación de las condiciones establecidas en estas menciones legales, así como el compromiso de hacer un uso adecuado de los contenidos y servicios ofrecidos.</p>
 
-            <p>
-                El vehículo deberá ser devuelto en la fecha y condiciones acordadas. Cargos adicionales podrán aplicarse en caso
-                de retrasos, daños, multas o incumplimiento del contrato.
-            </p>
+<p>El titular de este sitio web se reserva el derecho de modificar en cualquier momento la información, contenidos o configuración del sitio, sin necesidad de previo aviso, con el fin de adaptarlo a cambios legales, técnicos o de funcionamiento.</p>
 
-            <p>
-                El uso del vehículo está limitado al conductor autorizado y para fines legales únicamente.
-            </p>
+<p>Para cualquier consulta relacionada con este aviso legal o con el uso del sitio web, puede ponerse en contacto a través del correo electrónico <strong>info@alquizaibiza.com</strong>.</p>
 
-            <p>
-                La empresa se reserva el derecho de modificar estos términos sin previo aviso.
-            </p>
         </div>
-    </section>
+</section>
 
     <!-- Footer -->
     <footer class="footer-alquiza seccion-azul">
@@ -118,7 +91,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- BARRA INFERIOR -->
         <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
             <span>© Alquiza 2026</span>
-            <span>Política de cookies | Menciones legales | Sites maps</span>
+            <span><a href="PoliticaCookies.php">Política de cookies</a> | <a href="MencionesLegales.php">Menciones legales</a> | <a href="SitesMaps.php">Sites maps</a></span>
             <span class="footer-social">
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-facebook"></i>
