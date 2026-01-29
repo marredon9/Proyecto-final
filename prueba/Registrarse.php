@@ -39,7 +39,7 @@ session_start();
     <!-- Navbar -->
     <?= navbar() ?>
 
-    <section class="hero-section mb-5 position-relative min-vh-100">
+    <section class="hero-section position-relative min-vh-100">
         <video class="background-video" autoplay muted loop>
             <source src="img/olas.mp4" type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.

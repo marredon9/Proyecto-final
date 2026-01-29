@@ -36,7 +36,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
 </head>
 
-<body class="<?php echo $tema === 'dark' ? 'dark-theme' : ''; ?>">
+<body>
 
     <!-- Navbar -->
     <?= navbar() ?>

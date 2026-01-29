@@ -41,7 +41,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     <?= navbar() ?>
 
     <!-- Banner destacado con video -->
-    <section class="hero-section mb-5 position-relative min-vh-100">
+    <section class="hero-section position-relative min-vh-100">
 
         <video class="background-video" autoplay muted loop playsinline>
             <source src="img/olas.mp4" type="video/mp4" />
