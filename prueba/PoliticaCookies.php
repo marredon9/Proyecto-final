@@ -1,20 +1,3 @@
-<?php
-// Iniciar sesión o verificar si hay una cookie de tema
-session_start();
-
-if (isset($_GET['tema'])) {
-    // Cambiar el modo según el parámetro GET y guardar en cookie
-    $nuevo_tema = $_GET['tema'];
-    setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
-    // Redirigir para evitar que se vuelva a enviar el formulario
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// Obtener el tema de la cookie
-$tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -88,9 +71,9 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 <!-- CENTRO -->
                 <div class="col-lg-3 col-md-3 col-6 footer-col">
                     <h4>MÁS INFORMACIÓN</h4>
-                    <p><a>Preguntas frecuentes</a></p>
-                    <p><a>Contacta con nosotros</a></p>
-                    <p><a>NUESTRAS SUCURSALES</a></p>
+                    <p><a href="PreguntasFrecuentes.php">Preguntas frecuentes</a></p>
+                    <p><a href="Contacto.php">Contacta con nosotros</a></p>
+                    <p><a href="NuestrasSucursales.php">Nuestras sucursales</a></p>
                 </div>
 
                 <!-- DERECHA -->
