@@ -183,7 +183,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
             <div class="row mt-3 align-items-center">
                 <!-- Columna de la imagen -->
                 <div class="col-12 col-md-6 slide-in-left mb-3 mb-md-0">
-                    <img src="../img/escaparate.png" width="auto" height="300px" class="img-fluid img-borde"
+                    <img src="img/escaparate.png" width="auto" height="300px" class="img-fluid img-borde"
                         alt="Escaparate">
                 </div>
                 <!-- Columna del texto -->
