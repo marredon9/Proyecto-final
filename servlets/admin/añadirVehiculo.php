@@ -19,16 +19,17 @@ if (!$sesion->esAdmin) {
 /* d */$capacidad = intval($_POST["capacidad"] ?? 0);
 /* s */$emisiones = $_POST["emisiones"] ?? "";
 /* d */$sucursal = intval($_POST["sucursal"] ?? 0);
+/* d */$precioDia = intval($_POST["precioDia"] ?? 0);
 
 //hacer insert en base de datos
 try {
     $query = "
-INSERT INTO vehiculo (matricula, marca, modelo, tipo, asientos, puertas, maletero, modo, km, capacidad, emisiones, id_sucursal)
+INSERT INTO vehiculo (matricula, marca, modelo, tipo, asientos, puertas, maletero, modo, km, capacidad, emisiones, id_sucursal, precioDia)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     ";
     $stmt = $cn->prepare($query);
-    $stmt->bind_param("ssssdddsddsd",
-    $matricula, $marca, $modelo, $tipo, $asientos, $puertas, $maletero, $modo, $km, $capacidad, $emisiones, $sucursal
+    $stmt->bind_param("ssssdddsddsdd",
+    $matricula, $marca, $modelo, $tipo, $asientos, $puertas, $maletero, $modo, $km, $capacidad, $emisiones, $sucursal, $precioDia
     );
     $stmt->execute();
     redirect("admin/vehiculos.php");

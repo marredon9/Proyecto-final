@@ -25,11 +25,25 @@ if (!$sesion->esAdmin) {
             <td>Tipo: </td>
             <td>
                 <select name="tipo">
-                    <option value="coche">Coche</option>
-                    <option value="moto">Moto</option>
-                    <option value="furgoneta">Furgoneta</option>
+                    <!--
+                    <option value="COCHE">Coche</option>
+                    <option value="MOTO">Moto</option>
+                    <option value="FURGONETA">Furgoneta</option>
+                    -->
+                    <?php
+for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
+    $v = DB_TIPOS[$i];
+    ?>
+                    <option value="<?=$v?>"><?=$v?></option>
+    <?php
+}
+                    ?>
                 </select>
             </td>
+        </tr>
+        <tr>
+            <td>Precio por dia: </td>
+            <td><input type="text" name="precioDia"></td>
         </tr>
         <tr>
             <td>Asientos: </td>
@@ -47,8 +61,18 @@ if (!$sesion->esAdmin) {
             <td>Modo: </td>
             <td>
                 <select name="modo">
-                    <option value="automatico">Automático</option>
-                    <option value="manual">Manual</option>
+                    <!--
+                    <option value="AUTOMATICO">Automático</option>
+                    <option value="MANUAL">Manual</option>
+                    -->
+                    <?php
+for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
+    $v = DB_MODOS[$i];
+    ?>
+                    <option value="<?=$v?>"><?=$v?></option>
+    <?php
+}
+                    ?>
                 </select>
             </td>
         </tr>
@@ -66,11 +90,21 @@ if (!$sesion->esAdmin) {
             <td>Emisiones: </td>
             <td>
                 <select name="emisiones">
-                    <option value="ninguno">Ninguno</option>
+                    <!--
+                    <option value="NINGUNO">Ninguno</option>
                     <option value="0">0</option>
-                    <option value="eco">ECO</option>
-                    <option value="c">C</option>
-                    <option value="b">B</option>
+                    <option value="ECO">ECO</option>
+                    <option value="C">C</option>
+                    <option value="B">B</option>
+                    -->
+                    <?php
+for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
+    $v = DB_TIPOS[$i];
+    ?>
+                    <option value="<?=$v?>"><?=$v?></option>
+    <?php
+}
+                    ?>
                 </select>
             </td>
         </tr>

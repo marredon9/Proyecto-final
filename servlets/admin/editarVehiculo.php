@@ -20,6 +20,7 @@ if (!$sesion->esAdmin) {
 /* s */$emisiones = $_POST["emisiones"] ?? "";
 /* d */$sucursal = intval($_POST["sucursal"] ?? 0);
 /* d */$id = intval($_POST["id"] ?? 0);
+/* d */$precioDia = intval($_POST["precioDia"] ?? 0);
 
 //hacer update en base de datos
 try {
@@ -29,11 +30,11 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     ";
     $query = "
 UPDATE vehiculo SET matricula = ?, marca = ?, modelo = ?, tipo = ?, asientos = ?, puertas = ?, maletero = ?, modo = ?, km = ?,
-capacidad = ?, emisiones = ?, id_sucursal = ? WHERE id = ?;
+capacidad = ?, emisiones = ?, id_sucursal = ?, precioDia = ? WHERE id = ?;
     ";
     $stmt = $cn->prepare($query);
-    $stmt->bind_param("ssssdddsddsdd",
-    $matricula, $marca, $modelo, $tipo, $asientos, $puertas, $maletero, $modo, $km, $capacidad, $emisiones, $sucursal, $id
+    $stmt->bind_param("ssssdddsddsddd",
+    $matricula, $marca, $modelo, $tipo, $asientos, $puertas, $maletero, $modo, $km, $capacidad, $emisiones, $sucursal, $precioDia, $id
     );
     $stmt->execute();
     redirect("admin/verVehiculo.php?id=" . $id);

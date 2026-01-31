@@ -35,7 +35,8 @@ CREATE TABLE vehiculo (
     emisiones VARCHAR(3), #pegatina
     id_sucursal INT NOT NULL,
     CONSTRAINT id_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursal(id),
-    tipo VARCHAR(8)
+    tipo VARCHAR(8),
+    precioDia INT #AÑADIR EN BASE DE DATOS DE CLASE
 );
 
 CREATE TABLE alquiler (
@@ -52,6 +53,7 @@ CREATE TABLE alquiler (
     CONSTRAINT id_suc_dev FOREIGN KEY (id_suc_dev) REFERENCES sucursal(id),
     devuelto BOOLEAN NOT NULL,
     desde DATE,
-    hasta DATE
+    hasta DATE,
+    precio INT #AÑADIR EN BASE DE DATOS EN CLASE
 );
 */

@@ -38,13 +38,14 @@ try {
     redirect("vehiculos.php");
 }
 
+/*
 //obtener datos de indices para el select de emisiones
 $listaEmisiones = [
-    ["ninguno", "Ninguno"],
+    ["NINGUNO", "Ninguno"],
     ["0", "0"],
-    ["eco", "ECO"],
-    ["c", "C"],
-    ["b", "B"]
+    ["ECO", "ECO"],
+    ["C", "C"],
+    ["B", "B"]
 ];
 
 $indiceEmisiones = 0;
@@ -58,9 +59,9 @@ for ($i = 0; $i < sizeof($listaEmisiones); $i++) {
 
 //obtener datos de indices para la lista de tipos de vehiculos
 $listaTipos = [
-    ["coche", "Coche"],
-    ["moto", "Moto"],
-    ["furgoneta", "Furgoneta"]
+    ["COCHE", "Coche"],
+    ["MOTO", "Moto"],
+    ["FURGONETA", "Furgoneta"]
 ];
 
 $indiceTipos = 0;
@@ -73,8 +74,8 @@ for ($i = 0; $i < sizeof($listaTipos); $i++) {
 
 //obtener datos de modos para la lista de modos
 $listaModos = [
-    ["automatico", "Automático"],
-    ["manual", "Manual"]
+    ["AUTOMATICO", "Automático"],
+    ["MANUAL", "Manual"]
 ];
 
 $indiceModos = 0;
@@ -84,6 +85,8 @@ for ($i = 0; $i < sizeof($listaModos); $i++) {
         break;
     }
 }
+    
+*/
 ?>
 <h3><a href="vehiculos.php">Atrás</a></h3>
 <form action="<?=srv("admin/editarVehiculo")?>" method="post">
@@ -106,11 +109,20 @@ for ($i = 0; $i < sizeof($listaModos); $i++) {
             <td>
                 <select name="tipo">
                     <?php
+                    /*
 for ($i = 0; $i < sizeof($listaTipos); $i++) {
     ?>
                     <option value="<?=$listaTipos[$i][0]?>" <?=($i == $indiceTipos) ? 'selected="selected"' : ""?>>
                         <?=$listaTipos[$i][1]?>
                     </option>
+    <?php
+}
+*/
+//$lista = cambiarPrioridad(DB_TIPOS, $tipo);
+for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
+    $v = DB_TIPOS[$i];
+    ?>
+                    <option value="<?=$v?>" <?=($v == $tipo) ? 'selected="selected"' : ""?>><?=$v?></option>
     <?php
 }
                     ?>
@@ -139,11 +151,20 @@ for ($i = 0; $i < sizeof($listaTipos); $i++) {
             <td>
                 <select name="modo">
                     <?php
+/*
 for ($i = 0; $i < sizeof($listaModos); $i++) {
     ?>
                     <option value="<?=$listaModos[$i][0]?>" <?=($i == $indiceModos) ? 'selected="selected"' : ""?>>
                         <?=$listaModos[$i][1]?>
                     </option>
+    <?php
+}
+*/
+//$lista = cambiarPrioridad(DB_MODOS, $modo);
+for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
+    $v = DB_MODOS[$i];
+    ?>
+                    <option value="<?=$v?>" <?=($v == $modo) ? 'selected="selected"' : ""?>><?=$v?></option>
     <?php
 }
                     ?>
@@ -169,11 +190,20 @@ for ($i = 0; $i < sizeof($listaModos); $i++) {
             <td>
                 <select name="emisiones">
                     <?php
+/*
 for ($i = 0; $i < sizeof($listaEmisiones); $i++) {
     ?>
                     <option value="<?=$listaEmisiones[$i][0]?>" <?=($i == $indiceEmisiones) ? 'selected="selected"' : ""?>>
                         <?=$listaEmisiones[$i][1]?>
                     </option>
+    <?php
+}
+*/
+//$lista = cambiarPrioridad(DB_EMISIONES, $emisiones);
+for ($i = 0; $i < sizeof(DB_EMISIONES); $i++) {
+    $v = DB_EMISIONES[$i];
+    ?>
+                    <option value="<?=$v?>" <?=($v == $emisiones) ? 'selected="selected"' : ""?>><?=$v?></option>
     <?php
 }
                     ?>
