@@ -1,7 +1,7 @@
 <?php
+// Iniciar sesión o verificar si hay una cookie de tema
 include "includes/footer.php";
 include "includes/navbar.php";
-// Iniciar sesión o verificar si hay una cookie de tema
 session_start();
 
 if (isset($_GET['tema'])) {
@@ -9,6 +9,10 @@ if (isset($_GET['tema'])) {
     $nuevo_tema = $_GET['tema'];
     setcookie('theme', $nuevo_tema, time() + (30 * 24 * 60 * 60), "/");
     // Redirigir para evitar que se vuelva a enviar el formulario
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}if(!isset($_COOKIE['theme'])){
+    setcookie('theme', 'light', time() + (30 * 24 * 60 * 60), "/");
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }

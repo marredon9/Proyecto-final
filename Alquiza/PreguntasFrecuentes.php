@@ -11,12 +11,15 @@ if (isset($_GET['tema'])) {
     // Redirigir para evitar que se vuelva a enviar el formulario
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
+}if(!isset($_COOKIE['theme'])){
+    setcookie('theme', 'light', time() + (30 * 24 * 60 * 60), "/");
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
 }
 
 // Obtener el tema de la cookie
 $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
