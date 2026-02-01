@@ -50,6 +50,14 @@ $sesion = obtenerSesion();
             <td>Sucursal: </td>
             <td><input type="text" id="id_sucursal"></td>
         </tr>
+        <tr>
+            <td>Precio Mínimo: </td>
+            <td><input type="text" id="preciomin"></td>
+        </tr>
+        <tr>
+            <td>Precio Máximo: </td>
+            <td><input type="text" id="preciomax"></td>
+        </tr>
     </table>
 </fieldset>
 <div id="resultados"></div>
@@ -66,6 +74,8 @@ let maletero = document.getElementById("maletero");
 let modo = document.getElementById("maletero");
 let emisiones = document.getElementById("emisiones");
 let id_sucursal = document.getElementById("id_sucursal");
+let preciomin = document.getElementById("preciomin");
+let preciomax = document.getElementById("preciomax");
 
 let resultados = document.getElementById("resultados");
 function buscar() {
@@ -93,6 +103,8 @@ function buscar() {
     "&modo=" + encodeURI(modo.value) + 
     "&emisiones=" + encodeURI(emisiones.value) + 
     "&id_sucursal=" + encodeURI(id_sucursal.value) + 
+    "&preciomin=" + encodeURI(preciomin.value) + 
+    "&preciomax=" + encodeURI(preciomax.value) + 
     "&json=false";
     let url = "api/buscar.php?" + params;
     fetch(url)
@@ -104,4 +116,5 @@ function buscar() {
         resultados.innerHTML = error;
     });
 }
+buscar();
 </script>

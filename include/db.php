@@ -34,13 +34,4 @@ const DB_TIPOS = [
     "FURGONETA"
 ];
 
-function cambiarPrioridad($array, $valorPrimero) {
-    $nuevo = [$valorPrimero];
-    for ($i = 0; $i < sizeof($array); $i++) {
-        if ($array[$i] == $valorPrimero) continue;
-        array_push($nuevo, $array[$i]);
-    }
-    return $nuevo;
-}
-
 ?>

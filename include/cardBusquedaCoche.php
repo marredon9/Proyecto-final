@@ -1,7 +1,8 @@
 <?php
 
-function cardBusquedaCoche($result) {
+function cardBusquedaCoche($result, $desde, $hasta) {
     $r = $result;
+    //var_dump($r);
     $id = $r["id"];
     $marca = $r["marca"];
     $modelo = $r["modelo"];
@@ -14,14 +15,14 @@ function cardBusquedaCoche($result) {
     $sucursal = $r["sucursal"];
     $precioDia = $r["precioDia"];
     $precioTotal = $r["preciototal"];
-    $dias = $r["dias"];
+    $diasRecuento = $r["diasRecuento"];
     ?>
 <!-- 
 Esta version del card es solo para comprobar que todo funciona bien.
 Luego se tiene que cambiar por otra que implemente los estilos
 de la página de la rama proto. 
 -->
-<fieldset disabled>
+<fieldset>
     <legend><?=$marca?> <?=$modelo?></legend>
     <table>
         <tr>
@@ -54,9 +55,15 @@ de la página de la rama proto.
         </tr>
         <tr>
             <td>Precio: </td>
-            <td><?=$precioTotal?> (<?=$precioDia?>€ x <?=$dias?>dias)</td>
+            <td><?=$precioTotal?> (<?=$precioDia?>€ x <?=$diasRecuento?> dias)</td>
         </tr>
     </table>
+    <form action="alquilarCoche.php" method="get">
+        <input type="hidden" name="id" value="<?=$id?>">
+        <input type="hidden" name="desde" value="<?=$desde?>">
+        <input type="hidden" name="hasta" value="<?=$hasta?>">
+        <input type="submit" value="Alquilar Coche">
+    </form>
 </fieldset>
     <?php
 }

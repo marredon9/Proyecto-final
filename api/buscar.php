@@ -32,6 +32,8 @@ $id_sucursal = $_GET["id_sucursal"] ?? "%";
 $desde = $_GET["desde"] ?? "%";
 $hasta = $_GET["hasta"] ?? "%";
 $json = $_GET["json"] ?? "true";
+$preciomin = intval($_GET["preciomin"] ?? 0);
+$preciomax = intval($_GET["preciomax"] ?? 9999999);
 
 if ($desde == "") $desde = "%";
 if ($hasta == "") $hasta = "%";
@@ -44,6 +46,8 @@ if ($maletero == "") $maletero = "%";
 if ($modo == "") $modo = "%";
 if ($emisiones == "") $emisiones = "%";
 if ($id_sucursal == "") $id_sucursal = "%";
+//if ($preciomin == "") $preciomin = "%";
+//if ($preciomax == "") $preciomax = "%";
 
 //fechas 1 y 3 -> desde
 //fechas 2 y 4 -> hasta
@@ -89,7 +93,7 @@ SELECT sub.*, s.nombre AS sucursal FROM (
 	SELECT 
 		v.*,
 		COUNT(a.id) AS total_alquileres,
-        ABS(DATEDIFF(?, ?)) AS dias,
+        ABS(DATEDIFF(?, ?) - 1  ) AS diasRecuento,
         ABS(DATEDIFF(?, ?) - 1) * v.precioDia AS preciototal
 	FROM vehiculo v
 	LEFT JOIN alquiler a
@@ -107,7 +111,9 @@ AND sub.puertas LIKE ?
 AND sub.maletero LIKE ?
 AND sub.modo LIKE ?
 AND sub.emisiones LIKE ?
-AND sub.id_sucursal LIKE ?;";
+AND sub.id_sucursal LIKE ?
+AND sub.precioTotal <= ?
+AND sub.precioTotal >= ?;";
 
 //echo $tipo;
 
@@ -122,24 +128,30 @@ echo "id_sucursal: " . $id_sucursal . "<br>";
 echo "desde: " . $desde . "<br>";
 echo "hasta: " . $hasta . "<br>";
 echo "json: " . $json . "<br>";
+echo "preciomin: " . $preciomin . "<br>";
+echo "preciomax: " . $preciomax . "<br>";
 
 try {
     //echo "consultando...<br>";
     $stmt = $cn->prepare($query);
-    $stmt->bind_param("sssssssssssssssss", $desde, $hasta, $desde, $hasta, $desde, $desde, $hasta, $hasta,
-    $tipo, $marca, $modelo, $asientos, $puertas, $maletero, $modo, $emisiones, $id_sucursal
+    $stmt->bind_param("sssssssssssssssssdd", $desde, $hasta, $desde, $hasta, $desde, $desde, $hasta, $hasta,
+    $tipo, $marca, $modelo, $asientos, $puertas, $maletero, $modo, $emisiones, $id_sucursal, $preciomax, $preciomin
     );
     $stmt->execute();
     $res = $stmt->get_result();
 
-    var_dump($res);
+    //var_dump($res);
     $jsonArray = [];
     while ($r = $res->fetch_assoc()) {
+        //var_dump($r["diasRecuento"]);
         if ($json == "true") {
             array_push($jsonArray, $r);
         } else {
-            cardBusquedaCoche($r);
+            cardBusquedaCoche($r, $desde, $hasta);
         }
+    }
+    if ($json == "true") {
+        echo json_encode($jsonArray);
     }
     //echo "<br>consulta terminada<br>";
 } catch (mysqli_sql_exception $e) {

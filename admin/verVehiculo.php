@@ -34,6 +34,7 @@ try {
     $emisiones = $r["emisiones"];
     $id_sucursal = $r["id_sucursal"];
     $tipo = $r["tipo"];
+    $precioDia = $r["precioDia"];
 } catch (mysqli_sql_exception $e) {
     redirect("vehiculos.php");
 }
@@ -245,6 +246,10 @@ try {
 }
 
                     ?>
+                    <tr>
+                        <td>Precio por día: </td>
+                        <td><input type="number" name="precioDia" required value="<?=$precioDia?>"></td>
+                    </tr>
                 </select>
             </td>
         </tr>

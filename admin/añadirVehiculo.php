@@ -131,6 +131,10 @@ try {
 }
 
                     ?>
+                    <tr>
+                        <td>Precio por dia: </td>
+                        <td><input type="number" name="precioDia" required></td>
+                    </tr>
                 </select>
             </td>
         </tr>

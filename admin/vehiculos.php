@@ -46,6 +46,7 @@ sucursal (nombre mediante inner join)
         <td><b>Capacidad</b></td>
         <td><b>Emisiones</b></td>
         <td><b>Sucursal</b></td>
+        <td><b>Precio por dia</b></td>
     </tr>
     <?php
 
@@ -68,6 +69,7 @@ try {
         $emisiones = $r["emisiones"];
         $sucursal = $r["sucursal"];
         $tipo = $r["tipo"];
+        $precioDia = $r["precioDia"];
         ?>
     <tr>
         <td><a href="verVehiculo.php?id=<?=$id?>">Ver</a></td>
@@ -84,6 +86,7 @@ try {
         <td><?=$capacidad?></td>
         <td><?=$emisiones?></td>
         <td><?=$sucursal?></td>
+        <td><?=$precioDia?></td>
     </tr>
     <?php
     }
