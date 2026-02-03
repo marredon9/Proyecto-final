@@ -1,7 +1,5 @@
-# Proyecto final grupal de Desarrollo en Aplicaciones  Web
 # Alquiza - Plataforma de Alquiler de Vehículos
 
-## Oier Bárcena, Illart Beain, Unax Vizcaíno, Marina Redondo
 **Proyecto Final - Desarrollo de Aplicaciones Web**
 
 # Prototipo de la Página Web del Proyecto
@@ -10,10 +8,7 @@
 
 **Alquiza** es una plataforma web completa para la gestión y alquiler de vehículos (coches, motos y furgonetas). El sistema permite a los usuarios registrarse, buscar vehículos disponibles, realizar reservas y gestionar su perfil facilmente. Los administradores tienen acceso a un panel de control para la gestion de vehiculos, usuarios, sucursales y alquileres.
 
-### En esta sección se encuentra el prototipo inicial de la página web del proyecto. Su objetivo es servir como base para definir la estructura, el diseño y la experiencia de usuario que tendrá la versión final. Aquí exploramos ideas, probamos componentes y validamos el flujo general antes de avanzar al desarrollo completo.
-## Requisitos
-
-#### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajustes.
+## Tecnologías Utilizadas
     Desarrollo localmente:
     -Xampp
     -PHP
@@ -21,10 +16,8 @@
     -JavaScript
     -MySQL
     -GitHub
-
 ---
 
-#### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajustes.
     Para desplegarlo:
     -Debian Nginx
     -Permisos de todo
@@ -58,36 +51,16 @@
    sudo apt update && sudo apt upgrade -y
    ```
 
-2. **Instalar LAMP Stack**
-   ```bash
-   sudo apt install apache2 mariadb-server php libapache2-mod-php php-mysql php-mbstring php-curl php-gd php-xml -y
-   ```
+2. **Configurar Apache**
 
-3. **Configurar Apache**
-   ```bash
-   sudo a2enmod rewrite
-   sudo systemctl restart apache2
-   ```
-
-4. **Clonar el repositorio**
+3. **Clonar el repositorio**
    ```bash
    cd /var/www/html
    sudo git clone <URL_DEL_REPOSITORIO> alquiza
    sudo chown -R www-data:www-data alquiza
    ```
 
-5. **Configurar MySQL**
-   ```bash
-   sudo mysql_secure_installation
-   sudo mysql -u root -p < /var/www/html/alquiza/schema.sql
-   sudo mysql -u root -p < /var/www/html/alquiza/seed.sql
-   ```
-
-6. **Configurar SSL con Let's Encrypt**
-   ```bash
-   sudo apt install certbot python3-certbot-apache -y
-   sudo certbot --apache -d tudominio.com
-   ```
+4. **Configurar MySQL**
 
 ---
 
@@ -157,67 +130,39 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
 ### Modo Producción (Debian)
 
 1. Verificar que Apache y MySQL estén ejecutándose:
-   ```bash
-   sudo systemctl status apache2
-   sudo systemctl status mariadb
+   ```
+   sudo systemctl status apache
+   sudo systemctl status MySQL
    ```
 
-2. Acceder vía HTTPS: https://tudominio.com
+2. Acceder vía HTTPS: https://alquiza.com
 
-### Comandos Útiles
 
-```bash
-# Reiniciar Apache
-sudo systemctl restart apache2
-
-# Ver logs de Apache
-sudo tail -f /var/log/apache2/error.log
-
-# Ver logs de MySQL
-sudo tail -f /var/log/mysql/error.log
-
-# Verificar estado de servicios
-sudo systemctl status apache2 mysql
-```
-
+3. Iniciar toda la pagina
 ---
 
 ## Usuarios de Prueba
 
 ### Cuenta de Administrador
 
-- **Email:** ".........."
+- **Email:** "ejemplo@hotmail.com"
 - **Contraseña:** "......."
 - **Rol:** Administrador completo
 - **Permisos:** 
   - Gestión de usuarios
   - Gestión de vehículos
-  - Gestión de sucursales
   - Gestión de alquileres
-  - Acceso al dashboard de administración
+  - Acceso al administración
 
 ### Cuentas de Usuario Regular
 
-#### Usuario 1
-- **Email:** "........."
-- **Contraseña:** "..........."
-- **Rol:** Usuario regular
+#### Usuario
+- **Email:** El gmail que inicies sesion
+- **Contraseña:** contraseña que tu quieras
+- **Rol:** Usuario normal
 - **Permisos:**
   - Búsqueda y reserva de vehículos
-  - Gestión de perfil personal
-  - Historial de alquileres
-
-#### Usuario 2
-- **Email:** "........."
-- **Contraseña:** "............."
-- **Rol:** Usuario regular
-- **Permisos:** Mismos que Usuario 1
-
-#### Usuario 3 (Cuenta desactivada)
-- **Email:** "..........."
-- **Estado:** "........"
-- **Propósito:** Probar funcionalidad de desactivación de cuentas
-
+  - Gestión de perfil personal de usuario
 
 ---
 
@@ -436,55 +381,6 @@ Almacena información de los alquileres realizados.
 - **`schema.sql`**: Contiene la estructura completa de la base de datos (CREATE TABLE)
 - **`seed.sql`**: Contiene datos de prueba (INSERT INTO)
 
-### Importar Base de Datos
-
-```bash
-# Método 1: phpMyAdmin (desarrollo)
-# Abrir phpMyAdmin → Importar → Seleccionar schema.sql y seed.sql
-
-# Método 2: Línea de comandos (producción)
-mysql -u root -p alquiza < schema.sql
-mysql -u root -p alquiza < seed.sql
-```
-
----
-
-## 📚 Documentación Adicional
-
-La carpeta [`docs/`](docs/) contiene documentación técnica detallada:
-
-### Manuales Disponibles
-
-1. **[Manual de Instalación en Debian](docs/manual-instalacion-debian.md)**
-   - Instalación paso a paso del stack LAMP
-   - Configuración de Apache y Virtual Hosts
-   - Configuración de SSL/HTTPS con Let's Encrypt
-   - Optimización y seguridad del servidor
-   - Troubleshooting común
-
-2. **[Manual de Usuario](docs/manual-usuario.md)**
-   - Guía de registro e inicio de sesión
-   - Búsqueda y filtrado de vehículos
-   - Proceso de reserva paso a paso
-   - Gestión de perfil
-   - Uso del panel de administración (para admins)
-   - Preguntas frecuentes
-
-3. **[Decisiones Técnicas](docs/decisiones-tecnicas.md)**
-   - Arquitectura del sistema
-   - Elección de tecnologías (PHP, MySQL, Apache)
-   - Estructura de archivos y organización del código
-   - Patrones de diseño implementados
-   - Medidas de seguridad:
-     - Hashing de contraseñas (SHA-256)
-     - Prevención de SQL Injection (PDO preparado)
-     - Prevención de XSS
-     - Gestión segura de sesiones
-     - HTTPS/SSL en producción
-   - Consideraciones de rendimiento
-   - Escalabilidad y mantenibilidad
-
----
 
 ## 📸 Evidencias de Despliegue
 
@@ -558,7 +454,7 @@ Archivos de configuración (sanitizados):
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Backend
 - **PHP 7.4+** - Lenguaje de programación del servidor
@@ -588,42 +484,9 @@ Archivos de configuración (sanitizados):
 
 ---
 
-## 🔐 Seguridad
+## Conclusion
+Alquiza es una plataforma para el alquiler y gestión de vehículos, desarrollada con las tecnologías ya mencionadas. El proyecto se separo claramente frontend y backend, facilitando el proyecti. Incluye documentación, evidencias de despliegue y una base de datos bien estructurada. Su diseño sencillo y su facilidad hace que la pagina sea muy bonita y sencilla.
 
-El proyecto implementa las siguientes medidas de seguridad:
-
-- ✅ **Contraseñas hasheadas** con SHA-256
-- ✅ **Prepared Statements (PDO)** para prevenir SQL Injection
-- ✅ **Validación de entrada** en cliente y servidor
-- ✅ **Sanitización de salida** para prevenir XSS
-- ✅ **Gestión segura de sesiones** con tokens
-- ✅ **HTTPS/SSL** en producción con certificados Let's Encrypt
-- ✅ **Protección contra CSRF** en formularios
-- ✅ **Control de acceso basado en roles** (admin/usuario)
-
----
-
-## 📝 Licencia
-
-Este proyecto es un trabajo académico desarrollado para el curso de Desarrollo de Aplicaciones Web.
-
-**© 2026 - Oier Bárcena, Illart Beain, Unax Vizcaíno, Marina Redondo**
-
----
-
-## 📞 Contacto y Soporte
-
-Para consultas o soporte:
-
-- **Email del proyecto:** alquiza.soporte@ejemplo.com
-- **Issues:** Abrir un issue en el repositorio
-- **Documentación:** Ver carpeta `/docs`
-
----
-
-## 🙏 Agradecimientos
-
-Agradecemos a nuestros profesores y compañeros por el apoyo durante el desarrollo de este proyecto.
 
 ---
 
