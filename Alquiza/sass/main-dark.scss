@@ -8,6 +8,8 @@
 @import 'form';
 @import 'faq';
 @import 'cards';
+@import 'admin';
+
 
 body {
   font-family: $font-family;
@@ -15,12 +17,12 @@ body {
 }
 
 a {
-  color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
   font-weight: normal;
   text-decoration: none;
 
   &:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(92, 92, 92);
     text-decoration: underline;
   }
 }

@@ -1,7 +1,6 @@
 <?php
 // Iniciar sesión o verificar si hay una cookie de tema
-include "includes/footer.php";
-include "includes/navbar.php";
+include "include.php";
 session_start();
 
 if (isset($_GET['tema'])) {

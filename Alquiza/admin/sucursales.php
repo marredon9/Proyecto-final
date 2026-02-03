@@ -1,7 +1,13 @@
 <?php
-// Iniciar sesión o verificar si hay una cookie de tema
 include "include.php";
+
 session_start();
+$sesion = obtenerSesion();
+if (!$sesion->esAdmin) {
+    redirect("index.php");
+}
+
+// Iniciar sesión o verificar si hay una cookie de tema
 
 if (isset($_GET['tema'])) {
     // Cambiar el modo según el parámetro GET y guardar en cookie
@@ -33,41 +39,49 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="sass/main-<?php echo $_COOKIE['theme'] ?>.css" />
+    <link rel="stylesheet" href="../sass/main-<?php echo $_COOKIE['theme'] ?>.css" />
     <!-- Mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 </head>
 
 <body>
-
     <!-- Navbar -->
-    <?= navbar() ?>
+    <?= navbarAdmin() ?>
+<div class="admin">
+    <h1>Gestión de sucursales</h1>
+    <h3><a href="index.php">Volver atrás</a></h3>
+    <a href="añadirSucursal.php">Añadir Sucursal</a>
+    <table>
+        <tr>
+            <td><b></b></td>
+            <td><b>ID</b></td>
+            <td><b>Nombre</b></td>
+        </tr>
+        <?php
+        //consulta a base de datos
+        try {
+            $stmt = $cn->prepare("SELECT * FROM sucursal;");
+            $stmt->execute();
+            $res = $stmt->get_result();
+            while ($r = $res->fetch_assoc()) {
+                $id = $r["id"];
+                $nombre = $r["nombre"];
+                ?>
+                <tr>
+                    <td><a href="verSucursal.php?id=<?= $id ?>">Ver Detalles</a></td>
+                    <td><input type="text" disabled value="<?= $id ?>"></td>
+                    <td><input type="text" disabled value="<?= $nombre ?>"></td>
+                </tr>
+                <?php
+            }
+        } catch (mysqli_sql_exception $e) {
 
-    <section class="hero-section position-relative min-vh-100">
-        <video class="background-video" autoplay muted loop>
-            <source src="img/olas.mp4" type="video/mp4" />
-            Tu navegador no soporta la etiqueta de video.
-        </video>
-        <!-- Contenedor del formulario en un cuadro azul con transparencia -->
-        <div id="contact-card">
-            <h1 class="text-center mb-3"><b>Informacion Legal</b></h1>
-            <div>
-                <div class="informacion-legal">
-                    <p>Bienvenido a <strong>Alquiza Ibiza</strong>. Antes de utilizar nuestros servicios, por
-                        favor lee detenidamente la siguiente información legal:</p>
-                    <p>Para cualquier duda o consulta, contacta con nosotros en <a href="mailto:info@alquizaibiza.com"
-                            class="email-link">info@alquizaibiza.com</a> o en el
-                        teléfono +34 912 345 678.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+        }
+        ?>
+    </table>
+</div>
     <?= footer() ?>
-
-    <!-- Scripts -->
 </body>
 
 </html>

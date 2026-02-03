@@ -1,7 +1,7 @@
 <?php
 // Iniciar sesión o verificar si hay una cookie de tema
-include "includes/footer.php";
-include "includes/navbar.php";
+include "include.php";
+
 session_start();
 
 if (isset($_GET['tema'])) {
@@ -52,16 +52,16 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         <!-- Contenedor del formulario en un cuadro azul con transparencia -->
         <div class="form-container">
             <!-- Formulario de login -->
-            <form method="post" action="">
+            <form method="post" action="<?=srv("iniciarSesion")?>">
                 <div class="login-card">
-                    <h4 class="text-center mb-3"><b>Usuario</b></h4>
+                    <h4 class="text-center mb-3"><b>Iniciar Sesión</b></h4>
                     <div class="mb-3">
-                        <label class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control email-input" required />
+                        <label class="form-label">DNI</label>
+                        <input type="text" name="dni" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control password-input" required />
+                        <input type="password" name="contraseña" class="form-control password-input" required />
                     </div>
                     <div class="text-end">
                         <input type="submit" class="btn btn-custom" value="Entrar" />

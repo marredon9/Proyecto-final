@@ -1,7 +1,6 @@
 <?php
 // Iniciar sesión o verificar si hay una cookie de tema
-include "includes/footer.php";
-include "includes/navbar.php";
+include "include.php";
 session_start();
 
 if (isset($_GET['tema'])) {
@@ -109,11 +108,13 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                                 <label for="fecha_devolucion" class="form-label">Fecha de devolución</label>
                                 <input type="date" class="form-control" id="fecha_devolucion" name="fecha_devolucion"
                                     required>
+                                    
                             </div>
                             <div class="col-md-6">
                                 <label for="horario_devolucion" class="form-label">Horario</label>
                                 <input type="time" class="form-control" id="horario_devolucion"
                                     name="horario_devolucion" required>
+                                    
                             </div>
                             <div class="row g-3 mt-3">
                                 <div class="col-12">
@@ -139,6 +140,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
         </div>
     </div>
 
+    <!-- Sección cards -->
     <!-- Sección cards -->
     <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
     <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
@@ -172,9 +174,10 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     </div>
     </div>
     <div style="text-align: center; margin-top: 50px;">
-        <a class="view-button" href="vehiculos.php">Ver Nuestros Vehículos</a>
+        <a class="view-button" href="vehiculosUsuarios.php">Ver Nuestros Vehículos</a>
     </div>
 
+    <!--Zona gris -->
     <!--Zona gris -->
 
     <div class="seccion-gris mt-5">

@@ -1,7 +1,8 @@
 <?php
 // Iniciar sesión o verificar si hay una cookie de tema
-include "includes/footer.php";
-include "includes/navbar.php";
+include "include.php";
+//include "include/footer.php";
+//include "include/navbar.php";
 session_start();
 
 if (isset($_GET['tema'])) {
@@ -52,7 +53,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 		</video>
 
 		<div class="form-container">
-			<form method="post" action="Registrarse.php" class="w-100">
+			<form method="post" action="<?=srv("registrarUsuario")?>" class="w-100">
 				<h5 class="text-center mb-4"><b>Registrarse</b></h5>
 
 				<div class="mb-2">
@@ -67,7 +68,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 					</div>
 					<div class="col-md-6 mb-2">
 						<label class="form-label">Apellido 2</label>
-						<input type="text" name="apellido2" class="form-control email-input" required>
+						<input type="text" name="apellido2" class="form-control email-input">
 					</div>
 				</div>
 
@@ -75,18 +76,13 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 					<div class="col-md-6 mb-2">
 						<label class="form-label">Teléfono</label>
 						<input type="text" name="telefono" class="form-control email-input" maxlength="9"
-							pattern="[0-9]{9}" required>
+							pattern="[0-9]{9}">
 					</div>
 					<div class="col-md-6 mb-2">
 						<label class="form-label">DNI</label>
 						<input type="text" name="dni" class="form-control email-input" maxlength="9"
 							pattern="[0-9]{8}[A-Za-z]" required>
 					</div>
-				</div>
-
-				<div class="mb-2">
-					<label class="form-label">Fecha de nacimiento</label>
-					<input type="date" name="fecha_nacimiento" class="form-control email-input" required>
 				</div>
 
 				<div class="mb-2">
@@ -97,11 +93,11 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 				<div class="row">
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Contraseña</label>
-						<input type="password" name="password" class="form-control password-input" required>
+						<input type="password" name="contraseña" class="form-control password-input" required>
 					</div>
 					<div class="col-md-6 mb-3">
 						<label class="form-label">Repetir contraseña</label>
-						<input type="password" name="password2" class="form-control password-input" required>
+						<input type="password" name="repetirContraseña" class="form-control password-input" required>
 					</div>
 				</div>
 
