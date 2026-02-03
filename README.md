@@ -10,5 +10,5 @@
 #### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajustes.
 
 
-#### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajustes.
+#### Este prototipo no representa el producto final, sino una versión preliminar que nos permite iterar rápidamente, detectar mejoras y alinear la visión del equipo. A medida que el proyecto avance, esta sección se actualizará con nuevas versiones y ajust s.
 
