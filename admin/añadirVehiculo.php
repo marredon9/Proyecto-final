@@ -42,10 +42,6 @@ for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
             </td>
         </tr>
         <tr>
-            <td>Precio por dia: </td>
-            <td><input type="text" name="precioDia"></td>
-        </tr>
-        <tr>
             <td>Asientos: </td>
             <td><input type="number" name="asientos" required></td>
         </tr>
@@ -98,8 +94,8 @@ for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
                     <option value="B">B</option>
                     -->
                     <?php
-for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
-    $v = DB_TIPOS[$i];
+for ($i = 0; $i < sizeof(DB_EMISIONES); $i++) {
+    $v = DB_EMISIONES[$i];
     ?>
                     <option value="<?=$v?>"><?=$v?></option>
     <?php
