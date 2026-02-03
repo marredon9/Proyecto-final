@@ -48,12 +48,12 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
     <?= navbarAdmin() ?>
     
-        <div class="admin">
+        <div class="admin mt-5 mb-5 text-center">
             <h1>Gestión de vehículos</h1>
             <h3><a href="index.php">Volver atrás</a></h3>
             <h3><a href="añadirVehiculo.php">Añadir Vehículo</a></h3>
             <!-- no uso inputs porque no entran los campos en pantalla -->
-            <table border="1">
+            <table border="1" class="mx-auto">
                 <tr>
                     <td></td>
                     <td><b>ID</b></td>

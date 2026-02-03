@@ -51,11 +51,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
 <body>
     <?= navbarAdmin() ?>
-    <section class="hero-section position-relative min-vh-100">
-        <video class="background-video" autoplay muted loop>
-            <source src="img/olas.mp4" type="video/mp4" />
-            Tu navegador no soporta la etiqueta de video.
-        </video>
+    
         <form action="<?= srv("admin/añadirSucursal") ?>" method="post">
             <table>
                 <tr>
@@ -72,7 +68,7 @@ $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 </tr>
             </table>
         </form>
-    </section>
+    
     <?= footer() ?>
 </body>
 
