@@ -452,35 +452,6 @@ Archivos de configuración (sanitizados):
 
 **⚠️ Nota:** Todas las evidencias han sido sanitizadas para no exponer información sensible (contraseñas, tokens, IPs privadas, etc.)
 
----
-
-## Tecnologías Utilizadas
-
-### Backend
-- **PHP 7.4+** - Lenguaje de programación del servidor
-- **MySQL/MariaDB** - Sistema de gestión de base de datos
-- **PDO** - Capa de abstracción de base de datos
-
-### Frontend
-- **HTML5** - Estructura de páginas
-- **CSS3 / SCSS** - Estilos y diseño
-- **JavaScript (Vanilla)** - Interactividad del cliente
-- **Bootstrap 5** (si se usa) - Framework CSS
-
-### Servidor
-- **Apache 2.4** - Servidor web
-- **Debian 11** - Sistema operativo de producción
-- **Let's Encrypt** - Certificados SSL/TLS
-
-### Control de Versiones
-- **Git** - Sistema de control de versiones
-- **GitHub/GitLab** - Repositorio remoto
-
-### Herramientas de Desarrollo
-- **XAMPP** - Entorno de desarrollo local
-- **phpMyAdmin** - Gestión de base de datos
-- **VSCode** - Editor de código
-- **SASS** - Preprocesador CSS
 
 ---
 
@@ -489,5 +460,11 @@ Alquiza es una plataforma para el alquiler y gestión de vehículos, desarrollad
 
 
 ---
+## Reparto
 
-**Última actualización:** Febrero 2026
+-Servidor y backend: Unax
+-Frontend: Illart, Oier y Marina
+-Documentación y presentación: Illart y Oier
+-SASS: Marina
+
+------
