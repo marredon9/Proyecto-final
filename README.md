@@ -168,114 +168,106 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
 
 ## Estructura de Carpetas
 
-Toda la Esctrutura de nuestro proyecto hemos quierido separa el frontend y backend en la carpeta Alquiza, includes entan el navbar y footer, SASS en una carpeta aparte con todos Scss, 
 luego img separado por otra carpeta, archivo de JS separado suelto por que es uno y la carpeta de admin con su index separado por que hay se hace todo de añadir coches eliminar etc...
 
-### Descripción de Carpetas Principales
 
-- **Alquiza/**: Contiene toda la interfaz de usuario (frontend) y las páginas públicas
-    img/ - Imágenes y recursos visuales
-    includes/ - Componentes reutilizables (navbar, footer)
-    sass/ - Archivos de estilos SCSS
-
-- **xampp/**: Contiene la lógica del servidor (backend) y el panel de administración
-    admin/ - Panel de administración
-    include/ - Archivos de configuración (db.php, debug.php, sesionUsuario.php)
-
-- **docs/**: Documentación técnica y manuales
-    manual-instalacion-debian.md - Guía de instalación en Debian
-    manual-usuario.md - Manual de usuario (flujo de uso)
-    decisiones-tecnicas.md - Decisiones técnicas (servidor, estructura, seguridad)
-    evidencias-despliegue/ - Capturas, configuración, logs, videos
-
-- **sass/**: Archivos de estilos SCSS
-- **includes/**: Componentes reutilizables (navbar, footer, etc.)
+### Estructura actual de carpetas
 
 ```
-Proyecto-final/
+Proyecto_Final/
 │
-├── Alquiza/                          # Frontend de la aplicación
-│   ├── index.php                     # Página principal
-│   ├── IniciarSesion.php            # Página de login
-│   ├── Registrarse.php              # Página de registro
-│   ├── buscar.php                   # Búsqueda de vehículos
-│   ├── coches.php                   # Listado de coches
-│   ├── motos.php                    # Listado de motos
-│   ├── furgonetas.php               # Listado de furgonetas
-│   ├── reservar.php                 # Sistema de reservas
-│   ├── Desactivar.php               # Desactivar cuenta
-│   ├── contacto.php                 # Página de contacto
-│   ├── NuestrasSucursales.php       # Mapa de sucursales
-│   ├── PreguntasFrecuentes.php      # FAQ
-│   │
-│   ├── includes/                    # Componentes reutilizables
-│   │   ├── navbar.php               # Barra de navegación
-│   │   └── footer.php               # Pie de página
-│   │
-│   ├── sass/                        # Estilos SCSS
-│   │   ├── _variables.scss          # Variables de diseño
-│   │   ├── _navbar.scss             # Estilos de navegación
-│   │   ├── _footer.scss             # Estilos de footer
-│   │   ├── _hero.scss               # Sección hero
-│   │   ├── _cards.scss              # Tarjetas de vehículos
-│   │   ├── _form.scss               # Formularios
-│   │   ├── _buttons.scss            # Botones
-│   │   ├── _section.scss            # Secciones
-│   │   ├── _faq.scss                # FAQ
-│   │   ├── main-light.scss          # Tema claro
-│   │   ├── main-light.css           # CSS compilado (tema claro)
-│   │   ├── main-dark.scss           # Tema oscuro
-│   │   └── main-dark.css            # CSS compilado (tema oscuro)
-│   │
-│   ├── img/                         # Imágenes y recursos
-│   │   └── ibiza.avif               # Ejemplo de imagen
-│   │
-│   ├── script.js                    # JavaScript del frontend
-│   │
-│   └── [páginas legales]            # Información legal
-│       ├── Informacion_legal.php
-│       ├── TerminosCondiciones.php
-│       ├── PoliticaPrivacidad.php
-│       ├── PoliticaCookies.php
-│       ├── PoliticasDaños.php
-│       ├── PoliticasDeposito.php
-│       ├── MencionesLegales.php
-│       └── SitesMaps.php
+├── Alquiza/
+│   ├── admin/
+│   │   ├── añadirSucursal.php
+│   │   ├── añadirVehiculo.php
+│   │   ├── include.php
+│   │   ├── index.php
+│   │   ├── sucursales.php
+│   │   ├── usuarios.php
+│   │   ├── vehiculos.php
+│   │   ├── verSucursal.php
+│   │   ├── verUsuario.php
+│   │   └── verVehiculo.php
+│   ├── api/
+│   │   ├── buscar.php
+│   │   └── include.php
+│   ├── img/
+│   │   ├── coche.png
+│   │   ├── escaparate.png
+│   │   ├── ibiza.avif
+│   │   ├── moto.png
+│   │   ├── olas.mp4
+│   │   ├── output.jpg
+│   │   └── van.png
+│   ├── include/
+│   │   ├── alquilarCoche.php
+│   │   ├── cardBusquedaCoche.php
+│   │   ├── db.php
+│   │   ├── debug.php
+│   │   ├── footer.php
+│   │   ├── navbar.php
+│   │   ├── rutas.php
+│   │   └── sesionUsuario.php
+│   ├── sass/
+│   │   ├── main-dark.css
+│   │   ├── main-dark.css.map
+│   │   ├── main-dark.scss
+│   │   ├── main-light.css
+│   │   ├── main-light.css.map
+│   │   ├── main-light.scss
+│   │   ├── _admin.scss
+│   │   ├── _buttons.scss
+│   │   ├── _cards.scss
+│   │   ├── _faq.scss
+│   │   ├── _footer.scss
+│   │   ├── _form.scss
+│   │   ├── _hero.scss
+│   │   ├── _navbar.scss
+│   │   ├── _section.scss
+│   │   └── _variables.scss
+│   ├── servlets/
+│   │   ├── cerrarSesion.php
+│   │   ├── include.php
+│   │   ├── iniciarSesion.php
+│   │   ├── registrarUsuario.php
+│   │   └── admin/
+│   │       ├── añadirSucursal.php
+│   │       ├── añadirVehiculo.php
+│   │       ├── editarSucursal.php
+│   │       ├── editarUsuario.php
+│   │       ├── editarVehiculo.php
+│   │       └── include.php
+│   ├── alquilarCoche.php
+│   ├── buscar.php
+│   ├── coches.php
+│   ├── contacto.php
+│   ├── CuentaDesactivada.php
+│   ├── Desactivar.php
+│   ├── furgonetas.php
+│   ├── GraciasAlquiler.php
+│   ├── include.php
+│   ├── index.php
+│   ├── Informacion_legal.php
+│   ├── IniciarSesion.php
+│   ├── MencionesLegales.php
+│   ├── motos.php
+│   ├── NuestrasSucursales.php
+│   ├── PerfilUsuario.php
+│   ├── PoliticaCookies.php
+│   ├── PoliticaPrivacidad.php
+│   ├── PoliticasDaños.php
+│   ├── PoliticasDeposito.php
+│   ├── PreguntasFrecuentes.php
+│   ├── Registrarse.php
+│   ├── reservar.php
+│   ├── schema.sql
+│   ├── script.js
+│   ├── SitesMaps.php
+│   ├── TerminosCondiciones.php
+│   └── vehiculosUsuarios.php
 │
-├── xampp/                           # Backend y lógica de negocio
-│   ├── index.php                    # Dashboard principal
-│   ├── login.php                    # Lógica de login
-│   ├── registro.php                 # Lógica de registro
-│   ├── iniciarSesion.php            # Procesamiento de login
-│   ├── registrarUsuario.php         # Procesamiento de registro
-│   ├── sesionUsuario.php            # Gestión de sesiones
-│   ├── miPerfil.php                 # Perfil de usuario
-│   ├── cerrarSesion.php             # Cerrar sesión
-│   ├── desactivarMiCuenta.php       # Desactivar cuenta
-│   ├── include.php                  # Includes generales
-│   │
-│   ├── admin/                       # Panel de administración
-│   │   ├── index.php                # Dashboard admin
-│   │   └── include.php              # Includes admin
-│   │
-│   └── include/                     # Archivos de configuración
-│       ├── db.php                   # Conexión a base de datos
-│       ├── debug.php                # Utilidades de debug
-│       └── sesionUsuario.php        # Gestión de sesiones
-│
-├── docs/                            # Documentación del proyecto
-│   ├── manual-instalacion-debian.md # Guía de instalación en Debian
-│   ├── manual-usuario.md            # Manual de usuario
-│   ├── decisiones-tecnicas.md       # Decisiones técnicas y arquitectura
-│   └── evidencias-despliegue/       # Capturas y videos
-│       ├── capturas/                # Screenshots
-│       └── videos/                  # Videos demostrativos
-│
-├── bd.sql                           # Script SQL original
-├── schema.sql                       # Estructura de base de datos
-├── seed.sql                         # Datos de prueba
-├── README.md                        # Este archivo
-└── .git/                            # Control de versiones Git
+├── README.md
+└── .git/
 ```
 
 ---
