@@ -61,15 +61,9 @@ gestionarModoOscuro();
                             <?php
                             for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                                 $v = DB_TIPOS[$i];
-<<<<<<< HEAD
-                            ?>
-                                <option value="<?= $v ?>"><?= $v ?></option>
-                            <?php
-=======
                                 ?>
                                 <option value="<?= $v ?>" <?= ($v == $tipo) ? 'selected="selected"' : "" ?>><?= $v ?></option>
                                 <?php
->>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                             }
                             ?>
                         </select>
@@ -118,21 +112,13 @@ gestionarModoOscuro();
                                     while ($r = $res->fetch_assoc()) {
                                         $id = $r["id"];
                                         $nombre = $r["nombre"];
-<<<<<<< HEAD
-                                ?>
-=======
                                         ?>
->>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
         <option value="<?= $id ?>"><?= $nombre ?></option>
         <?php
                                     }
                                 } catch (mysqli_sql_exception $e) {
                                 }
-<<<<<<< HEAD
-        ?>
-=======
                                 ?>
->>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                             </select>
                         </div>
                     </div>
@@ -181,15 +167,9 @@ gestionarModoOscuro();
                                 while ($r = $res->fetch_assoc()) {
                                     $id = $r["id"];
                                     $nombre = $r["nombre"];
-<<<<<<< HEAD
-                            ?>
-                                    <option value="<?= $id ?>"><?= $nombre ?></option>
-                            <?php
-=======
                                     ?>
                                     <option value="<?= $id ?>"><?= $nombre ?></option>
                                     <?php
->>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                                 }
                             } catch (mysqli_sql_exception $e) {
                             }
@@ -204,12 +184,8 @@ gestionarModoOscuro();
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Min.: </label>
-<<<<<<< HEAD
-                            <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input" value="0" required>
-=======
                             <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input"
                                 value="0" required>
->>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                         </div>
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Max.: </label>
@@ -366,6 +342,8 @@ gestionarModoOscuro();
 
     let resultados = document.getElementById("resultados");
 
+    const divError = document.getElementById('contact-card');
+
     function buscar() {
         console.log("desde: " + encodeURI(desde.value));
         console.log("hasta: " + encodeURI(hasta.value));
@@ -399,6 +377,9 @@ gestionarModoOscuro();
             .then(response => response.text())
             .then(data => {
                 resultados.innerHTML = data;
+                if(data.length < 1) {
+                    
+                }
             })
             .catch(error => {
                 resultados.innerHTML = error;
