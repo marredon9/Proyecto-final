@@ -20,6 +20,11 @@ preciomin (numero)
 preciomax (numero)
 */
 
+$tipo = $_GET["tipo"] ?? "";
+$tipo = strtoupper($tipo);
+
+$diaHoy = date('Y-m-d');
+
 gestionarModoOscuro();
 ?>
 <!DOCTYPE HTML>
@@ -33,18 +38,20 @@ gestionarModoOscuro();
     <?= navbar() ?>
 
     <div class="container-md">
-        <div class="row">
+        <div class="row" style="margin: 20px 0px;">
             <div class="col-12 col-lg-4 justify-content-center d-flex">
                 <div class="form-container" oninput="buscar()">
                     <h5 class="text-center mb-4"><b>Buscar Vehículos</b></h5>
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Desde: </label>
-                            <input type="date" id="desde" class="form-control email-input" required>
+                            <input type="date" id="desde" class="form-control email-input" value="<?= $diaHoy ?>"
+                                required>
                         </div>
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Hasta: </label>
-                            <input type="date" id="hasta" class="form-control email-input">
+                            <input type="date" id="hasta" class="form-control email-input" value="<?= $diaHoy ?>"
+                                required>
                         </div>
                     </div>
 
@@ -54,9 +61,15 @@ gestionarModoOscuro();
                             <?php
                             for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                                 $v = DB_TIPOS[$i];
+<<<<<<< HEAD
                             ?>
                                 <option value="<?= $v ?>"><?= $v ?></option>
                             <?php
+=======
+                                ?>
+                                <option value="<?= $v ?>" <?= ($v == $tipo) ? 'selected="selected"' : "" ?>><?= $v ?></option>
+                                <?php
+>>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                             }
                             ?>
                         </select>
@@ -76,13 +89,16 @@ gestionarModoOscuro();
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Asientos: </label>
-                            <input type="number" min="1" max="9" id="asientos" class="form-control email-input" required>
+                            <input type="number" min="1" max="9" id="asientos" class="form-control email-input"
+                                required>
                         </div>
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Puertas: </label>
                             <input type="number" min="1" max="9" id="puertas" class="form-control email-input">
                         </div>
                     </div>
+
+
 
                     <!--
                     <div class="row">
@@ -102,13 +118,21 @@ gestionarModoOscuro();
                                     while ($r = $res->fetch_assoc()) {
                                         $id = $r["id"];
                                         $nombre = $r["nombre"];
+<<<<<<< HEAD
                                 ?>
+=======
+                                        ?>
+>>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
         <option value="<?= $id ?>"><?= $nombre ?></option>
         <?php
                                     }
                                 } catch (mysqli_sql_exception $e) {
                                 }
+<<<<<<< HEAD
         ?>
+=======
+                                ?>
+>>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                             </select>
                         </div>
                     </div>
@@ -157,9 +181,15 @@ gestionarModoOscuro();
                                 while ($r = $res->fetch_assoc()) {
                                     $id = $r["id"];
                                     $nombre = $r["nombre"];
+<<<<<<< HEAD
                             ?>
                                     <option value="<?= $id ?>"><?= $nombre ?></option>
                             <?php
+=======
+                                    ?>
+                                    <option value="<?= $id ?>"><?= $nombre ?></option>
+                                    <?php
+>>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                                 }
                             } catch (mysqli_sql_exception $e) {
                             }
@@ -174,11 +204,17 @@ gestionarModoOscuro();
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Min.: </label>
+<<<<<<< HEAD
                             <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input" value="0" required>
+=======
+                            <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input"
+                                value="0" required>
+>>>>>>> 28a36f2628eb80abc7279fe97bad847ba3a5b6bd
                         </div>
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Max.: </label>
-                            <input type="number" min="0" max="999999" id="preciomax" class="form-control email-input" value="999999">
+                            <input type="number" min="0" max="999999" id="preciomax" class="form-control email-input"
+                                value="999999">
                         </div>
                     </div>
 
@@ -234,6 +270,19 @@ gestionarModoOscuro();
             </div>
         </div>
     </div>
+    <!-- Card de no hay vehiculo disponible -->
+    <?php
+
+    ?>
+        <div class="card" id="contact-card" style="width: 26rem; background-color: none;">
+            <img src="assets/img/cerca.png" class="card-img-top" alt="no">
+            <div class="card-body">
+                <h5 class="card-title">No hay <?= $tipo ?> disponibles actualmente</h5>
+                <p class="card-text">Lamentamos informarles que todos nuestros <?= $tipo ?> están ocupados, por favor
+                    seleccione otra fecha. Gracias</p>
+            </div>
+        </div>
+    
 
     <?= footer() ?>
 </body>

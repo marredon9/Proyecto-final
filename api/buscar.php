@@ -144,6 +144,11 @@ try {
 
     //var_dump($res);
     $jsonArray = [];
+    var_dump($res);
+    if($res->num_rows == 0){
+        
+    } 
+    die;
     while ($r = $res->fetch_assoc()) {
         //var_dump($r["diasRecuento"]);
         if ($json == "true") {
