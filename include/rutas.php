@@ -1,8 +1,12 @@
 <?php
 
 //define("RUTA_ABS", "http://localhost/php/git/proyectofinal/Proyecto-final/");
+<<<<<<< HEAD
 define("RUTA_ABS", "http://localhost/Proyecto-final/Proyecto-final/");
 //define("RUTA_ABS", "http://localhost/git/proyectofinal/");
+=======
+define("RUTA_ABS", "http://localhost/git/proyectofinal/");
+>>>>>>> 50eee2d1cd3c20332c8a8b44ea978addbc96ca30
 define("RUTA_IMG", "assets/img/");
 define("RUTA_VID", "assets/vid/");
 define("RUTA_SRV", "servlets/");

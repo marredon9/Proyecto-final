@@ -25,7 +25,7 @@ if (!$sesion->esAdmin) {
 try {
     $query = "
 INSERT INTO vehiculo (matricula, marca, modelo, tipo, asientos, puertas, maletero, modo, km, capacidad, emisiones, id_sucursal, precioDia)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     ";
     $stmt = $cn->prepare($query);
     $stmt->bind_param("ssssdddsddsdd",
