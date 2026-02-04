@@ -28,7 +28,7 @@ gestionarModoOscuro();
             <h3>Has iniciado sesión como administrador.</h3>
             <div>
                 <ul>
-                    <li style="color: black;"><a href="<?= lnk("admin/usuarios.php") ?>">Administrar usuarios</a></li>
+                    <li><a href="<?= lnk("admin/usuarios.php") ?>">Administrar usuarios</a></li>
                     <li><a href="<?= lnk("admin/vehiculos.php") ?>">Administrar vehiculos</a></li>
                     <li><a href="<?= lnk("admin/alquileres.php") ?>">Administrar alquileres</a></li>
                     <li><a href="<?= lnk("admin/sucursales.php") ?>">Administrar sucursales</a></li>

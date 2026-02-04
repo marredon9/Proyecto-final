@@ -42,6 +42,7 @@
   color: #3b3b3b;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   overflow: hidden;
+  color: white;
 }
 
 .background-video {
@@ -328,11 +329,16 @@ footer .footer-social i {
   padding: 30px;
   width: 100%;
   max-width: 420px;
+  color: white;
 }
 
 .card-body {
   color: white;
   max-width: 520px;
+}
+
+li a {
+  color: white;
 }
 
 .admin {

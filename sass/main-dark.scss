@@ -17,12 +17,12 @@ body {
 }
 
 a {
-  color: rgb(0, 0, 0);
+  color: rgb(175, 175, 175);
   font-weight: normal;
   text-decoration: none;
 
   &:hover {
-    color: rgb(92, 92, 92);
+    color: rgb(255, 255, 255);
     text-decoration: underline;
   }
 }
