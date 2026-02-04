@@ -3,8 +3,8 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    //$host = "192.168.72.125";
-    $host = "192.168.0.180";
+    $host = "192.168.72.125";
+    //$host = "192.168.0.180";
     //$host = "localhost";
     $user = "root";
     $pass = "root";

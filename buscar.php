@@ -20,8 +20,8 @@ preciomin (numero)
 preciomax (numero)
 */
 
+gestionarModoOscuro();
 ?>
-
 <!DOCTYPE HTML>
 <html lang="es">
 
