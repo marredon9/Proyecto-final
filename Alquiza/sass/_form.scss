@@ -1,0 +1,64 @@
+@import 'variables';
+
+.form-container {
+  background: rgba(0, 123, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  z-index: 2;
+
+  .custom-input {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+.btn-custom {
+  background-color: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+}
+
+.register-text {
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+
+  a {
+    color: #ffd700;
+    text-decoration: underline;
+    margin-left: 10px;
+  }
+}
+
+.email-input,
+.password-input {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}

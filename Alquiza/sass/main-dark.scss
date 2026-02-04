@@ -1,0 +1,28 @@
+// base.scss
+@import 'variables';
+@import 'navbar';
+@import 'hero';
+@import 'section';
+@import 'buttons';
+@import 'footer';
+@import 'form';
+@import 'faq';
+@import 'cards';
+@import 'admin';
+@import 'table';
+
+body {
+  font-family: $font-family;
+  background-color: $background-body-dark;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(92, 92, 92);
+    text-decoration: underline;
+  }
+}
