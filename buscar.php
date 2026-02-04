@@ -25,8 +25,8 @@ $tipo = strtoupper($tipo);
 
 $diaHoy = date('Y-m-d');
 
+gestionarModoOscuro();
 ?>
-
 <!DOCTYPE HTML>
 <html lang="es">
 
