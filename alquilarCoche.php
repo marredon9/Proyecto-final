@@ -87,7 +87,7 @@ if ($disponible) {
         <input type="hidden" name="id" value="<?=$id?>">
         <input type="hidden" name="desde" value="<?=$desde?>">
         <input type="hidden" name="hasta" value="<?=$hasta?>">
-        <input type="hidden" name="idSucursalRec" value="<?=$r["sucursal"]?>">
+        <input type="hidden" name="idSucursalRec" value="<?=$r["id_sucursal"]?>">
         <input type="submit" value="Alquilar Coche">
     </form>
     <?php
