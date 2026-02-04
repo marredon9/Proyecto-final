@@ -54,9 +54,9 @@ preciomax (numero)
                             <?php
                             for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                                 $v = DB_TIPOS[$i];
-                                ?>
+                            ?>
                                 <option value="<?= $v ?>"><?= $v ?></option>
-                                <?php
+                            <?php
                             }
                             ?>
                         </select>
@@ -94,21 +94,21 @@ preciomax (numero)
                             <label class="form-label">Sucursal: </label>
                             <select class="form-select" id="id_sucursal">
                                 <?php
-//consulta para crear select con sucursales al vuelo
-try {
-    $stmt = $cn->prepare("SELECT id, nombre FROM sucursal;");
-    $stmt->execute();
-    $res = $stmt->get_result();
-    while ($r = $res->fetch_assoc()) {
-        $id = $r["id"];
-        $nombre = $r["nombre"];
-        ?>
+                                //consulta para crear select con sucursales al vuelo
+                                try {
+                                    $stmt = $cn->prepare("SELECT id, nombre FROM sucursal;");
+                                    $stmt->execute();
+                                    $res = $stmt->get_result();
+                                    while ($r = $res->fetch_assoc()) {
+                                        $id = $r["id"];
+                                        $nombre = $r["nombre"];
+                                ?>
         <option value="<?= $id ?>"><?= $nombre ?></option>
         <?php
-    }
-} catch (mysqli_sql_exception $e) {
-}
-                                ?>
+                                    }
+                                } catch (mysqli_sql_exception $e) {
+                                }
+        ?>
                             </select>
                         </div>
                     </div>
@@ -122,11 +122,11 @@ try {
                                 <?php
                                 for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
                                     $v = DB_MODOS[$i];
-                                    ?>
+                                ?>
                                     <option value="<?= $v ?>"><?= $v ?></option>
                                     <?php
                                 }
-                                ?>
+                                    ?>
                             </select>
                         </div>
                         <div class="col-md-6 mb-2">
@@ -135,11 +135,11 @@ try {
                                 <?php
                                 for ($i = 0; $i < sizeof(DB_EMISIONES); $i++) {
                                     $v = DB_EMISIONES[$i];
-                                    ?>
+                                ?>
                                     <option value="<?= $v ?>"><?= $v ?></option>
                                     <?php
                                 }
-                                ?>
+                                    ?>
                             </select>
                         </div>
                     </div>
@@ -149,20 +149,20 @@ try {
                         <label class="form-label">Sucursal: </label>
                         <select class="form-select" id="id_sucursal">
                             <?php
-//consulta para crear select con sucursales al vuelo
-try {
-    $stmt = $cn->prepare("SELECT id, nombre FROM sucursal;");
-    $stmt->execute();
-    $res = $stmt->get_result();
-    while ($r = $res->fetch_assoc()) {
-        $id = $r["id"];
-        $nombre = $r["nombre"];
-        ?>
-        <option value="<?= $id ?>"><?= $nombre ?></option>
-        <?php
-    }
-} catch (mysqli_sql_exception $e) {
-}
+                            //consulta para crear select con sucursales al vuelo
+                            try {
+                                $stmt = $cn->prepare("SELECT id, nombre FROM sucursal;");
+                                $stmt->execute();
+                                $res = $stmt->get_result();
+                                while ($r = $res->fetch_assoc()) {
+                                    $id = $r["id"];
+                                    $nombre = $r["nombre"];
+                            ?>
+                                    <option value="<?= $id ?>"><?= $nombre ?></option>
+                            <?php
+                                }
+                            } catch (mysqli_sql_exception $e) {
+                            }
                             ?>
                         </select>
                     </div>
@@ -174,7 +174,7 @@ try {
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Min.: </label>
-                            <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input" value="0"required>
+                            <input type="number" min="0" max="999999" id="preciomin" class="form-control email-input" value="0" required>
                         </div>
                         <div class="col-md-6 mb-2">
                             <label class="form-label">Precio Max.: </label>

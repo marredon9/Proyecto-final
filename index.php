@@ -116,7 +116,7 @@ gestionarModoOscuro();
     </div>
 
     <!-- Sección cards -->
-    <h2 class="section-title mb-4 text-center" id="flota">Descubra Nuestra Flota</h2>
+    <h2 class="section-title mb-4 text-center mt-3" id="flota">Descubra Nuestra Flota</h2>
     <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
         <div class="card" style="width: 18rem;">
             <img src="<?=img("coche.png")?>" class="card-img-top" alt="coche">

@@ -45,59 +45,59 @@ try {
 ?>
 
 <ul>
-    <li>Coche: <?=$r["marca"]?> <?=$r["modelo"]?></li>
-    <li>Asientos: <?=$r["asientos"]?></li>
-    <li>Puertas: <?=$r["puertas"]?></li>
-    <li>Maletero: <?=$r["maletero"] == 1 ? "Si" : "No"?></li>
-    <li>Modo: <?=$r["modo"]?></li>
-    <li>Kilómetros: <?=$r["km"]?></li>
-    <li>Precio: <?=$r["preciototal"]?> (<?=$r["precioDia"]?>€ x <?=$r["diasRecuento"]?> dias)</li>
-    <li>Desde: <?=$desde?></li>
-    <li>Hasta: <?=$hasta?></li>
-    <form action="<?=srv("alquilarCoche")?>" method="post">
+    <li>Coche: <?= $r["marca"] ?> <?= $r["modelo"] ?></li>
+    <li>Asientos: <?= $r["asientos"] ?></li>
+    <li>Puertas: <?= $r["puertas"] ?></li>
+    <li>Maletero: <?= $r["maletero"] == 1 ? "Si" : "No" ?></li>
+    <li>Modo: <?= $r["modo"] ?></li>
+    <li>Kilómetros: <?= $r["km"] ?></li>
+    <li>Precio: <?= $r["preciototal"] ?> (<?= $r["precioDia"] ?>€ x <?= $r["diasRecuento"] ?> dias)</li>
+    <li>Desde: <?= $desde ?></li>
+    <li>Hasta: <?= $hasta ?></li>
+    <form action="<?= srv("alquilarCoche") ?>" method="post">
         <li>
             Sucursal de recogida:
             <select disabled>
-                <option><?=$r["sucursal"]?></option>
+                <option><?= $r["sucursal"] ?></option>
             </select>
         </li>
         <li>
             Sucursal de devolución:
             <select name="idSucursalDev">
                 <?php
-try {
-    $stmt = $cn->prepare("SELECT * FROM sucursal;");
-    $stmt->execute();
-    $res = $stmt->get_result();
-    while ($i = $res->fetch_assoc()) {
-        ?>
-                <option value="<?=$i["id"]?>"><?=$i["nombre"]?></option>
-        <?php
-    }
-} catch (mysqli_sql_exception $e) {
-    echo $e;
-}
+                try {
+                    $stmt = $cn->prepare("SELECT * FROM sucursal;");
+                    $stmt->execute();
+                    $res = $stmt->get_result();
+                    while ($i = $res->fetch_assoc()) {
+                ?>
+                        <option value="<?= $i["id"] ?>"><?= $i["nombre"] ?></option>
+                <?php
+                    }
+                } catch (mysqli_sql_exception $e) {
+                    echo $e;
+                }
                 ?>
             </select>
         </li>
-        <!--<li>Alquileres: <?=$r["total_alquileres"]?></li>-->
+        <!--<li>Alquileres: <?= $r["total_alquileres"] ?></li>-->
         <?php
-if ($disponible) {
-    ?>
-        <input type="hidden" name="id" value="<?=$id?>">
-        <input type="hidden" name="desde" value="<?=$desde?>">
-        <input type="hidden" name="hasta" value="<?=$hasta?>">
-        <input type="hidden" name="idSucursalRec" value="<?=$r["id_sucursal"]?>">
-        <input type="submit" value="Alquilar Coche">
+        if ($disponible) {
+        ?>
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <input type="hidden" name="desde" value="<?= $desde ?>">
+            <input type="hidden" name="hasta" value="<?= $hasta ?>">
+            <input type="hidden" name="idSucursalRec" value="<?= $r["id_sucursal"] ?>">
+            <input type="submit" value="Alquilar Coche">
     </form>
-    <?php
-} else {
-    ?>
+<?php
+        } else {
+?>
     </form>
     <form>
         <input type="submit" disabled value="No disponible">
     </form>
-    <?php
-}
-    ?>
+<?php
+        }
+?>
 </ul>

@@ -155,25 +155,23 @@ Archivos JS:
 
 ### Cuenta de Administrador
 
-- **Email:** "ejemplo@hotmail.com"
-- **Contraseña:** "......."
+- **DNI:** "79124257W"
+- **Email:** "24dw.marina.redondo@arangoya.net"
+- **Contraseña:** "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225"
 - **Rol:** Administrador completo
 - **Permisos:** 
   - Gestión de usuarios
   - Gestión de vehículos
   - Gestión de alquileres
-  - Acceso al administración
+  - Gestion de sucursales
 
 
 ### Cuentas de Usuario Regular
 
-#### Usuario
-- **Email:** El gmail que inicies sesion
-- **Contraseña:** contraseña que tu quieras
-- **Rol:** Usuario normal
-- **Permisos:**
-  - Búsqueda y reserva de vehículos
-  - Gestión de perfil personal de usuario
+- **DNI:** "12345678J"
+- **Email:** "24dw.illart.beain@arangoya.net"
+- **Contraseña:** "4922b0b6b574d124524e3b81b56dae2c5fca36624b053d6d7e8d4fee6a7f1201"
+- **Rol:** Usuario regular
 
 ---
 
@@ -280,7 +278,6 @@ Proyecto_Final/
 │       ├── editarUsuario.php
 │       ├── editarVehiculo.php
 │       └── include.php
-```
 ```
 
 ---
