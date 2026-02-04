@@ -2,70 +2,74 @@
 
 **Proyecto Final - Desarrollo de Aplicaciones Web**
 
-# Prototipo de la Página Web del Proyecto
+## Prototipo de la Página Web del Proyecto
 **Autores:** Oier Bárcena, Illart Beain, Unax Vizcaíno, Marina Redondo
+
 ---
 
-**Alquiza** es una plataforma web completa para la gestión y alquiler de vehículos (coches, motos y furgonetas). El sistema permite a los usuarios registrarse, buscar vehículos disponibles, realizar reservas y gestionar su perfil facilmente. Los administradores tienen acceso a un panel de control para la gestion de vehiculos, usuarios, sucursales y alquileres.
+**Alquiza** es una plataforma web completa para la gestión y alquiler de vehículos (coches, motos y furgonetas). El sistema permite a los usuarios registrarse, buscar vehículos disponibles, realizar reservas y gestionar su perfil fácilmente. Los administradores tienen acceso a un panel de control para la gestión de vehículos, usuarios, sucursales y alquileres.
 
 ## Tecnologías Utilizadas
-    Desarrollo localmente:
-    -Xampp
-    -PHP
-    -Html, CSS, Bootstrap 5 y SASS
-    -JavaScript
-    -MySQL
-    -GitHub
----
 
-    Para desplegarlo:
-    -Debian Nginx
-    -Permisos de todo
-    -HTTPS
+**Desarrollo localmente:**
+
+- Xampp
+- PHP
+- Html, CSS, Bootstrap 5 y SASS
+- JavaScript
+- MySQL
+- GitHub
+
+**Para desplegarlo:**
+
+- Debian Nginx
+- Permisos de todo
+- HTTPS
+
 
 ## Instalación
 
 ### Primero: Instalar Localmente XAMPP
 
+
 1. **Descargar e instalar XAMPP**
-
 2. **Clonar el repositorio**
-   cd C:\xampp\htdocs
-
-   git clone <https://github.com/marredon9/Proyecto-final.git> Proyecto-final
-
+    ```bash
+    cd C:\xampp\htdocs
+    git clone <https://github.com/marredon9/Proyecto-final.git> Proyecto-final
+    ```
 3. **Configurar la base de datos**
-    -Primero hacer la base de datos en MySQL.
-    -Hacer un bd.sql con las tablas.
-    -Configurar la conexion de la base de datos.
-
+    - Primero hacer la base de datos en MySQL.
+    - Hacer un bd.sql con las tablas.
+    - Configurar la conexión de la base de datos.
 4. **Proyecto**
-   - Hacer todo el trabajo PHP, js, etc...
+    - Hacer todo el trabajo PHP, js, etc...
 
-###  Segundo: Instalación Debian
+
+### Segundo: Instalación Debian
 
 **Pasos resumidos:**
 
 1. **Actualizar el sistema**
-   ```bash
-   sudo apt update && sudo apt upgrade -y
-   ```
-
+    ```bash
+    sudo apt update && sudo apt upgrade -y
+    ```
 2. **Configurar Apache**
-
 3. **Clonar el repositorio**
-   ```bash
-   cd /var/www/html
-   sudo git clone <URL_DEL_REPOSITORIO> alquiza
-   sudo chown -R www-data:www-data alquiza
-   ```
-
+    ```bash
+    cd /var/www/html
+    sudo git clone <URL_DEL_REPOSITORIO> alquiza
+    sudo chown -R www-data:www-data alquiza
+    ```
 4. **Configurar MySQL**
 
 ---
 
+
 ## Configuración
-La configuracion del proyecto asi la hemos hecho:
+
+La configuración del proyecto así la hemos hecho:
+
 
 ### Configuración de Base de Datos
 
@@ -85,6 +89,7 @@ try {
 ?>
 ```
 
+
 ### Configuración de PHPs
 Planeamos hacer el Frontend Marina, Illart y Oier, y el Backend Unax.
 
@@ -93,6 +98,7 @@ Planeamos hacer el Frontend Marina, Illart y Oier, y el Backend Unax.
         -Index, Iniciar Sesion, Registrar ...
     -Backend
         -AlquilarCoche, BorrarAlquiler ...
+
 
 ### Configuración de SASS
 Primero hicimos todo en CSS pero al final lo cambiamos a SASS para mejor funcionamiento a la larga.
@@ -110,14 +116,16 @@ Primero hicimos todo en CSS pero al final lo cambiamos a SASS para mejor funcion
     -main-light.scss -tema claro(cookie)
     -main-dark.scss -tema oscuro(cookie)
 
+
 ### Configuración de JavaScript
-El javaScript se iba añadiendo mediante cada uno que iria añadiendo su parte del codigo.
-Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo hemos añadido.
-   
-    Archivos JS:
-    -script.js
+El JavaScript se iba añadiendo mediante cada uno que iba añadiendo su parte del código.
+Hemos hecho solo un archivo de JavaScript y si era poco código abajo del PHP lo hemos añadido.
+
+Archivos JS:
+- script.js
 
 ---
+
 
 ## Ejecución
 
@@ -126,6 +134,7 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
 1. Iniciar XAMPP Control Panel
 2. Arrancar Apache y MySQL
 3. Abrir navegador: http://localhost/Proyecto-final/Alquiza/index.php
+
 
 ### Modo Producción (Debian)
 
@@ -141,6 +150,7 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
 3. Iniciar toda la pagina
 ---
 
+
 ## Usuarios de Prueba
 
 ### Cuenta de Administrador
@@ -154,6 +164,7 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
   - Gestión de alquileres
   - Acceso al administración
 
+
 ### Cuentas de Usuario Regular
 
 #### Usuario
@@ -166,119 +177,114 @@ Hemos hecho solo un archivo de javaScript y si era poco codigo abajo del PHP lo 
 
 ---
 
+
 ## Estructura de Carpetas
 
-Toda la Esctrutura de nuestro proyecto hemos quierido separa el frontend y backend en la carpeta Alquiza, includes entan el navbar y footer, SASS en una carpeta aparte con todos Scss, 
-luego img separado por otra carpeta, archivo de JS separado suelto por que es uno y la carpeta de admin con su index separado por que hay se hace todo de añadir coches eliminar etc...
+Luego img separado por otra carpeta, archivo de JS separado suelto porque es uno y la carpeta de admin con su index separado porque ahí se hace todo de añadir coches, eliminar, etc...
 
-### Descripción de Carpetas Principales
-
-- **Alquiza/**: Contiene toda la interfaz de usuario (frontend) y las páginas públicas
-    img/ - Imágenes y recursos visuales
-    includes/ - Componentes reutilizables (navbar, footer)
-    sass/ - Archivos de estilos SCSS
-
-- **xampp/**: Contiene la lógica del servidor (backend) y el panel de administración
-    admin/ - Panel de administración
-    include/ - Archivos de configuración (db.php, debug.php, sesionUsuario.php)
-
-- **docs/**: Documentación técnica y manuales
-    manual-instalacion-debian.md - Guía de instalación en Debian
-    manual-usuario.md - Manual de usuario (flujo de uso)
-    decisiones-tecnicas.md - Decisiones técnicas (servidor, estructura, seguridad)
-    evidencias-despliegue/ - Capturas, configuración, logs, videos
-
-- **sass/**: Archivos de estilos SCSS
-- **includes/**: Componentes reutilizables (navbar, footer, etc.)
+### Estructura actual de carpetas
 
 ```
-Proyecto-final/
+Proyecto_Final/
 │
-├── Alquiza/                          # Frontend de la aplicación
-│   ├── index.php                     # Página principal
-│   ├── IniciarSesion.php            # Página de login
-│   ├── Registrarse.php              # Página de registro
-│   ├── buscar.php                   # Búsqueda de vehículos
-│   ├── coches.php                   # Listado de coches
-│   ├── motos.php                    # Listado de motos
-│   ├── furgonetas.php               # Listado de furgonetas
-│   ├── reservar.php                 # Sistema de reservas
-│   ├── Desactivar.php               # Desactivar cuenta
-│   ├── contacto.php                 # Página de contacto
-│   ├── NuestrasSucursales.php       # Mapa de sucursales
-│   ├── PreguntasFrecuentes.php      # FAQ
-│   │
-│   ├── includes/                    # Componentes reutilizables
-│   │   ├── navbar.php               # Barra de navegación
-│   │   └── footer.php               # Pie de página
-│   │
-│   ├── sass/                        # Estilos SCSS
-│   │   ├── _variables.scss          # Variables de diseño
-│   │   ├── _navbar.scss             # Estilos de navegación
-│   │   ├── _footer.scss             # Estilos de footer
-│   │   ├── _hero.scss               # Sección hero
-│   │   ├── _cards.scss              # Tarjetas de vehículos
-│   │   ├── _form.scss               # Formularios
-│   │   ├── _buttons.scss            # Botones
-│   │   ├── _section.scss            # Secciones
-│   │   ├── _faq.scss                # FAQ
-│   │   ├── main-light.scss          # Tema claro
-│   │   ├── main-light.css           # CSS compilado (tema claro)
-│   │   ├── main-dark.scss           # Tema oscuro
-│   │   └── main-dark.css            # CSS compilado (tema oscuro)
-│   │
-│   ├── img/                         # Imágenes y recursos
-│   │   └── ibiza.avif               # Ejemplo de imagen
-│   │
-│   ├── script.js                    # JavaScript del frontend
-│   │
-│   └── [páginas legales]            # Información legal
-│       ├── Informacion_legal.php
-│       ├── TerminosCondiciones.php
-│       ├── PoliticaPrivacidad.php
-│       ├── PoliticaCookies.php
-│       ├── PoliticasDaños.php
-│       ├── PoliticasDeposito.php
-│       ├── MencionesLegales.php
-│       └── SitesMaps.php
+├── alquilarCoche.php
+├── buscar.php
+├── contacto.php
+├── GraciasAlquiler.php
+├── include.php
+├── index.php
+├── IniciarSesion.php
+├── PerfilUsuario.php
+├── README.md
+├── Registrarse.php
+├── reservar.php
+├── schema.sql
+├── script.js
+├── vehiculosUsuarios.php
 │
-├── xampp/                           # Backend y lógica de negocio
-│   ├── index.php                    # Dashboard principal
-│   ├── login.php                    # Lógica de login
-│   ├── registro.php                 # Lógica de registro
-│   ├── iniciarSesion.php            # Procesamiento de login
-│   ├── registrarUsuario.php         # Procesamiento de registro
-│   ├── sesionUsuario.php            # Gestión de sesiones
-│   ├── miPerfil.php                 # Perfil de usuario
-│   ├── cerrarSesion.php             # Cerrar sesión
-│   ├── desactivarMiCuenta.php       # Desactivar cuenta
-│   ├── include.php                  # Includes generales
-│   │
-│   ├── admin/                       # Panel de administración
-│   │   ├── index.php                # Dashboard admin
-│   │   └── include.php              # Includes admin
-│   │
-│   └── include/                     # Archivos de configuración
-│       ├── db.php                   # Conexión a base de datos
-│       ├── debug.php                # Utilidades de debug
-│       └── sesionUsuario.php        # Gestión de sesiones
+├── admin/
+│   ├── añadirSucursal.php
+│   ├── añadirVehiculo.php
+│   ├── include.php
+│   ├── index.php
+│   ├── sucursales.php
+│   ├── usuarios.php
+│   ├── vehiculos.php
+│   ├── verSucursal.php
+│   ├── verUsuario.php
+│   └── verVehiculo.php
 │
-├── docs/                            # Documentación del proyecto
-│   ├── manual-instalacion-debian.md # Guía de instalación en Debian
-│   ├── manual-usuario.md            # Manual de usuario
-│   ├── decisiones-tecnicas.md       # Decisiones técnicas y arquitectura
-│   └── evidencias-despliegue/       # Capturas y videos
-│       ├── capturas/                # Screenshots
-│       └── videos/                  # Videos demostrativos
+├── Alquiza/
 │
-├── bd.sql                           # Script SQL original
-├── schema.sql                       # Estructura de base de datos
-├── seed.sql                         # Datos de prueba
-├── README.md                        # Este archivo
-└── .git/                            # Control de versiones Git
+├── api/
+│   ├── buscar.php
+│   └── include.php
+│
+├── assets/
+│   ├── img/
+│   │   └── ibiza.avif
+│   └── vid/
+│
+├── Documentacion/
+│
+├── include/
+│   ├── cardBusquedaCoche.php
+│   ├── db.php
+│   ├── debug.php
+│   ├── elementosComunes.php
+│   ├── footer.php
+│   ├── navbar.php
+│   ├── rutas.php
+│   └── sesionUsuario.php
+│
+├── info/
+│   ├── include.php
+│   ├── Informacion_legal.php
+│   ├── MencionesLegales.php
+│   ├── NuestrasSucursales.php
+│   ├── PoliticaCookies.php
+│   ├── PoliticaPrivacidad.php
+│   ├── PoliticasDaños.php
+│   ├── PoliticasDeposito.php
+│   ├── PreguntasFrecuentes.php
+│   ├── SitesMaps.php
+│   └── TerminosCondiciones.php
+│
+├── sass/
+│   ├── _admin.scss
+│   ├── _buttons.scss
+│   ├── _cards.scss
+│   ├── _faq.scss
+│   ├── _footer.scss
+│   ├── _form.scss
+│   ├── _hero.scss
+│   ├── _navbar.scss
+│   ├── _section.scss
+│   ├── _table.scss
+│   ├── _variables.scss
+│   ├── main-dark.css
+│   ├── main-dark.scss
+│   ├── main-light.css
+│   └── main-light.scss
+│
+├── servlets/
+│   ├── alquilarCoche.php
+│   ├── cerrarSesion.php
+│   ├── include.php
+│   ├── iniciarSesion.php
+│   ├── registrarUsuario.php
+│   └── admin/
+│       ├── añadirSucursal.php
+│       ├── añadirVehiculo.php
+│       ├── editarSucursal.php
+│       ├── editarUsuario.php
+│       ├── editarVehiculo.php
+│       └── include.php
+```
 ```
 
 ---
+
 
 ## Base de Datos
 
@@ -376,10 +382,12 @@ Almacena información de los alquileres realizados.
 | id_suc_dev | INT (FK) | Sucursal de devolución |
 | devuelto | BOOLEAN | Indica si fue devuelto |
 
+
 ### Scripts SQL
 
 - **`schema.sql`**: Contiene la estructura completa de la base de datos (CREATE TABLE)
 - **`seed.sql`**: Contiene datos de prueba (INSERT INTO)
+
 
 
 ## 📸 Evidencias de Despliegue
@@ -387,6 +395,7 @@ Almacena información de los alquileres realizados.
 ### Ubicación de Evidencias
 
 Las evidencias de despliegue se encuentran en la carpeta: **`docs/evidencias-despliegue/`**
+
 
 ### Capturas de Pantalla
 
@@ -404,6 +413,7 @@ Incluye capturas de pantalla que demuestran:
 8. **`08-logs-sistema.png`** - Logs del sistema
 9. **`09-base-datos.png`** - Base de datos configurada
 10. **`10-responsive-mobile.png`** - Vista responsive en móvil
+
 
 ### Videos Demostrativos
 
@@ -425,6 +435,7 @@ Videos cortos (2-5 minutos) que muestran:
    - Configuración de SSL
    - Importación de base de datos
 
+
 ### Logs y Configuración
 
 📁 **`docs/evidencias-despliegue/logs/`**
@@ -444,6 +455,7 @@ Archivos de configuración (sanitizados):
 - **`php.ini`** - Configuración de PHP
 - **`my.cnf`** - Configuración de MySQL
 
+
 ### Formato de Evidencias
 
 - **Imágenes:** PNG o JPG, resolución mínima 1920x1080
@@ -455,16 +467,17 @@ Archivos de configuración (sanitizados):
 
 ---
 
-## Conclusion
-Alquiza es una plataforma para el alquiler y gestión de vehículos, desarrollada con las tecnologías ya mencionadas. El proyecto se separo claramente frontend y backend, facilitando el proyecti. Incluye documentación, evidencias de despliegue y una base de datos bien estructurada. Su diseño sencillo y su facilidad hace que la pagina sea muy bonita y sencilla.
 
+## Conclusión
+Alquiza es una plataforma para el alquiler y gestión de vehículos, desarrollada con las tecnologías ya mencionadas. El proyecto se separó claramente frontend y backend, facilitando el proyecto. Incluye documentación, evidencias de despliegue y una base de datos bien estructurada. Su diseño sencillo y su facilidad hace que la página sea muy bonita y sencilla.
 
 ---
+
 ## Reparto
 
--Servidor y backend: Unax
--Frontend: Illart, Oier y Marina
--Documentación y presentación: Illart y Oier
--SASS: Marina
+- Servidor y backend: Unax
+- Frontend: Illart, Oier y Marina
+- Documentación y presentación: Illart y Oier
+- SASS: Marina
 
 ------
