@@ -12,9 +12,9 @@ function navbar()
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("IniciarSesion.php")?>">Iniciar Sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php")?>">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php")?>">Motos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php")?>">Furgonetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php?tipo=coche")?>">Coches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php?tipo=moto")?>">Motos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=lnk("buscar.php?tipo=furgoneta")?>">Furgonetas</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("contacto.php")?>">Contacto</a></li>
                     <!-- Enlace para cambiar a modo oscuro -->
                     <a href="?tema=dark" class="btn btn-secondary">Modo Oscuro</a>
