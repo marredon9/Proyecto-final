@@ -21,9 +21,13 @@ $contraseña = $_POST["contraseña"] ?? "";
 
 //comprobar que esten todos los datos
 if ($dni == "" || $contraseña == "") {
+    //var_dump($dni);
+    //var_dump($contraseña);
     redirect("login.php?error=1"); //error 1: parametros insuficientes
     return;
 }
+
+
 
 //hashear contraseña
 $contraseña = hash("sha256", $contraseña);
@@ -38,7 +42,9 @@ try {
     $r = $res->fetch_assoc();
     $recuento = $r["count"];
     if ($recuento == 0) { //si no existe un usuario con ese dni
-        redirect("login.php?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
+        var_dump($r);
+        redirect("login.php?error=2"); //error 2: el usuario no existe o la contraseña es incorrecta
+        exit;
     }
     
     //hacer consulta con todos los datos del usuario
@@ -50,7 +56,10 @@ try {
 
     //comprobar que la contraseña es correcta
     if ($contraseña != $r["contraseña"]) {
-        redirect("login.php?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
+        var_dump($contraseña);
+        var_dump($r["contraseña"]);
+        redirect("login.php?error=2"); //error 2: el usuario no existe o la contraseña es incorrecta
+        exit;
     }
 
     //guardar objeto sesionusuario en datos de sesion
@@ -58,6 +67,7 @@ try {
         $r["id"], $r["nombre"], $r["apellido1"], $r["apellido2"], $r["dni"], $r["email"], ($r["es_admin"] == 1)
     );
     guardarSesion($sesion);
+    var_dump($sesion);
     if ($sesion->esAdmin) {
         redirect("admin/index.php");
     } else {
