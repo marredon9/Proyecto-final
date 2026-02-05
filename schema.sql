@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(128) NOT NULL,
@@ -56,4 +56,3 @@ CREATE TABLE alquiler (
     hasta DATE,
     precio INT #AÑADIR EN BASE DE DATOS EN CLASE
 );
-*/
