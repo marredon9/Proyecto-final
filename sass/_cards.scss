@@ -1,0 +1,23 @@
+@import 'variables';
+
+#contact-card {
+  background: rgba(0, 123, 255, 0.6) !important;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+}
+
+
+li{
+  margin-left: 10px;
+  a{
+    color:white;
+  }
+}
+
+span .text-card{
+  color: $color-black !important;
+  font-size: 12px !important;
+}
