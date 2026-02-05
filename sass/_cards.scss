@@ -9,13 +9,15 @@
   color: white;
 }
 
-.card-body{
-  color:white;
-  max-width: 520px;
-}
 
 li{
+  margin-left: 10px;
   a{
     color:white;
   }
+}
+
+span .text-card{
+  color: $color-black !important;
+  font-size: 12px !important;
 }

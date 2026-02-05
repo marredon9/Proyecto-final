@@ -25,12 +25,11 @@ gestionarModoOscuro();
         <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative"
             style="z-index: 1;">
             <h1 class="display-4 fw-bold mb-3">¡Tu mejor opción en Ibiza!</h1>
-            <p class="lead mb-4">Alquiler de coches, motos y furgonetas con la mejor calidad y precio</p>
-            <!--
+            <p class="lead mb-4">Alquiler de coches y furgonetas con la mejor calidad y precio</p>            <!--
             <button type="button" class="btn btn-primary btn-lg btn-rounded" data-bs-toggle="modal"
                 data-bs-target="#reservaModal">Reserva Ahora</button>
             -->
-            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("buscar.php")?>">Reserva Ahora</a>
+            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("Registrarse.php")?>">Regístrate</a>
         </div>
 
     </section>
@@ -136,19 +135,11 @@ gestionarModoOscuro();
                 <a href="<?=lnk("furgoneta.php")?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="<?=img("moto.png")?>" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column justify-content-between">
-                <div>
-                    <h5 class="card-title">Motos</h5>
-                </div>
-                <a href="<?=lnk("moto.php")?>" class="btn btn-outline-dark">Ver más</a>
-            </div>
-        </div>
+
     </div>
     </div>
     <div style="text-align: center; margin-top: 50px;">
-        <a class="view-button" href="<?=lnk("buscar.php")?>">Ver Nuestros Vehículos</a>
+        <a class="view-button" href="<?=lnk("vehiculo.php")?>">Ver Nuestros Vehículos</a>
     </div>
 
     <!--Zona gris -->

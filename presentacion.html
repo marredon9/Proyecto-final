@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Estratégica de Virtualización</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #005F73;
+            --secondary: #94D2BD;
+            --accent: #EE9B00;
+            --accent-dark: #CA6702;
+            --text-dark: #1B263B;
+            --text-light: #5A6D8C;
+            --bg-body: #E9ECEF;
+            --bg-slide: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 95%; max-width: 1280px; aspect-ratio: 16/9;
+            background: var(--bg-slide);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+
+        .deco-circle { position: absolute; border-radius: 50%; z-index: 0; opacity: 0.1; }
+        .deco-1 { width: 400px; height: 400px; background: var(--primary); top: -150px; right: -100px; }
+        .deco-2 { width: 300px; height: 300px; background: var(--accent); bottom: -100px; left: -50px; }
+
+        .slide {
+            flex: 1; padding: 40px 70px;
+            display: none; flex-direction: column; justify-content: center;
+            position: relative; z-index: 1;
+            opacity: 0; transform: translateY(10px);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide.active { display: flex; opacity: 1; transform: translateY(0); }
+
+        h1 { color: var(--primary); font-size: 3.2em; line-height: 1.1; margin-bottom: 20px; font-weight: 700; font-family: 'Poppins'; }
+        h2 { color: var(--primary); font-size: 2.2em; margin-bottom: 20px; border-bottom: 4px solid var(--secondary); display: inline-block; font-family: 'Poppins'; }
+        h3 { color: var(--accent-dark); font-size: 1.3em; margin: 15px 0 10px 0; font-family: 'Poppins'; }
+       
+        p, li { font-size: 1.05em; line-height: 1.5; margin-bottom: 8px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+
+        .card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0,0,0,0.05); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        }
+        @media (max-width: 720px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            .presentation-container { padding: 20px; }
+            body { overflow: auto; }
+        }
+        .highlight-box { background: linear-gradient(120deg, var(--primary), #0A9396); color: white; padding: 25px; border-radius: 20px; margin-bottom: 20px; }
+        .highlight-box h3, .highlight-box p { color: white; }
+
+        .tag { display: inline-block; padding: 5px 15px; border-radius: 50px; font-size: 0.8em; font-weight: 600; text-transform: uppercase; margin: 5px; }
+        .tag.orange { background: rgba(238, 155, 0, 0.15); color: var(--accent-dark); }
+        .tag.blue { background: rgba(0, 95, 115, 0.1); color: var(--primary); }
+        .tag.green { background: rgba(46, 139, 87, 0.15); color: #2E8B57; }
+        .tag.red { background: rgba(220, 20, 60, 0.1); color: #DC143C; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 10px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .data-table th { background: var(--primary); color: white; padding: 15px; text-align: left; }
+        .data-table td { padding: 12px 15px; border-bottom: 1px solid #eee; background: #fff; }
+
+        ul.check-list { list-style: none; padding: 0; }
+        ul.check-list li::before { content: '✓ '; color: var(--secondary); font-weight: bold; margin-right: 8px; }
+
+        .nav-controls { position: absolute; bottom: 30px; right: 40px; display: flex; gap: 10px; z-index: 100; }
+        .nav-btn { background: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-size: 1.2em; color: var(--primary); transition: 0.3s; }
+        .nav-btn:hover { background: var(--accent); color: white; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        .progress-track { position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background: #eee; }
+        .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.5s; }
+
+        /* Estilos adicionales para ajustar contenido denso */
+        .text-sm { font-size: 0.9em; line-height: 1.4; }
+        .box-light { margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+    </style>
+</head>
+
+<body>
+    <div class="presentation-container">
+        <div class="deco-circle deco-1"></div>
+        <div class="deco-circle deco-2"></div>
+
+        <div class="slide active">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <span class="tag orange">Informe Técnico Empresarial</span>
+                <h1>Evaluación de Modelos de Virtualización y Contenedores</h1>
+                <p style="font-size: 1.2em; color: var(--text-light); margin: 20px 0;">Análisis estratégico de infraestructuras de TI modernas</p>
+                <div style="margin: 30px 0;">
+                    <span class="tag blue">Erlantz Kareaga</span> <span class="tag blue">Illart Beain</span>
+                    <span class="tag blue">Oier Barcena</span> <span class="tag blue">Unai Serrano</span>
+                </div>
+                <p style="font-weight: 600; color: #999;">Arangoya Ikastetxea | 2025-2026</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>1. Introducción</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Contextualización Estratégica</h3>
+                    <p>La virtualización es hoy la clave de la <strong>eficiencia operativa</strong> en las empresas. Permite:</p>
+                    <ul class="check-list">
+                        <li>Optimizar el uso de recursos físicos.</li>
+                        <li>Reducir drásticamente costes operativos.</li>
+                        <li>Aumentar la flexibilidad y escalabilidad.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <p>Mediante la abstracción del hardware, las organizaciones ejecutan múltiples sistemas en un mismo servidor, facilitando la <strong>Alta Disponibilidad</strong> y la recuperación ante desastres.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Metodología y Alcance</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Metodología</h3>
+                    <p>Análisis comparativo de tecnologías basado en:</p>
+                    <ul class="check-list">
+                        <li>Rendimiento y escalabilidad.</li>
+                        <li>Gestión y costes operativos.</li>
+                        <li>Estudio de casos reales.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Alcance del Análisis</h3>
+                    <p>Evaluación técnica de los estándares de la industria:</p>
+                    <div style="margin-top: 10px;">
+                        <span class="tag blue">VMware</span> <span class="tag blue">Hyper-V</span>
+                        <span class="tag blue">KVM</span> <span class="tag blue">Docker</span> <span class="tag blue">LXC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>2.1 Virtualización Completa</h2>
+            <div class="highlight-box">
+                <h3>¿Qué es?</h3>
+                <p>Es una técnica donde el hipervisor emula íntegramente el hardware físico. El sistema operativo invitado (Guest OS) se ejecuta sin necesidad de modificaciones internas, creyendo que dispone de hardware dedicado.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <p><strong>Independencia total:</strong> Cada VM funciona como un sistema autónomo con sus propias aplicaciones y recursos asignados.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Uso empresarial:</strong> Ideal para simular entornos físicos reales y facilitar la migración de sistemas antiguos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Hipervisores: Tipo 1 vs Tipo 2</h2>
+            <div class="grid-2">
+                <div class="card" style="border-left: 5px solid var(--primary);">
+                    <h3>Tipo 1 (Bare-Metal)</h3>
+                    <p>Instalado directamente sobre el hardware.</p>
+                    <ul class="check-list">
+                        <li>Mayor rendimiento y estabilidad.</li>
+                        <li>Ideal para Centros de Datos.</li>
+                        <li><em>Ejemplos: ESXi, KVM.</em></li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 5px solid var(--accent);">
+                    <h3>Tipo 2 (Hosted)</h3>
+                    <p>Se ejecuta sobre un SO anfitrión.</p>
+                    <ul class="check-list">
+                        <li>Sencillo de implementar.</li>
+                        <li>Ideal para desarrollo y pruebas.</li>
+                        <li><em>Ejemplos: VirtualBox, VMware Workstation.</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Balance: Virtualización Completa</h2>
+            <div class="grid-2">
+                <div class="card" style="background: rgba(148, 210, 189, 0.1);">
+                    <h3 style="color: #2d6a4f;">Ventajas</h3>
+                    <ul class="check-list">
+                        <li><strong>Aislamiento total:</strong> Seguridad robusta entre VMs.</li>
+                        <li><strong>Versatilidad:</strong> Ejecuta múltiples SO distintos sobre el mismo hardware.</li>
+                    </ul>
+                </div>
+                <div class="card" style="background: rgba(200, 50, 50, 0.05);">
+                    <h3 style="color: #c53030;">Desventajas</h3>
+                    <ul class="check-list">
+                        <li><strong>Alto consumo:</strong> Cada VM necesita un SO completo (overhead).</li>
+                        <li><strong>Latencia:</strong> Tiempos de arranque más prolongados.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>2.2 Paravirtualización</h2>
+            <div class="card" style="margin-bottom: 20px;">
+                <p>En este modelo, el sistema operativo invitado es <strong>consciente</strong> de que se ejecuta en una VM. No emula todo el hardware, sino que colabora con el hipervisor.</p>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <h3>Hyper Calls</h3>
+                    <p>El sistema utiliza APIs especiales (hyper calls) para comunicarse directamente con el hipervisor, eliminando la necesidad de traducir instrucciones de hardware.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--secondary);">
+                    <h3>Beneficio Directo</h3>
+                    <p>Reducción masiva de la sobrecarga de emulación, resultando en un rendimiento cercano al nativo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Eficacia de la Paravirtualización</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Ventajas Técnicas</h3>
+                    <ul class="check-list">
+                        <li><strong>Alto Rendimiento:</strong> Ideal para bases de datos y aplicaciones en tiempo real.</li>
+                        <li><strong>Eficiencia:</strong> Menor sobrecarga en operaciones de E/S.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Desventajas Críticas</h3>
+                    <ul class="check-list">
+                        <li><strong>Modificación del Kernel:</strong> El SO invitado debe ser adaptado específicamente.</li>
+                        <li><strong>Baja Compatibilidad:</strong> No apto para sistemas de código cerrado (como Windows antiguo).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Comparativa: Completa vs Paravirtualización</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Virtualización Completa</th>
+                        <th>Paravirtualización</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Modificar el SO</strong></td>
+                        <td>No requerido</td>
+                        <td>Obligatorio (Kernel)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Emulación HW</strong></td>
+                        <td>Total (Íntegra)</td>
+                        <td>Parcial (vía APIs)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rendimiento</strong></td>
+                        <td>Menor (más overhead)</td>
+                        <td>Mayor (eficiencia E/S)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compatibilidad</strong></td>
+                        <td>Alta (Universal)</td>
+                        <td>Baja (Solo SO modificados)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aislamiento</strong></td>
+                        <td>Muy fuerte</td>
+                        <td>Moderado/Fuerte</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+         <div class="slide">
+            <h2>2.3 Contenedores: Virtualización a Nivel de SO</h2>
+            <div class="highlight-box">
+                <h3 style="border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 15px;">
+                    Definición Técnica</h3>
+                <p style="margin: 0;">
+                    Técnica que permite ejecutar varios espacios de trabajo (contenedores) compartiendo un <strong>único
+                        kernel</strong> del sistema operativo. A diferencia de las VMs, no requieren un SO completo,
+                    basándose en el <em>aislamiento de procesos</em>.
+                </p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Características Técnicas</h3>
+                    <ul class="check-list text-sm">
+                        <li><strong>Ligeros:</strong> Utilizan el kernel del host, sin duplicar el SO.</li>
+                        <li><strong>Arranque Rápido:</strong> Inician en segundos (facilitando CI/CD).</li>
+                        <li><strong>Portabilidad:</strong> "Build once, run anywhere" (Desarrollo a Producción).</li>
+                        <li><strong>Dependencia:</strong> Requieren un motor de contenedores activo.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Balance Estratégico</h3>
+                    <div style="margin-bottom: 15px;">
+                        <span class="tag green">Ventajas</span>
+                        <p class="text-sm" style="margin-bottom: 5px;">Eficiencia extrema de recursos y escalabilidad
+                            ideal para <strong>microservicios</strong>.</p>
+                    </div>
+                    <div>
+                        <span class="tag red">Desventajas</span>
+                        <p class="text-sm" style="margin-bottom: 0;">Aislamiento más débil que una VM. Si el kernel se
+                            compromete, <strong>todos</strong> los contenedores son vulnerables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>3.1 Tecnologías de Virtualización Completa</h2>
+            <div class="grid-3">
+
+                <div class="card" style="border-top: 4px solid var(--primary);">
+                    <h3 style="font-size: 1.2em;">VMware vSphere / ESXi</h3>
+                    <p class="text-sm">Plataforma empresarial tipo <em>Bare-metal</em> (sobre hardware físico).</p>
+
+                    <div class="box-light text-sm">
+                        <p><strong>Ventaja:</strong> Ecosistema y soporte robusto. Alto rendimiento.</p>
+                        <p style="margin-top:10px; border-top:1px solid #ddd; paddingTop:5px;">
+                            <strong>Desventaja:</strong> Elevado coste de licenciamiento (post-adquisición Broadcom).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #00A4EF;">
+                    <h3 style="font-size: 1.2em;">Microsoft Hyper-V</h3>
+                    <p class="text-sm">Hipervisor Tipo 1 nativo en Windows Server.</p>
+
+                    <div class="box-light text-sm">
+                        <p><strong>Ventaja:</strong> Integración total Microsoft (AD) y <em>Failover Clustering</em>
+                            incluido.</p>
+                        <p style="margin-top:10px; border-top:1px solid #ddd; paddingTop:5px;">
+                            <strong>Desventaja:</strong> Menor flexibilidad en entornos heterogéneos (No-Windows).</p>
+                    </div>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--accent);">
+                    <h3 style="font-size: 1.2em;">KVM (Linux)</h3>
+                    <p class="text-sm">Open Source. Integrado en el Kernel (Convierte Linux en Hipervisor).</p>
+
+                    <div class="box-light text-sm">
+                        <p><strong>Ventaja:</strong> Gratuito, eficiente (usa Intel VT-x) y base de
+                            <strong>Proxmox</strong>.</p>
+                        <p style="margin-top:10px; border-top:1px solid #ddd; paddingTop:5px;">
+                            <strong>Desventaja:</strong> Requiere conocimientos técnicos avanzados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>3.2 Ecosistema de Contenedores</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Docker</h3>
+                        <span class="tag blue">App Container</span>
+                    </div>
+                    <p class="text-sm">Contenedores de aplicación (un solo proceso). Dominio del 82.8% del mercado.</p>
+                    <div class="box-light text-sm">
+                         <p><strong>Tecnología:</strong> Comparte kernel. Aislamiento vía <em>namespaces</em> y control con <em>cgroups</em>.</p>
+                         <p><strong>Riesgo:</strong> Imágenes públicas vulnerables y aislamiento parcial.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>LXC</h3>
+                        <span class="tag orange">System Container</span>
+                    </div>
+                    <p class="text-sm">Virtualización de SO completo (VPS ligero). Comportamiento de VM real.</p>
+                    <div class="box-light text-sm">
+                        <p><strong>Ventaja:</strong> Persistencia de datos y gestión tradicional (SSH).</p>
+                        <p><strong>Uso:</strong> Ideal en Proxmox para servicios de larga duración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>4.1 Análisis Comparativo: Rendimiento</h2>
+            <table class="data-table" style="font-size: 0.9em;">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px;">KPI / Métrica</th>
+                        <th style="padding: 10px;">Docker</th>
+                        <th style="padding: 10px;">LXC</th>
+                        <th style="padding: 10px;">VM (Virtualización)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px 15px;"><strong>Arranque</strong></td>
+                        <td style="padding: 8px 15px; color: var(--primary); font-weight:bold;">2 - 15 seg</td>
+                        <td style="padding: 8px 15px;">~45 seg</td>
+                        <td style="padding: 8px 15px; color: #999;">3 - 5 min</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 15px;"><strong>Uso RAM (Idle)</strong></td>
+                        <td style="padding: 8px 15px; color: var(--primary); font-weight:bold;">~2.1 GB</td>
+                        <td style="padding: 8px 15px;">~3.2 GB</td>
+                        <td style="padding: 8px 15px; color: #999;">~14.5 GB</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 15px;"><strong>Overhead Disco</strong></td>
+                        <td style="padding: 8px 15px; color: var(--primary); font-weight:bold;">0% (Nativo)</td>
+                        <td style="padding: 8px 15px;">~5%</td>
+                        <td style="padding: 8px 15px; color: #999;">~15%</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 15px;"><strong>Red (Throughput)</strong></td>
+                        <td style="padding: 8px 15px; color: var(--primary); font-weight:bold;">1 Gbps (Nativo)</td>
+                        <td style="padding: 8px 15px;">~980 Mbps</td>
+                        <td style="padding: 8px 15px; color: #999;">~920 Mbps</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 15px; background: #eef; padding: 10px; border-radius: 8px; font-size: 0.85em;">
+                <p style="margin:0;"><strong>Conclusión:</strong> Docker ofrece rendimiento nativo en disco y red, mientras que las VMs sacrifican ~15% de recursos por el aislamiento total.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>4.2 Seguridad y Aislamiento</h2>
+            <div class="grid-2">
+                <div class="card" style="background: #fff5f5; border: 1px solid #ffcccc; padding: 15px;">
+                    <h3 style="color: #c53030; font-size: 1.1em;">Contenedores (Debilidad)</h3>
+                    <p class="text-sm">Comparten el Kernel del Host.</p>
+                    <ul class="check-list text-sm" style="margin-bottom: 0;">
+                        <li><strong>Vulnerabilidad de Escape:</strong> Fallo en Kernel afecta a todo.</li>
+                        <li><strong>Barrera Lógica:</strong> Solo <em>Namespaces</em> (visibilidad) y <em>Cgroups</em> (recursos).</li>
+                    </ul>
+                </div>
+                <div class="card" style="background: #f0fff4; border: 1px solid #c6f6d5; padding: 15px;">
+                    <h3 style="color: #2f855a; font-size: 1.1em;">VMs (Fortaleza)</h3>
+                    <p class="text-sm">Aislamiento por Hardware.</p>
+                    <ul class="check-list text-sm" style="margin-bottom: 0;">
+                        <li><strong>Aislamiento Físico:</strong> Malware contenido en la VM.</li>
+                        <li><strong>Compliance:</strong> Obligatorio para banca/sanidad.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>4.4 Gestión y Administración</h2>
+            <div class="grid-2">
+                 <div class="card" style="border-top: 4px solid var(--primary); padding: 15px;">
+                    <h3 style="font-size: 1.1em;">Enfoque DevOps (Docker)</h3>
+                    <p class="text-sm">Gestión declarativa y automatizada.</p>
+                    <ul class="check-list text-sm" style="margin-bottom: 0;">
+                        <li><strong>Herramientas:</strong> CLI, <code>docker-compose</code> (YAML).</li>
+                        <li><strong>Curva:</strong> Baja para desarrolladores.</li>
+                        <li><strong>Escalabilidad:</strong> Horizontal (Miles de instancias).</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--accent); padding: 15px;">
+                    <h3 style="font-size: 1.1em;">Enfoque SysAdmin (LXC/VM)</h3>
+                    <p class="text-sm">Gestión de sistemas tradicional.</p>
+                    <ul class="check-list text-sm" style="margin-bottom: 0;">
+                        <li><strong>Herramientas:</strong> SSH, GUI Web (Proxmox, vSphere).</li>
+                        <li><strong>Curva:</strong> Media (Requiere admin Linux).</li>
+                        <li><strong>Escalabilidad:</strong> Vertical (Más RAM/CPU por nodo).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide">
+            <h2>5. Casos de Éxito en la Industria</h2>
+            <div class="grid-2">
+                <div class="card" style="padding: 15px;">
+                    <span class="tag blue" style="font-size: 0.7em;">Full Virtualization</span>
+                    <h3 style="margin: 5px 0 10px 0;">Banca (BBVA, Santander)</h3>
+                    <p class="text-sm" style="margin-bottom: 5px;"><strong>Necesidad:</strong> Seguridad crítica y cumplimiento PCI-DSS.</p>
+                    <div class="box-light text-sm" style="font-size: 0.85em;">
+                        <p style="margin:0;">Uso de <strong>VMs</strong> para asegurar aislamiento total de datos financieros.</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 15px;">
+                     <span class="tag orange" style="font-size: 0.7em;">Contenedores</span>
+                    <h3 style="margin: 5px 0 10px 0;">Streaming (Netflix, Spotify)</h3>
+                    <p class="text-sm" style="margin-bottom: 5px;"><strong>Necesidad:</strong> Agilidad extrema y CI/CD.</p>
+                     <div class="box-light text-sm" style="font-size: 0.85em;">
+                        <p style="margin:0;">Uso de <strong>Docker</strong> para microservicios. Escalado instantáneo ante picos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>6. Análisis de Escenario Crítico</h2>
+            <p><strong>Reto:</strong> E-commerce (Black Friday) con datos sensibles.</p>
+
+            <div class="highlight-box" style="padding: 15px; margin-bottom: 15px;">
+                <h3 style="text-align:center; font-size: 1.2em; margin-bottom: 10px;">Recomendación: Proxmox VE (Híbrido)</h3>
+                <div class="grid-3">
+                    <div style="background: rgba(255,255,255,0.15); padding: 10px; border-radius: 10px;">
+                        <strong>Datos (KVM)</strong>
+                        <p class="text-sm" style="font-size: 0.85em;">Aislamiento total para la Base de Datos.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 10px; border-radius: 10px;">
+                        <strong>App (Docker)</strong>
+                        <p class="text-sm" style="font-size: 0.85em;">Escalado rápido ante picos de tráfico.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 10px; border-radius: 10px;">
+                        <strong>Coste (OpEx)</strong>
+                        <p class="text-sm" style="font-size: 0.85em;">Ahorro en licencias redirigido a seguridad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>7. Conclusiones y Futuro</h2>
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--primary);">Conclusiones Clave</h3>
+                    <ul class="check-list">
+                        <li><strong>VMs:</strong> El estándar de oro en seguridad.</li>
+                        <li><strong>Contenedores:</strong> La revolución de la agilidad.</li>
+                        <li><strong>Proxmox:</strong> Unifica ambos mundos.</li>
+                    </ul>
+                </div>
+                 <div class="card" style="border-left: 5px solid var(--accent); padding: 15px;">
+                    <h3>Tendencias 2026</h3>
+                    <p class="text-sm">Hacia la convergencia total:</p>
+                    <ul class="check-list text-sm">
+                         <li><strong>WebAssembly (Wasm):</strong> Portabilidad extrema.</li>
+                         <li><strong>Micro-VMs (Firecracker):</strong> Velocidad de contenedor con seguridad de VM.</li>
+                    </ul>
+                </div>
+            </div>
+             <div style="text-align: center; margin-top: 25px;">
+                 <p style="font-weight: bold; color: #999;">Equipo de Análisis | Arangoya Ikastetxea</p>
+             </div>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" onclick="navigate(-1)">&#8592;</button>
+            <button class="nav-btn" id="nextBtn" onclick="navigate(1)">&#8594;</button>
+        </div>
+
+    </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) slide.classList.add('active');
+            });
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function navigate(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+            updateSlide();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
+        });
+
+        updateSlide();
+    </script>
+</body>
+</html>

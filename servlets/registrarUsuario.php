@@ -26,10 +26,10 @@ $repetirContraseña = $_POST["repetirContraseña"] ?? "";
 
 //comprobar campos uno a uno
 $comprobarCampos = [$nombre, $apellido1, $dni, $contraseña, $repetirContraseña, $email];
-for ($i = 0; $i > sizeof($comprobarCampos); $i++) {
+for ($i = 0; $i < sizeof($comprobarCampos); $i++) {
     //echo ($i);
     if ($comprobarCampos[$i] == "") {
-        redirect("registro.php?error=3"); //error 3: datos insuficientes
+        redirect("Registrarse.php?error=campos_insuficientes");
         return;
     }
 }
@@ -38,7 +38,7 @@ unset($comprobarCampos);
 $contraseña = hash("sha256", $contraseña);
 $repetirContraseña = hash("sha256", $repetirContraseña);
 if ($contraseña != $repetirContraseña) {
-    redirect("registro.php?error=2"); //error 2: las contraseñas no coinciden
+    redirect("Registrarse.php?error=contrasenas_no_coinciden");
     return;
 }
 
@@ -52,7 +52,7 @@ try {
     $r = $res->fetch_assoc();
     $recuento = $r["count"];
     if ($recuento != 0) { //si el recuento no es 0
-        redirect("registro.php?error=1");
+        redirect("Registrarse.php?error=dni_existe");
         return;
     }
 
@@ -63,10 +63,10 @@ try {
     $stmt->execute();
     
     //final redirigir a login.php
-    redirect("login.php");
+    redirect("IniciarSesion.php");
     return;
 } catch (mysqli_sql_exception $e) {
-    redirect("registro.php?error=0"); //error 0: error con base de datos
+    redirect("../Registrarse.php?error=error_base_datos");
     return;
 }
 
