@@ -13,7 +13,6 @@ function navbar()
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("IniciarSesion.php")?>">Iniciar Sesion</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("coche.php")?>">Coches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=lnk("moto.php")?>">Motos</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("furgoneta.php")?>">Furgonetas</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?=lnk("contacto.php")?>">Contacto</a></li>
                     <!-- Enlace para cambiar a modo oscuro -->

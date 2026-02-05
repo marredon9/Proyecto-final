@@ -136,15 +136,7 @@ gestionarModoOscuro();
                 <a href="<?=lnk("furgoneta.php")?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="<?=img("moto.png")?>" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column justify-content-between">
-                <div>
-                    <h5 class="card-title">Motos</h5>
-                </div>
-                <a href="<?=lnk("moto.php")?>" class="btn btn-outline-dark">Ver más</a>
-            </div>
-        </div>
+
     </div>
     </div>
     <div style="text-align: center; margin-top: 50px;">
