@@ -124,7 +124,7 @@ gestionarModoOscuro();
                 <div>
                     <h5 class="card-title">Coches</h5>
                 </div>
-                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+                <a href="coche.php" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -133,7 +133,7 @@ gestionarModoOscuro();
                 <div>
                     <h5 class="card-title">Furgonetas</h5>
                 </div>
-                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+                <a href="<?=lnk("furgoneta.php")?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -142,7 +142,7 @@ gestionarModoOscuro();
                 <div>
                     <h5 class="card-title">Motos</h5>
                 </div>
-                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+                <a href="<?=lnk("moto.php")?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
     </div>
