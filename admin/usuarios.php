@@ -16,7 +16,7 @@ gestionarModoOscuro();
 <html lang="es">
 
 <head>
-    <?=headerPagina()?>
+    <?= headerPagina() ?>
 </head>
 
 <body>
@@ -29,6 +29,9 @@ Se puede quitar en cualquier momento sin problema
     <div class="admin mt-5 mb-5 text-center">
 
         <h1>Listado de usuarios</h1>
+        <div>
+            <a href="<?= lnk("servlets/admin/exportarUsuariosCSV.php") ?>" class="btn btn-primary btn-lg px-5">Exportar CSV</a>
+        </div>
         <table class="mx-auto">
             <tr>
                 <td></td>
@@ -53,10 +56,10 @@ Se puede quitar en cualquier momento sin problema
                     $dni = $r["dni"] ?? "";
                     $email = $r["email"] ?? "";
                     $esAdmin = $r["es_admin"] == 1;
-                    ?>
+            ?>
                     <tr>
                         <td>
-                            <a href="<?=lnk("admin/usuarios.php?id=" . $id)?>">Ver</a>
+                            <a href="<?= lnk("admin/usuarios.php?id=" . $id) ?>">Ver</a>
                         </td>
                         <td><input type="text" disabled value="<?= $id ?>"></td>
                         <td><input type="text" disabled value="<?= $nombreCompleto ?>"></td>
@@ -65,26 +68,24 @@ Se puede quitar en cualquier momento sin problema
                         <?php
 
                         if ($esAdmin) {
-                            ?>
+                        ?>
                             <td><input type="checkbox" disabled checked></td>
-                            <?php
+                        <?php
                         } else {
-                            ?>
+                        ?>
                             <td><input type="checkbox" disabled></td>
-                            <?php
+                        <?php
                         }
 
                         ?>
                     </tr>
-
-                    <?php
+            <?php
                 }
             } catch (mysqli_sql_exception $e) {
-
             }
             ?>
         </table>
-    </div>  
+    </div>
     <?= footer() ?>
 </body>
 
