@@ -25,17 +25,11 @@ gestionarModoOscuro();
         <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative"
             style="z-index: 1;">
             <h1 class="display-4 fw-bold mb-3">¡Tu mejor opción en Ibiza!</h1>
-<<<<<<< HEAD
             <p class="lead mb-4">Alquiler de coches y furgonetas con la mejor calidad y precio</p>            <!--
             <button type="button" class="btn btn-primary btn-lg btn-rounded" data-bs-toggle="modal"
                 data-bs-target="#reservaModal">Reserva Ahora</button>
             -->
-            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("buscar.php")?>">Reserva Ahora</a>
-=======
-            <p class="lead mb-4">Alquiler de coches y furgonetas con la mejor calidad y precio</p>
-            
-            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("Registrarse.php")?>">Regístrate</a>
->>>>>>> c05d2b3fb77a8694e406bf4d06d19d981431e9f7
+            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("buscar.php")?>">Regístrate</a>
         </div>
 
     </section>
