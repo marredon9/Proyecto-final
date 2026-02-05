@@ -23,7 +23,7 @@ $contraseña = $_POST["contraseña"] ?? "";
 
 //comprobar que esten todos los datos
 if ($dni == "" || $contraseña == "") {
-    redirect($rutaError . "error=1"); //error 1: parametros insuficientes
+    redirect($rutaError . "?error=1"); //error 1: parametros insuficientes
     return;
 }
 
@@ -41,6 +41,7 @@ try {
     $recuento = $r["count"];
     if ($recuento == 0) { //si no existe un usuario con ese dni
         redirect($rutaError . "?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
+        exit;
     }
     
     //hacer consulta con todos los datos del usuario
@@ -53,6 +54,7 @@ try {
     //comprobar que la contraseña es correcta
     if ($contraseña != $r["contraseña"]) {
         redirect($rutaError . "?error=1"); //error 2: el usuario no existe o la contraseña es incorrecta
+        exit;
     }
 
     //guardar objeto sesionusuario en datos de sesion
@@ -65,6 +67,7 @@ try {
     } else {
         redirect("index.php");
     }
+    exit;
 } catch (mysqli_sql_exception $e) {
     echo $e;
     //redirect("login.php?error=0"); //error 0: problema con la base de datos
