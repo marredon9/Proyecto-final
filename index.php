@@ -119,7 +119,7 @@ gestionarModoOscuro();
     <h2 class="section-title mb-4 text-center mt-3" id="flota">Descubra Nuestra Flota</h2>
     <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
         <div class="card" style="width: 18rem;">
-            <img src="img/coche.png" class="card-img-top" alt="coche">
+            <img src="<?=img("coche.png")?>" class="card-img-top" alt="coche">
             <div class="card-body d-flex flex-column justify-content-between">
                 <div>
                     <h5 class="card-title">Coches</h5>
@@ -137,7 +137,7 @@ gestionarModoOscuro();
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img src="<?=img("img/moto.png")?>" class="card-img-top" alt="...">
+            <img src="<?=img("moto.png")?>" class="card-img-top" alt="...">
             <div class="card-body d-flex flex-column justify-content-between">
                 <div>
                     <h5 class="card-title">Motos</h5>
