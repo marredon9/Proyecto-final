@@ -32,6 +32,8 @@ Se puede quitar en cualquier momento sin problema
         <div>
             <a href="<?= lnk("servlets/admin/exportarUsuariosCSV.php") ?>" class="btn btn-primary btn-lg px-5">Exportar CSV</a>
         </div>
+        <div id="resultados"></div>
+        <!--
         <table class="mx-auto">
             <tr>
                 <td><b>ID</b></td>
@@ -81,8 +83,31 @@ Se puede quitar en cualquier momento sin problema
             }
             ?>
         </table>
+        -->
     </div>
+    <script>
+function cargarUsuarios() {
+    let json;
+    //primer fetch -> obtener lista de usuarios de la API en formato json
+    fetch("<?=RUTA_ABS?>" + "api/getUsuarios.php")
+    .then(response => response.json())
+    .then(data => {
+        //segundo fetch -> con los datos en formato json (guardado como texto en la variable) mandar datos a php para que genere la tabla.
+        fetch("<?=RUTA_ABS?>" + "api/html/tabla.php", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((res) => res.text())
+        .then((res) => {
+            document.getElementById("resultados").innerHTML = res;
+        })
+        
+    });
+}
+    </script>
     <?= footer() ?>
 </body>
-
 </html>

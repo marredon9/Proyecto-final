@@ -58,4 +58,54 @@ function gestionarModoOscuro() {
     // Obtener el tema de la cookie
     $tema = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 }
+
+function tablaUsuarios($json) {
+    ?>
+    <table class="mx-auto">
+        <tr>
+            <td><b>ID</b></td>
+            <td><b>Nombre Completo</b></td>
+            <td><b>DNI</b></td>
+            <td><b>E-mail</b></td>
+            <td><b>Admin</b></td>
+        </tr>
+    <?php
+    $usuarios = json_decode($json);
+    //var_dump($usuarios[0]);
+    //var_dump($usuarios);
+    foreach ($usuarios as $usuario) {
+        //var_dump($usuario);
+        
+        echo '
+    
+        <tr>
+            <td><input type="text" disabled value="' .  $usuario["id"] ?>"></td>
+            <td><input type="text" disabled value="<?= $usuario["nombre"] ?>"></td>
+            <td><input type="text" disabled value="<?= $usuario["apellido1"] ?>"></td>
+            <td><input type="text" disabled value="<?= $usuario["apellido2"] ?>"></td>
+            <td><input type="text" disabled value="<?= $usuario["dni"] ?>"></td>
+            <td><input type="text" disabled value="<?= $usuario["email"] ?>"></td>
+            <?php
+
+            if ($usuario["es_admin"]) {
+            ?>
+                <td><input type="checkbox" disabled checked></td>
+            <?php
+            } else {
+            ?>
+                <td><input type="checkbox" disabled></td>
+            <?php
+            }
+
+            ?>
+        </tr>
+     ';
+    
+    ?>
+        </table>
+    </div>
+    <p>Wololo</p>
+    <?php
+}
+
 ?>
