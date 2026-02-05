@@ -25,8 +25,7 @@ gestionarModoOscuro();
         <div class="hero-content container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative"
             style="z-index: 1;">
             <h1 class="display-4 fw-bold mb-3">¡Tu mejor opción en Ibiza!</h1>
-            <p class="lead mb-4">Alquiler de coches, motos y furgonetas con la mejor calidad y precio</p>
-            <!--
+            <p class="lead mb-4">Alquiler de coches y furgonetas con la mejor calidad y precio</p>            <!--
             <button type="button" class="btn btn-primary btn-lg btn-rounded" data-bs-toggle="modal"
                 data-bs-target="#reservaModal">Reserva Ahora</button>
             -->
