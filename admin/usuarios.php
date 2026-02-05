@@ -107,6 +107,30 @@ function cargarUsuarios() {
         
     });
 }
+
+function actualizarUsuario(id) {
+    let nombre = document.getElementById("us" + id + "_nombre").value;
+    let apellido1 = document.getElementById("us" + id + "_apellido1").value;
+    let apellido2 = document.getElementById("us" + id + "_apellido2").value;
+    let dni = document.getElementById("us" + id + "_dni").value;
+    let email = document.getElementById("us" + id + "_email").value;
+    let admin = document.getElementById("us" + id + "_admin").checked == true ? 1 : 0;
+    let params = [id, nombre, apellido1, apellido2, dni, email, admin];
+    let status = "none";
+    //console.log(params);
+    fetch("<?=RUTA_ABS?>" + "api/editarUsuario.php", {
+        method: "POST",
+        body: JSON.stringify(params),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((res) => res.text())
+    .then((data) => {
+        console.log(data);
+    })
+}
+cargarUsuarios();
     </script>
     <?= footer() ?>
 </body>

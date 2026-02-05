@@ -60,52 +60,49 @@ function gestionarModoOscuro() {
 }
 
 function tablaUsuarios($json) {
-    ?>
+    //escrito como echoes de php porque no dibuja el HTML correctamente
+    echo '
     <table class="mx-auto">
         <tr>
             <td><b>ID</b></td>
-            <td><b>Nombre Completo</b></td>
+            <td><b>Nombre</b></td>
+            <td><b>Apellido 1</b></td>
+            <td><b>Apellido 2</b></td>
             <td><b>DNI</b></td>
             <td><b>E-mail</b></td>
             <td><b>Admin</b></td>
         </tr>
-    <?php
+    ';
     $usuarios = json_decode($json);
     //var_dump($usuarios[0]);
     //var_dump($usuarios);
     foreach ($usuarios as $usuario) {
+        $id = $usuario->id;
         //var_dump($usuario);
-        
         echo '
     
-        <tr>
-            <td><input type="text" disabled value="' .  $usuario["id"] ?>"></td>
-            <td><input type="text" disabled value="<?= $usuario["nombre"] ?>"></td>
-            <td><input type="text" disabled value="<?= $usuario["apellido1"] ?>"></td>
-            <td><input type="text" disabled value="<?= $usuario["apellido2"] ?>"></td>
-            <td><input type="text" disabled value="<?= $usuario["dni"] ?>"></td>
-            <td><input type="text" disabled value="<?= $usuario["email"] ?>"></td>
-            <?php
+        <tr oninput="actualizarUsuario(' . $id . ')">
+            <td><input type="text" disabled value="' . $id . '"></td>
+            <td><input id="us' . $id . '_nombre" type="text" value="' . $usuario->nombre . '"></td>
+            <td><input id="us' . $id . '_apellido1" type="text" value="' . $usuario->apellido1 . '"></td>
+            <td><input id="us' . $id . '_apellido2" type="text" value="' . $usuario->apellido2 . '"></td>
+            <td><input id="us' . $id . '_dni" type="text" value="' . $usuario->dni . '"></td>
+            <td><input id="us' . $id . '_email" type="text" value="' . $usuario->email . '"></td>
+        ';
 
-            if ($usuario["es_admin"]) {
-            ?>
-                <td><input type="checkbox" disabled checked></td>
-            <?php
-            } else {
-            ?>
-                <td><input type="checkbox" disabled></td>
-            <?php
-            }
+        if ($usuario->es_admin) {
+            echo '<td><input id="us' . $id . '_admin" type="checkbox" checked></td>';
+        } else {
+            echo '<td><input id="us' . $id . '_admin" type="checkbox"></td>';
+        }
+    }
 
-            ?>
+    echo '
         </tr>
-     ';
     
-    ?>
         </table>
     </div>
-    <p>Wololo</p>
-    <?php
+    ';
 }
 
 ?>
