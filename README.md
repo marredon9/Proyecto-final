@@ -25,6 +25,7 @@
 - Debian Nginx
 - Permisos de todo
 - HTTPS
+- MariaDB
 
 
 ## Instalación
@@ -75,17 +76,42 @@ La configuración del proyecto así la hemos hecho:
 
 ```php
 <?php
-$host = "localhost";
-$dbname = "alquiza";
-$username = "root";
-$password = "root";  
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    ("Error de conexión: " . $e->getMessage());
+    $host = "192.168.72.54";
+    //$host = "192.168.0.180";
+    //$host = "localhost";
+    $user = "root";
+    $pass = "root";
+    $db = "alquiler";
+
+    $cn = new mysqli($host, $user, $pass, $db);
+    $cn->set_charset("utf8mb4");
+} catch (mysqli_sql_exception $e) {
+    echo $e->getMessage();
 }
+
+const DB_EMISIONES = [
+    "NINGUNO",
+    "0",
+    "ECO",
+    "B",
+    "C"
+];
+
+const DB_MODOS = [
+    "AUTOMATICO",
+    "MANUAL"
+];
+
+const DB_TIPOS = [
+    "COCHE",
+    "MOTO",
+    "FURGONETA"
+];
+
 ?>
 ```
 
@@ -387,81 +413,23 @@ Almacena información de los alquileres realizados.
 
 
 
-## 📸 Evidencias de Despliegue
-
-### Ubicación de Evidencias
-
-Las evidencias de despliegue se encuentran en la carpeta: **`docs/evidencias-despliegue/`**
-
+## Evidencias de Despliegue
 
 ### Capturas de Pantalla
 
-📁 **`docs/evidencias-despliegue/capturas/`**
+Capturas del Despliegue:
 
-Incluye capturas de pantalla que demuestran:
+Instalacion de Nginx:
+![Instalacion Nginx](./Documentacion/image.png)
 
-1. **`01-https-certificado.png`** - Acceso HTTPS con certificado SSL válido
-2. **`02-login-exitoso.png`** - Inicio de sesión exitoso
-3. **`03-dashboard-admin.png`** - Panel de administración
-4. **`04-crud-vehiculos.png`** - Operaciones CRUD de vehículos
-5. **`05-crud-usuarios.png`** - Gestión de usuarios
-6. **`06-lista-alquileres.png`** - Listado de alquileres
-7. **`07-configuracion-apache.png`** - Configuración de Apache
-8. **`08-logs-sistema.png`** - Logs del sistema
-9. **`09-base-datos.png`** - Base de datos configurada
-10. **`10-responsive-mobile.png`** - Vista responsive en móvil
+Instalacion de MariaDB:
+![Instalacion MariaDB](./Documentacion/MariaDB.png)
 
+Instalacion de PHP:
+![Instalacion PHP](./Documentacion/InstalacionPHP.png)
 
-### Videos Demostrativos
-
-📁 **`docs/evidencias-despliegue/videos/`**
-
-Videos cortos (2-5 minutos) que muestran:
-
-1. **`demo-completa.mp4`** - Demo completa del sistema funcionando
-   - Acceso HTTPS
-   - Registro de usuario
-   - Login
-   - Búsqueda de vehículos
-   - Reserva de vehículo
-   - Panel de administración
-   - CRUD de entidades
-
-2. **`instalacion-debian.mp4`** - Proceso de instalación en Debian
-   - Instalación del stack LAMP
-   - Configuración de SSL
-   - Importación de base de datos
-
-
-### Logs y Configuración
-
-📁 **`docs/evidencias-despliegue/logs/`**
-
-Archivos de log sanitizados (sin información sensible):
-
-- **`apache-access.log`** - Registro de accesos HTTP
-- **`apache-error.log`** - Registro de errores de Apache
-- **`mysql-error.log`** - Registro de errores de MySQL
-- **`php-error.log`** - Registro de errores de PHP
-
-📁 **`docs/evidencias-despliegue/configuracion/`**
-
-Archivos de configuración (sanitizados):
-
-- **`apache-site.conf`** - Configuración del Virtual Host de Apache
-- **`php.ini`** - Configuración de PHP
-- **`my.cnf`** - Configuración de MySQL
-
-
-### Formato de Evidencias
-
-- **Imágenes:** PNG o JPG, resolución mínima 1920x1080
-- **Videos:** MP4, H.264, resolución 1080p, máximo 5 minutos
-- **Logs:** Archivos de texto plano (.log o .txt)
-
-**⚠️ Nota:** Todas las evidencias han sido sanitizadas para no exponer información sensible (contraseñas, tokens, IPs privadas, etc.)
-
-
+Archivo de configuración de la página en Nginx:
+![Configuracion Nginx](./Documentacion/ConfiguracionNginx.png)
 ---
 
 
