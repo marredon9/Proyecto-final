@@ -26,8 +26,18 @@ gestionarModoOscuro();
                 <div>
                     <h5 class="card-title">Ford Focus</h5>
                 </div>
-                <span><img src="<?= img("marchas.png") ?>" style="width: 20px;">Automático <img src="<?= img("grupo.png") ?>" style="width: 20px;"> 5 Personas <img src="<?= img("maleta.png") ?>"style="width: 20px;"> 2 Maletas</span>
-                <a href="coche.php" class="btn btn-outline-dark">Ver más</a>
+                <span class="text-card"><img src="<?= img("marchas.png") ?>" style="width: 20px;">Automático <img
+                        src="<?= img("grupo.png") ?>" style="width: 20px;"> 5 Personas <img
+                        src="<?= img("maleta.png") ?>" style="width: 20px;"> 2 Maletas</span>
+                <h5 style="margin-top: 10px;">Características del vehículo</h5>
+
+                <li>Radio estéreo AM/FM</li>
+                <li> Airbags</li>
+                <li> Vehículo de gasolina</li>
+                <li> Aire acondicionado</li>
+            </div>
+            <div class="card-footer">
+                <p>20€/día</p>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -59,3 +69,4 @@ gestionarModoOscuro();
         </div>
     </div>
     </div>
+    <?= footer() ?>

@@ -332,16 +332,14 @@ footer .footer-social i {
   color: white;
 }
 
-.card-body {
-  color: white;
-  max-width: 520px;
+li {
+  margin-left: 10px;
 }
-
 li a {
   color: white;
 }
 
-span {
+span .text-card {
   color: #000 !important;
   font-size: 12px !important;
 }
