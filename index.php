@@ -29,7 +29,7 @@ gestionarModoOscuro();
             <button type="button" class="btn btn-primary btn-lg btn-rounded" data-bs-toggle="modal"
                 data-bs-target="#reservaModal">Reserva Ahora</button>
             -->
-            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("buscar.php")?>">Regístrate</a>
+            <a class="btn btn-primary btn-lg btn-rounded" href="<?=lnk("Registrarse.php")?>">Regístrate</a>
         </div>
 
     </section>
