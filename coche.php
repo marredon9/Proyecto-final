@@ -10,7 +10,7 @@ gestionarModoOscuro();
 <html lang="es">
 
 <head>
-    <?=headerPagina()?>
+    <?= headerPagina() ?>
 </head>
 
 <body>
@@ -18,49 +18,44 @@ gestionarModoOscuro();
     <!-- Navbar -->
     <?= navbar() ?>
 
-    <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="img/coches/focus.png" class="card-img-top" alt="fiat 500">
-                <div class="card-body">
-                    <p class="card-header">Ford Focus</p>
+    <h2 class="section-title mb-4 text-center mt-3" id="flota">Nuestros coches</h2>
+    <div class="d-flex justify-content-center gap-3 flex-wrap align-items-stretch">
+        <div class="card" style="width: 18rem;">
+            <img src="<?= img("focus (2).png") ?>" class="card-img-top" alt="coche">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Ford Focus</h5>
                 </div>
-                <div class="card-body">
-                    <p></p>
-                </div>
-                <div class="card-footer text-muted">Card footer</div>
+                <span><img src="<?= img("marchas.png") ?>" style="width: 20px;">Automático <img src="<?= img("grupo.png") ?>" style="width: 20px;"> 5 Personas <img src="<?= img("maleta.png") ?>"style="width: 20px;"> 2 Maletas</span>
+                <a href="coche.php" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Texto de ejemplo 2.</p>
+        <div class="card" style="width: 18rem;">
+            <img src="<?= img("van.png") ?>" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Furgonetas</h5>
                 </div>
-                <div class="card-footer text-muted">Card footer</div>
+                <a href="<?= lnk("furgoneta.php") ?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Texto de ejemplo 3.</p>
+        <div class="card" style="width: 18rem;">
+            <img src="<?= img("moto.png") ?>" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Motos</h5>
                 </div>
-                <div class="card-footer text-muted">Card footer</div>
+                <a href="<?= lnk("moto.php") ?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Texto de ejemplo 4.</p>
+        <div class="card" style="width: 18rem;">
+            <img src="<?= img("moto.png") ?>" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Motos</h5>
                 </div>
-                <div class="card-footer text-muted">Card footer</div>
+                <a href="<?= lnk("moto.php") ?>" class="btn btn-outline-dark">Ver más</a>
             </div>
         </div>
     </div>
-</div>
+    </div>

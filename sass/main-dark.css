@@ -341,6 +341,11 @@ li a {
   color: white;
 }
 
+span {
+  color: #000 !important;
+  font-size: 12px !important;
+}
+
 .admin {
   display: flex;
   flex-direction: column;
