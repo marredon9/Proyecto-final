@@ -30,14 +30,12 @@ gestionarModoOscuro();
                 <ul>
                     <li><a href="<?= lnk("admin/usuarios.php") ?>">Administrar usuarios</a></li>
                     <li><a href="<?= lnk("admin/vehiculos.php") ?>">Administrar vehiculos</a></li>
-                    <li><a href="<?= lnk("admin/alquileres.php") ?>">Administrar alquileres</a></li>
                     <li><a href="<?= lnk("admin/sucursales.php") ?>">Administrar sucursales</a></li>
                 </ul>
-                <a href="<?=lnk("servlets/cerrarSesion.php")?>" class="btn btn-primary btn-lg px-5">Cerrar Sesion</a>
+                <a href="<?= lnk("servlets/cerrarSesion.php") ?>" class="btn btn-primary btn-lg px-5">Cerrar Sesion</a>
             </div>
         </div>
     </section>
-
     <?= footer() ?>
 </body>
 
