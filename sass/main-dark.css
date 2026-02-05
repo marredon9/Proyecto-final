@@ -347,6 +347,15 @@ li a {
   align-items: center;
   margin-top: 40px;
   margin-bottom: 40px;
+  color: black;
+}
+
+h3 a {
+  color: rgb(70, 70, 70);
+}
+h3 a:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
 }
 
 .admin table {
@@ -406,6 +415,10 @@ table td:first-child a:hover {
 body {
   font-family: "Poppins", sans-serif;
   background-color: black;
+}
+
+h3 a {
+  color: black;
 }
 
 a {
