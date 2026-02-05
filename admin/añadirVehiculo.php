@@ -16,7 +16,7 @@ gestionarModoOscuro();
 <html lang="es">
 
 <head>
-    <?=headerPagina()?>
+    <?= headerPagina() ?>
 </head>
 
 <body>
@@ -48,17 +48,13 @@ gestionarModoOscuro();
                         <?php
                         for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                             $v = DB_TIPOS[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>"><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                     </select>
                 </td>
-            </tr>
-            <tr>
-                <td>Precio por dia: </td>
-                <td><input type="text" name="precioDia"></td>
             </tr>
             <tr>
                 <td>Asientos: </td>
@@ -83,9 +79,9 @@ gestionarModoOscuro();
                         <?php
                         for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
                             $v = DB_MODOS[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>"><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                     </select>
@@ -115,9 +111,9 @@ gestionarModoOscuro();
                         <?php
                         for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                             $v = DB_TIPOS[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>"><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                     </select>
@@ -137,12 +133,11 @@ gestionarModoOscuro();
                             while ($r = $res->fetch_assoc()) {
                                 $id = $r["id"];
                                 $nombre = $r["nombre"];
-                                ?>
+                        ?>
                                 <option value="<?= $id ?>"><?= $nombre ?></option>
-                                <?php
+                        <?php
                             }
                         } catch (mysqli_sql_exception $e) {
-
                         }
 
                         ?>
