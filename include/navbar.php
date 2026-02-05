@@ -39,7 +39,6 @@ function navbarAdmin(){
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="sucursales.php">Sucursales</a></li>
-                    <li class="nav-item"><a class="nav-link" href="vehiculos.php">Vehículos</a></li>
                     <li class="nav-item"><a class="nav-link" href="usuarios.php">Usuarios</a></li>
                     
                     <!-- Enlace para cambiar a modo oscuro -->
