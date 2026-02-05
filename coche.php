@@ -80,7 +80,7 @@ gestionarModoOscuro();
                 <li> Aire acondicionado</li>
             </div>
             <div class="card-footer">
-                <p>25€/día</p>
+                <p>30€/día</p>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -100,12 +100,14 @@ gestionarModoOscuro();
                 <li> Aire acondicionado</li>
             </div>
             <div class="card-footer">
-                <p>25€/día</p>
+                <p>40€/día</p>
             </div>
         </div>
 
     </div>
     </div>
+
+    
     <?= footer() ?>
 </body>
 
