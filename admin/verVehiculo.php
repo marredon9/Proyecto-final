@@ -48,12 +48,12 @@ gestionarModoOscuro();
 <html lang="es">
 
 <head>
-    <?=headerPagina()?>
+    <?= headerPagina() ?>
 </head>
 
 <body>
     <?= navbarAdmin() ?>
-    <h3><a href="<?=lnk("admin/vehiculos.php")?>">Atrás</a></h3>
+    <h3><a href="<?= lnk("admin/vehiculos.php") ?>">Atrás</a></h3>
     <form action="<?= srv("admin/editarVehiculo") ?>" method="post">
         <input type="hidden" name="id" value="<?= $id ?>">
         <table>
@@ -86,9 +86,9 @@ gestionarModoOscuro();
                         //$lista = cambiarPrioridad(DB_TIPOS, $tipo);
                         for ($i = 0; $i < sizeof(DB_TIPOS); $i++) {
                             $v = DB_TIPOS[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>" <?= ($v == $tipo) ? 'selected="selected"' : "" ?>><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                         <!--
@@ -128,9 +128,9 @@ gestionarModoOscuro();
                         //$lista = cambiarPrioridad(DB_MODOS, $modo);
                         for ($i = 0; $i < sizeof(DB_MODOS); $i++) {
                             $v = DB_MODOS[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>" <?= ($v == $modo) ? 'selected="selected"' : "" ?>><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                         <!--
@@ -167,9 +167,9 @@ gestionarModoOscuro();
                         //$lista = cambiarPrioridad(DB_EMISIONES, $emisiones);
                         for ($i = 0; $i < sizeof(DB_EMISIONES); $i++) {
                             $v = DB_EMISIONES[$i];
-                            ?>
+                        ?>
                             <option value="<?= $v ?>" <?= ($v == $emisiones) ? 'selected="selected"' : "" ?>><?= $v ?></option>
-                            <?php
+                        <?php
                         }
                         ?>
                     </select>
@@ -189,7 +189,7 @@ gestionarModoOscuro();
                             $stmt->execute();
                             $res = $stmt->get_result();
                             $r = $res->fetch_assoc();
-                            ?>
+                        ?>
                             <option value="<?= $r["id"] ?>"><?= $r["nombre"] ?></option>
                             <?php
 
@@ -201,12 +201,11 @@ gestionarModoOscuro();
                             while ($r = $res->fetch_assoc()) {
                                 $id = $r["id"];
                                 $nombre = $r["nombre"];
-                                ?>
+                            ?>
                                 <option value="<?= $id ?>"><?= $nombre ?></option>
-                                <?php
+                        <?php
                             }
                         } catch (mysqli_sql_exception $e) {
-
                         }
 
                         ?>
@@ -219,7 +218,7 @@ gestionarModoOscuro();
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Guardar Coche"></td>
+                <td><input type="submit" class="btn btn-primary btn-lg px-5" value="Guardar Coche"></td>
             </tr>
         </table>
     </form>

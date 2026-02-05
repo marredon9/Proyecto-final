@@ -1,6 +1,8 @@
 <?php
 include "include.php";
+error_reporting(1);
 
+error_reporting(0);
 /*
 PARAMETROS:
 tipo
@@ -29,8 +31,8 @@ $maletero = $_GET["maletero"] ?? "%";
 $modo = $_GET["modo"] ?? "%";
 $emisiones = $_GET["emisiones"] ?? "%";
 $id_sucursal = $_GET["id_sucursal"] ?? "%";
-$desde = $_GET["desde"] ?? "%";
-$hasta = $_GET["hasta"] ?? "%";
+$desde = $_GET["desde"] ?? "0000-00-00";
+$hasta = $_GET["hasta"] ?? "0000-00-00";
 $json = $_GET["json"] ?? "true";
 $preciomin = intval($_GET["preciomin"] ?? 0);
 $preciomax = intval($_GET["preciomax"] ?? 9999999);
@@ -144,11 +146,11 @@ try {
 
     //var_dump($res);
     $jsonArray = [];
-    var_dump($res);
+
     if($res->num_rows == 0){
-        
+
     } 
-    die;
+    
     while ($r = $res->fetch_assoc()) {
         //var_dump($r["diasRecuento"]);
         if ($json == "true") {

@@ -118,7 +118,7 @@ gestionarModoOscuro();
                                     }
                                 } catch (mysqli_sql_exception $e) {
                                 }
-                                ?>
+        ?>
                             </select>
                         </div>
                     </div>
@@ -247,17 +247,7 @@ gestionarModoOscuro();
         </div>
     </div>
     <!-- Card de no hay vehiculo disponible -->
-    <?php
 
-    ?>
-        <div class="card" id="contact-card" style="width: 26rem; background-color: none;">
-            <img src="assets/img/cerca.png" class="card-img-top" alt="no">
-            <div class="card-body">
-                <h5 class="card-title">No hay <?= $tipo ?> disponibles actualmente</h5>
-                <p class="card-text">Lamentamos informarles que todos nuestros <?= $tipo ?> están ocupados, por favor
-                    seleccione otra fecha. Gracias</p>
-            </div>
-        </div>
     
 
     <?= footer() ?>
@@ -342,6 +332,8 @@ gestionarModoOscuro();
 
     let resultados = document.getElementById("resultados");
 
+    const divError = document.getElementById('contact-card');
+
     function buscar() {
         console.log("desde: " + encodeURI(desde.value));
         console.log("hasta: " + encodeURI(hasta.value));
@@ -372,13 +364,16 @@ gestionarModoOscuro();
             "&json=false";
         let url = "api/buscar.php?" + params;
         fetch(url)
-        then(response => response.text())
-        then(data => {
-           resultados.innerHTML = data;
-        )
-        catch(error => {
-           resultados.innerHTML = error;
-        );
+            .then(response => response.text())
+            .then(data => {
+                resultados.innerHTML = data;
+                if(data.length < 1) {
+                    
+                }
+            })
+            .catch(error => {
+                resultados.innerHTML = error;
+            });
     }
     buscar();
 </script>
