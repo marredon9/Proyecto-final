@@ -14,21 +14,18 @@ gestionarModoOscuro();
 <html lang="es">
 
 <head>
-    <?=headerPagina()?>
+    <?= headerPagina() ?>
 </head>
 
 <body>
 
     <?= navbarAdmin() ?>
-    
+
     <div class="admin mt-5 mb-5 text-center">
         <h1>Gestión de vehículos</h1>
-        <h3><a href="<?=lnk("admin/index.php")?>">Volver atrás</a></h3>
-        <h3><a href="<?=lnk("admin/añadirVehiculo.php")?>">Añadir Vehículo</a></h3>
         <!-- no uso inputs porque no entran los campos en pantalla -->
         <table border="1" class="mx-auto">
             <tr>
-                <td></td>
                 <td><b>ID</b></td>
                 <td><b>Matrícula</b></td>
                 <td><b>Marca</b></td>
@@ -66,9 +63,8 @@ gestionarModoOscuro();
                     $sucursal = $r["sucursal"];
                     $tipo = $r["tipo"];
                     $precioDia = $r["precioDia"];
-                    ?>
+            ?>
                     <tr>
-                        <td><a href="<?=lnk("admin/verVehiculo.php?id=" . $id)?>">Ver</a></td>
                         <td><?= $id ?></td>
                         <td><?= $matricula ?></td>
                         <td><?= $marca ?></td>
@@ -84,10 +80,9 @@ gestionarModoOscuro();
                         <td><?= $sucursal ?></td>
                         <td><?= $precioDia ?></td>
                     </tr>
-                    <?php
+            <?php
                 }
             } catch (mysqli_sql_exception $e) {
-
             }
             ?>
         </table>

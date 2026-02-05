@@ -34,7 +34,6 @@ Se puede quitar en cualquier momento sin problema
         </div>
         <table class="mx-auto">
             <tr>
-                <td></td>
                 <td><b>ID</b></td>
                 <td><b>Nombre Completo</b></td>
                 <td><b>DNI</b></td>
@@ -58,9 +57,6 @@ Se puede quitar en cualquier momento sin problema
                     $esAdmin = $r["es_admin"] == 1;
             ?>
                     <tr>
-                        <td>
-                            <a href="<?= lnk("admin/usuarios.php?id=" . $id) ?>">Ver</a>
-                        </td>
                         <td><input type="text" disabled value="<?= $id ?>"></td>
                         <td><input type="text" disabled value="<?= $nombreCompleto ?>"></td>
                         <td><input type="text" disabled value="<?= $dni ?>"></td>
