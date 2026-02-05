@@ -212,7 +212,8 @@ Luego img separado por otra carpeta, archivo de JS separado suelto porque es uno
 Proyecto_Final/
 │
 ├── alquilarCoche.php
-├── buscar.php
+├── coche.php
+├── furgoneta.php
 ├── contacto.php
 ├── GraciasAlquiler.php
 ├── include.php
@@ -245,11 +246,37 @@ Proyecto_Final/
 │   └── include.php
 │
 ├── assets/
-│   ├── img/
-│   │   └── ibiza.avif
+│   │   ├── cerca.png  
+│   │   ├── citroen.png  
+│   │   ├── coche.png  
+│   │   ├── descapotable.png  
+│   │   ├── enchufe.png  
+│   │   ├── escaparate.png  
+│   │   ├── focus-2.png  
+│   │   ├── furgoneta1.png  
+│   │   ├── furgoneta2.png  
+│   │   ├── furgoneta3.png  
+│   │   ├── furgoneta4.png  
+│   │   ├── grupo.png  
+│   │   ├── ibiza.avif  
+│   │   ├── maleta.png  
+│   │   ├── marchas.png  
+│   │   ├── moto.png  
+│   │   ├── moto1.png  
+│   │   ├── moto2.png  
+│   │   ├── output.jpg  
+│   │   ├── peugeot.png  
+│   │   └── van.png  
 │   └── vid/
+        └── olas.mp4 
 │
-├── Documentacion/
+├── Documentacion/  
+│   │   ├── ConfiguracionNginx.png  
+│   │   ├── Diagrama_Flujo_Alquiza.drawio.png  
+│   │   ├── EntidadRelacion.png  
+│   │   ├── image.jpg  
+│   │   ├── InstalacionPHP.png  
+│   │   └── MariaDB.png 
 │
 ├── include/
 │   ├── cardBusquedaCoche.php
@@ -303,6 +330,7 @@ Proyecto_Final/
 │       ├── editarSucursal.php
 │       ├── editarUsuario.php
 │       ├── editarVehiculo.php
+        ├── exportarUsuariosCSV.php
 │       └── include.php
 ```
 
