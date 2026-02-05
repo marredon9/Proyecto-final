@@ -247,17 +247,7 @@ gestionarModoOscuro();
         </div>
     </div>
     <!-- Card de no hay vehiculo disponible -->
-    <?php
 
-    ?>
-        <div class="card" id="contact-card" style="width: 26rem; background-color: none;">
-            <img src="assets/img/cerca.png" class="card-img-top" alt="no">
-            <div class="card-body">
-                <h5 class="card-title">No hay <?= $tipo ?> disponibles actualmente</h5>
-                <p class="card-text">Lamentamos informarles que todos nuestros <?= $tipo ?> están ocupados, por favor
-                    seleccione otra fecha. Gracias</p>
-            </div>
-        </div>
     
 
     <?= footer() ?>
