@@ -22,9 +22,12 @@ gestionarModoOscuro();
     <div class="row">
         <div class="col-md-3">
             <div class="card">
-                <img src="img/coches/500.png" class="card-img-top" alt="fiat 500">
+                <img src="img/coches/focus.png" class="card-img-top" alt="fiat 500">
                 <div class="card-body">
-                    <p class="card-text"></p>
+                    <p class="card-header">Ford Focus</p>
+                </div>
+                <div class="card-body">
+                    <p></p>
                 </div>
                 <div class="card-footer text-muted">Card footer</div>
             </div>
