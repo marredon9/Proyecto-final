@@ -15,6 +15,35 @@ gestionarModoOscuro();
 
 <body>
 
+<div class="card" style="width: 18rem;">
+            <img src="<?=img("moto1.png")?>"class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Benelli TRK 502</h5>
+                </div>
+                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="<?=img("moto2.png")?>"class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Benelli TRK 502</h5>
+                </div>
+                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="<?=img("moto1.png")?>"class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">Benelli TRK 502</h5>
+                </div>
+                <a href="<?=lnk("buscar.php")?>" class="btn btn-outline-dark">Ver más</a>
+            </div>
+        </div>
     <!-- Navbar -->
     <?= navbar() ?>
 
@@ -80,7 +109,7 @@ gestionarModoOscuro();
                 <li> Aire acondicionado</li>
             </div>
             <div class="card-footer">
-                <p>30€/día</p>
+                <p>25€/día</p>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -100,14 +129,12 @@ gestionarModoOscuro();
                 <li> Aire acondicionado</li>
             </div>
             <div class="card-footer">
-                <p>40€/día</p>
+                <p>25€/día</p>
             </div>
         </div>
 
     </div>
     </div>
-
-    
     <?= footer() ?>
 </body>
 

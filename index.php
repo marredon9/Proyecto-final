@@ -140,7 +140,7 @@ gestionarModoOscuro();
     </div>
     </div>
     <div style="text-align: center; margin-top: 50px;">
-        <a class="view-button" href="<?=lnk("buscar.php")?>">Ver Nuestros Vehículos</a>
+        <a class="view-button" href="<?=lnk("vehiculo.php")?>">Ver Nuestros Vehículos</a>
     </div>
 
     <!--Zona gris -->
