@@ -1,6 +1,11 @@
 <?php
 
+<<<<<<< HEAD
 define("RUTA_ABS", "http://localhost/Proyecto-final/Proyecto-final/");
+=======
+//define("RUTA_ABS", "http://localhost/Proyecto_Final/");
+define("RUTA_ABS", "http://localhost/php/git/proyectofinal/Proyecto-final/");
+>>>>>>> proto
 //define("RUTA_ABS", "http://localhost/Proyecto_Final/Alquiza/");
 //define("RUTA_ABS", "http://localhost/git/proyectofinal/");
 define("RUTA_IMG", RUTA_ABS . "assets/img/");
