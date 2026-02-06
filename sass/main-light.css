@@ -425,7 +425,7 @@ a {
   font-weight: normal;
   text-decoration: none;
 }
-a a:hover {
+a:hover {
   color: rgb(255, 255, 255);
   text-decoration: underline;
 }/*# sourceMappingURL=main-light.css.map */
